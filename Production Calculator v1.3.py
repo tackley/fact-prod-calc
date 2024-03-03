@@ -954,6 +954,7 @@ if selectedGame == "Captain of Industry":
         "bb": "Woodchips",
         "bc": "Yellowcake",
     }
+    list(items.values())
     # applying power multiplier
     for recipe in recipes:
         if "2c" in recipe[1]:
@@ -1324,8 +1325,8 @@ if len(byproducts) > 0:
 if len(inputs) > 0:
     print()
     print("Inputs:")
-    for input in inputs:
-        print(f"{int(finalProducts[input] * -100) / 100}{itemUnit} of {items[input]}")
+    for value in inputs:
+        print(f"{int(finalProducts[value] * 100) / 100}{itemUnit} of {items[value]}")
 print()
 print("We hope you found your experience helpful.")
 print()

@@ -8,7 +8,9 @@ app = Flask(__name__)
 def homepage():
   return getData("Captain of Industry", parameter="machines")
 
-@app.route('/items', methods=["GET"])
-def itemList():
-  queryParameters = request.args
-  return getData(queryParameters.get("game"), parameter="items")
+@app.route('/<game>/items')
+def itemList(game):
+  games = {
+    "coi":"Captain of Industry",
+  }
+  return getData(games[game], parameter="items")

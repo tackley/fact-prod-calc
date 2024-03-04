@@ -9,11 +9,12 @@ games = {
 }
 @app.route('/')
 def homepage():
-  return getData("Captain of Industry", parameter="machines")
+  return "Welcome to the Factory Production Calculator v2.0!"
 
 @app.route('/<game>/items')
 def itemList(game):
   return getData(games[game], parameter="items")
+
 @app.route('/<game>/recipes', methods=["GET"])
 def recipes(game):
   queryParameters = request.args

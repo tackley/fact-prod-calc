@@ -1,4 +1,4 @@
-from .functions import getData
+from .data import getData
 from app import app
 
 @app.route('/')

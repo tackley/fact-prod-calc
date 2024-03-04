@@ -9,6 +9,6 @@ def homepage():
   return getData("Captain of Industry", parameter="machines")
 
 @app.route('/items', methods=["GET"])
-def homepage():
+def itemList():
   queryParameters = request.args
   return getData(queryParameters.get("game"), parameter="items")

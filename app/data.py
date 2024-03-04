@@ -4,7 +4,7 @@
 from .functions import currentValue
 
 # getting data from data-list
-def getRawData(game: str, gameSettings: dict, parameter: str | None):
+def getRawData(game: str, gameSettings: dict, parameter: str):
     def settingValue(setting):
         return currentValue(gameSettings, setting, getRawData(game, gameSettings, "defaultGameSettings")[setting])
     data = {}

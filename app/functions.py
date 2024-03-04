@@ -145,7 +145,7 @@ def productionLine(chosenRecipes: dict[int, dict[str, str]], requiredItems: dict
 
 
 # maths functions
-def sign(value: int | float):
+def sign(value: float):
     if value > 0:
         return 1
     elif value < 0:
@@ -154,7 +154,7 @@ def sign(value: int | float):
         return 0
 
 
-def roundUp(value: int | float):
+def roundUp(value: float):
     if value == int(value):
         value = int(value)
     else:
@@ -162,7 +162,7 @@ def roundUp(value: int | float):
     return value
 
 
-def roundToDigit(value: int | float, digits: int = 0, roundMode: str = "down"):
+def roundToDigit(value: float, digits: int = 0, roundMode: str = "down"):
     value *= 10**digits
     if roundMode == "down":
         value = int(value)
@@ -173,14 +173,14 @@ def roundToDigit(value: int | float, digits: int = 0, roundMode: str = "down"):
 
 
 # integer coversions for printing values
-def intConvert(value: int | float):
+def intConvert(value: float):
     if int(value) == value:
         value = int(value)
     return value
 
 
 # selective rounding of machine numbers
-def requirementRounder(quantity: int | float, utilisationDependency: bool):
+def requirementRounder(quantity: float, utilisationDependency: bool):
     if not utilisationDependency:
         quantity = roundUp(quantity)
     return quantity

@@ -1,7 +1,6 @@
 # Factory Production Calculator v2.0 BACKEND
 # Based off version 1.3.1 (2024-03-03)
 
-
 # key-error free value for dictionaries
 def currentValue(dictionary: dict, key: any, default: any = 0):
     if key in dictionary.keys():
@@ -16,8 +15,7 @@ def currentValue(dictionary: dict, key: any, default: any = 0):
 # perDuration = boolean[str(input(">>> "))]
 # print()
 
-
-# chosen recipes table
+# # chosen recipes table
 # notChosen = []
 # notFinal = []
 # for index in range(0, len(items.keys())):

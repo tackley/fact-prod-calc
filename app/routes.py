@@ -1,4 +1,4 @@
-from .calculator import getData
+from .functions import getData
 from app import app
 
 @app.route('/')

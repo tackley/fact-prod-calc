@@ -1,21 +1,17 @@
 # Factory Production Calculator v2.0 BACKEND
 # Based off version 1.3.1 (2024-03-03)
 
-
-# quick way to do error-free '+=' with dictionaries
-def currentValue(dictionary: dict, key: any, default=0):
+# key-error free value for dictionaries
+def currentValue(dictionary: dict, key: any, default: any = 0):
     if key in dictionary.keys():
         return dictionary[key]
     else:
         return default
 
-
-def getData(
-    game: str, gameSettings: dict = {}, parameter: str = None, reformat: bool = True
-):
+# getting data from data-list
+def getRawData(game: str, gameSettings: dict, parameter: str | None):
     def settingValue(setting):
         return currentValue(gameSettings, setting, data["defaultGameSettings"][setting])
-
     if game == "Captain of Industry":
         data = {
             "recipes": [
@@ -479,10 +475,10 @@ def getData(
             "machineRequirements": [
                 ("Power", True, "W"),
                 ("Workers", False, ""),
-                ("Maintenance I", True, "/min"),
-                ("Maintenance II", True, "/min"),
-                ("Maintenance III", True, "/min"),
-                ("Unity", False, "/min"),
+                ("Maintenance I", True, "/ min"),
+                ("Maintenance II", True, "/ min"),
+                ("Maintenance III", True, "/ min"),
+                ("Unity", False, "/ min"),
                 ("Computing", True, "TF"),
             ],
             "machines": {
@@ -604,7 +600,13 @@ def getData(
                 "6f": ("Groundwater well", (0, 16, 4, 0, 0, 0.2, 0), {}),
             },
             "durationUnit": "s",
-            "gameSettings": {"electricityMultiplier": float},
+            "gameSettings": [
+                {
+                    "name": "electricityMultiplier",
+                    "type": "float",
+                    "displayText": "Electricity multiplier",
+                }
+            ],
             "defaultGameSettings": {"electricityMultiplier": 1},
             "unitFactor": 60,
             "itemUnit": "/min",
@@ -817,73 +819,83 @@ def getData(
             "itemUnitLong": str(),
             "items": dict(),
         }
-    if reformat:
-
-        def reformatRecipes(recipeList: list):
-            recipes = []
-            for index in range(len(recipeList)):
-                recipe = recipeList[index]
-                inputs = []
-                for item in list(recipe[0].keys()):
-                    inputs.append(
-                        {"item": data["items"][item], "amount": recipe[0][item]}
-                    )
-                outputs = []
-                for item in list(recipe[1].keys()):
-                    outputs.append(
-                        {"item": data["items"][item], "amount": recipe[1][item]}
-                    )
-                recipes.append(
-                    {
-                        "inputs": inputs,
-                        "outputs": outputs,
-                        "duration": recipe[2],
-                        "machine": data["machines"][recipe[3]][0],
-                        "id": index,
-                    }
-                )
-            return recipes
-
-        def reformatMachines(machineList: list, requirementKey: list):
-            machines = []
-            for machine in machineList:
-                requirements = {}
-                for index in range(len(machine[1])):
-                    requirements[requirementKey[index]["name"]] = machine[1][index]
-                machines.append({"name": machine[0], "requirements": requirements})
-            return machines
-
-        def reformatRequirements(requirementList: list):
-            requirements = []
-            for requirement in requirementList:
-                requirements.append(
-                    {
-                        "name": requirement[0],
-                        "utilisationDependency": requirement[1],
-                        "unit": requirement[2],
-                    }
-                )
-            return requirements
-
-        data["recipes"] = reformatRecipes(data["recipes"])
-        data["machineRequirements"] = reformatRequirements(data["machineRequirements"])
-        data["machines"] = reformatMachines(
-            list(data["machines"].values()), data["machineRequirements"]
-        )
-        data["items"] = list(data["items"].values())
     if parameter == None:
         return data
     else:
         return data[parameter]
 
 
-def getItemList(game):
-    items = getData(game, parameter="items")
-    itemIndices = list(items.keys())
-    itemList = []
-    for item in itemIndices:
-        itemList.append({"name": items[item], "id": item})
-    return itemList
+def getData(game: str, gameSettings: dict = {}, parameter: str = None):
+    def reformatRecipes(recipeList: list):
+        recipes = []
+        for index in range(len(recipeList)):
+            recipe = recipeList[index]
+            inputs = []
+            for item in list(recipe[0].keys()):
+                inputs.append({"item": data["items"][item], "amount": recipe[0][item]})
+            outputs = []
+            for item in list(recipe[1].keys()):
+                outputs.append({"item": data["items"][item], "amount": recipe[1][item]})
+            recipes.append(
+                {
+                    "inputs": inputs,
+                    "outputs": outputs,
+                    "duration": recipe[2],
+                    "machine": data["machines"][recipe[3]][0],
+                    "id": index,
+                }
+            )
+        return recipes
+
+    def reformatMachines(machines: dict, requirementKey: list):
+        machineList = []
+        for machine in list(machines.values()):
+            requirements = {}
+            for index in range(len(machine[1])):
+                requirements[requirementKey[index][0]] = machine[1][index]
+            machineList.append({"name": machine[0], "requirements": requirements})
+        return machineList
+
+    def reformatRequirements(requirementList: list):
+        requirements = []
+        for requirement in requirementList:
+            requirements.append(
+                {
+                    "name": requirement[0],
+                    "utilisationDependency": requirement[1],
+                    "unit": requirement[2],
+                }
+            )
+        return requirements
+
+    def reformatItems(items: dict):
+        return list(items.values())
+
+    reformattingFunctions = {
+        "recipes": lambda: reformatRecipes(getRawData(game, gameSettings, "recipes")()),
+        "machineRequirements": lambda: reformatRequirements(
+            getRawData(game, gameSettings, "machineRequirements")()
+        ),
+        "machines": lambda: reformatMachines(
+            getRawData(game, gameSettings, "machines")(),
+            getRawData(game, gameSettings, "machineRequirements")(),
+        ),
+        "durationUnit": lambda: getRawData(game, gameSettings, "durationUnit"),
+        "gameSettings": lambda: getRawData(game, gameSettings, "gameSettings"),
+        "defaultGameSettings": lambda: getRawData(
+            game, gameSettings, "defaultGameSettings"
+        ),
+        "unitFactor": lambda: getRawData(game, gameSettings, "unitFactor"),
+        "itemUnit": lambda: getRawData(game, gameSettings, "recipes"),
+        "itemUnitLong": lambda: getRawData(game, gameSettings, "itemUnitLong"),
+        "items": lambda: reformatItems(getRawData(game, gameSettings, "items")),
+    }
+    if parameter == None:
+        for field in list(reformattingFunctions.keys()):
+            data[field] = reformattingFunctions[field]()
+    else:
+        data = reformattingFunctions[parameter]()
+    return data
 
 
 # production requirement variables
@@ -1031,16 +1043,34 @@ def getItemList(game):
 #     1:dict(zip(list(items.keys()), notFinal)),
 # }
 
-# recipe side text
-textIndex = {0: "inputs", 1: "outputs"}
-# recipe search side
-searchSide = {-1: "inputs", 1: "outputs"}
-# excess-factors for recipe side
-excessFactors = {0: 1, 1: -1}
+# lookup in dictionary-lists
+def lookup(
+    lookupList: list[dict],
+    lookupField: any,
+    lookupValue: any = None,
+    returnField: any = None,
+    returnFirstOnly: bool = True,
+    ifNotFound: any = None,
+):
+    if lookupValue == None:
+        return [value[lookupField] for value in lookupList]
+    else:
+        output = [
+            value[lookupField]
+            for value in lookupList
+            if value[returnField] == lookupValue
+        ]
+        if returnFirstOnly:
+            if len(output) > 0:
+                return output[0]
+            else:
+                return ifNotFound
+        else:
+            return output
 
-
+# allowed recipe calculator
 def allowedRecipes(item: str, amount: float, recipes: list):
-    global searchSide
+    searchSide = {-1: "inputs", 1: "outputs"}
     recipeType = 1
     if amount < 0:
         recipeType *= -1
@@ -1054,10 +1084,9 @@ def allowedRecipes(item: str, amount: float, recipes: list):
 
 # MAIN CALCULATOR
 def productionLine(chosenRecipes: dict, requiredItems: dict, recipes: list):
-    # requires reformatted recipes
-    global textIndex
-    global searchSide
-    global excessFactors
+    textIndex = {0: "inputs", 1: "outputs"}
+    searchSide = {-1: "inputs", 1: "outputs"}
+    excessFactors = {0: 1, 1: -1}
     finalProducts = {}
     recipeAmounts = {}
     zeroes = []
@@ -1086,7 +1115,9 @@ def productionLine(chosenRecipes: dict, requiredItems: dict, recipes: list):
             if abs(excess[item]) > 2**-32:  # to prevent diminishing loops
                 recipeIndex = chosenRecipes[recipeType][item]
                 itemRecipe = recipes[recipeIndex]
-                itemQuantity = [x["amount"] for x in itemRecipe[searchSide[recipeType]] if x["item"] == item]
+                itemQuantity = lookup(
+                    item, itemRecipe[searchSide[recipeType]], "item", "amount"
+                )
                 recipeQuantity = recipeType * excess[item] / itemQuantity
                 recipeAmounts[recipeIndex] = (
                     currentValue(recipeAmounts, recipeIndex) + recipeQuantity
@@ -1103,10 +1134,6 @@ def productionLine(chosenRecipes: dict, requiredItems: dict, recipes: list):
                             )
                             if recipeItem not in checklist:
                                 checklist.append(recipeItem)
-                # calculating machine amounts
-                # machineRecipes = machines[itemRecipe[3]][2]
-                # machineQuantity = recipeQuantity * itemRecipe[2] / unitFactor
-                # machineRecipes[recipeIndex] = currentValue(machineRecipes, recipeIndex) + machineQuantity
         else:  # item removal
             finalProducts[item] = currentValue(finalProducts, item) + excess[item]
         if leftover == 0:
@@ -1134,6 +1161,84 @@ def productionLine(chosenRecipes: dict, requiredItems: dict, recipes: list):
         "recipes": recipeQuantities,
     }
 
+# maths functions
+def sign(value:int|float):
+    if value > 0:
+        return 1
+    elif value < 0:
+        return -1
+    else:
+        return 0
+def roundUp(value: int | float):
+    if value == int(value):
+        value = int(value)
+    else:
+        value = int(value) + sign(value)
+    return value
+def roundToDigit(value:int|float,digits:int=0,roundMode:str="down"):
+    value *= 10 ** digits
+    if roundMode == "down":
+        value = int(value)
+    else:
+        value = roundUp(value)
+    value /= 10 ** digits
+    return intConvert(value)
+# integer coversions for printing values
+def intConvert(value:int|float):
+    if int(value) == value:
+        value = int(value)
+    return value
+
+# selective rounding of machine numbers
+def requirementRounder(quantity: int | float, utilisationDependency: bool):
+    if not utilisationDependency:
+        quantity = roundUp(quantity)
+    return quantity
+
+# machine quantity aggregator and requirement calculator
+def machineCalculator(
+        recipeQuantities: list[dict],
+        recipes: list[dict],
+        machines: list[dict],
+        requirementList: list[dict],
+    ):
+    machineAmounts = {}
+    for recipe in recipeQuantities:
+        recipeMachine = lookup(recipes, "id", recipes[recipe["recipeId"]], "machine")
+        machineAmounts[recipeMachine] = (
+            currentValue(machineAmounts, recipeMachine) + recipe["quantity"]
+        )
+    requirements = {}
+    machineQuantities = []
+    for machine in list(machineAmounts.keys()):
+        machineQuantities.append(
+            {"machine": machine, "quantity": machineAmounts[machine]}
+        )
+        for requirement in lookup(requirementList, "name"):
+            requirements[requirement] = (
+                currentValue(requirements, requirement)
+                + requirementRounder(
+                    machineAmounts[machine],
+                    lookup(
+                        requirementList, "name", requirement, "utilisationDependency"
+                    ),
+                )
+                * machines[machine]["requirements"][requirement]
+            )
+    machineRequirements = []
+    for requirement in list(requirements.keys()):
+        machineRequirements.append(
+            {"requirement": requirement, "value": requirements[requirement]}
+        )
+    return {"quantities": machineQuantities, "requirements": machineRequirements}
+
+# output of machine requirements
+def requirementStrings(totalRequirements: list[dict], requirementList: list[dict]):
+    outputStrings = []
+    for requirement in lookup(totalRequirements, "name"):
+        requirementUnit = lookup(requirementList,"name",requirement,"unit")
+        outputStrings.append(roundToDigit(totalRequirements,2,"up") + requirementUnit + requirement)
+    return outputStrings
 
 # # totalling machines
 # print()

@@ -98,7 +98,7 @@ def productionLine(chosenRecipes: dict[int, dict[str, str]], requiredItems: dict
                 recipeIndex = chosenRecipes[recipeType][item]
                 itemRecipe = recipes[recipeIndex]
                 itemQuantity = lookup(
-                    item, itemRecipe[searchSide[recipeType]], "item", "amount"
+                    itemRecipe[searchSide[recipeType]], "item", item, "amount"
                 )
                 recipeQuantity = recipeType * excess[item] / itemQuantity
                 recipeAmounts[recipeIndex] = (

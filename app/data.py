@@ -6,7 +6,7 @@ from .functions import currentValue
 # getting data from data-list
 def getRawData(game: str, gameSettings: dict, parameter: str | None):
     def settingValue(setting):
-        return currentValue(gameSettings, setting, data["defaultGameSettings"][setting])
+        return currentValue(gameSettings, setting, getRawData(game, gameSettings, "defaultGameSettings")[setting])
     data = {}
     if game == "Captain of Industry":
         if parameter == "recipes" or parameter == None:

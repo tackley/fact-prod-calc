@@ -51,9 +51,9 @@ def productionLine(chosenRecipes: dict[int, dict[str, str]], requiredItems: dict
         if recipeChosen:
             if abs(excess[item]) > 2**-32:  # to prevent diminishing loops
                 recipeIndex = chosenRecipes[recipeType][item]
-                itemRecipe = recipes[recipeIndex]
+                itemRecipe = lookup(recipes,"id",recipeIndex)
                 itemQuantity = lookup(
-                    item, itemRecipe[searchSide[recipeType]], "item", "amount"
+                    itemRecipe[searchSide[recipeType]], "item", item, "amount"
                 )
                 recipeQuantity = recipeType * excess[item] / itemQuantity
                 recipeAmounts[recipeIndex] = (
@@ -114,7 +114,9 @@ def machineCalculator(
 ):
     machineAmounts = {}
     for recipe in recipeQuantities:
-        recipeMachine = lookup(recipes, "id", recipes[recipe["recipeId"]], "machine")
+        recipeMachine = lookup(
+            recipes, "id", recipes[recipe["id"]], "machine"
+        )
         machineAmounts[recipeMachine] = (
             currentValue(machineAmounts, recipeMachine) + recipe["quantity"]
         )
@@ -124,15 +126,10 @@ def machineCalculator(
         machineQuantities.append(
             {"machine": machine, "quantity": machineAmounts[machine]}
         )
-        for requirement in lookup(requirementList, "name"):
-            requirements[requirement] = (
+        for requirement in requirementList:
+            requirements[requirement["name"]] = (
                 currentValue(requirements, requirement)
-                + requirementRounder(
-                    machineAmounts[machine],
-                    lookup(
-                        requirementList, "name", requirement, "utilisationDependency"
-                    ),
-                )
+                + requirementRounder(machineAmounts[machine], requirement["utilisationDependency"])
                 * machines[machine]["requirements"][requirement]
             )
     machineRequirements = []
@@ -148,6 +145,9 @@ def requirementStrings(totalRequirements: list[dict], requirementList: list[dict
     for requirement in lookup(totalRequirements, "name"):
         requirementUnit = lookup(requirementList, "name", requirement, "unit")
         outputStrings.append(
-            roundToDigit(totalRequirements, 2, "up") + requirementUnit + requirement
+            roundToDigit(totalRequirements, 2, "up")
+            + requirementUnit
+            + " "
+            + requirement
         )
     return outputStrings

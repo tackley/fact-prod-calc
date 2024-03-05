@@ -1,0 +1,9 @@
+[
+  { "name": "Power", "utilisationDependency": true, "unit": "W" },
+  { "name": "Workers", "utilisationDependency": false, "unit": "" },
+  { "name": "Maintenance I", "utilisationDependency": true, "unit": "/min" },
+  { "name": "Maintenance II", "utilisationDependency": true, "unit": "/min" },
+  { "name": "Maintenance III", "utilisationDependency": true, "unit": "/min" },
+  { "name": "Unity", "utilisationDependency": false, "unit": "/min" },
+  { "name": "Computing", "utilisationDependency": true, "unit": "TF" }
+]

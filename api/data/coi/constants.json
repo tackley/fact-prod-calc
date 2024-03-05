@@ -1,0 +1,14 @@
+{
+  "durationUnit": "s",
+  "gameSettings": [
+    {
+      "defaultValue": 1.0,
+      "displayText": "Electricity multiplier",
+      "name": "electricityMultiplier",
+      "type": "float"
+    }
+  ],
+  "unitFactor": 60,
+  "itemUnit": "/min",
+  "itemUnitLong": "per minute"
+}

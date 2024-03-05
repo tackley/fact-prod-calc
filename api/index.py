@@ -5,15 +5,15 @@ from .data import gameName
 from flask import request
 
 app = Flask(__name__)
-@app.route('/')
+@app.route('/api')
 def homepage():
   return "Welcome to the Factory Production Calculator v2.0!"
 
-@app.route('/<game>/items')
+@app.route('/api/<game>/items')
 def itemList(game):
   return getData(gameName(game,True), parameter="items")
 
-@app.route('/<game>/recipes', methods=["GET"])
+@app.route('/api/<game>/recipes', methods=["GET"])
 def recipes(game):
     queryParameters = request.args
     item = queryParameters.get("item")

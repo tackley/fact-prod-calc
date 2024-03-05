@@ -4,5 +4,8 @@
     "config:best-practices",
     "group:allNonMajor",
     "npm:unpublishSafe"
+  ],
+  "ignorePaths": [
+    ".python-version"
   ]
 }

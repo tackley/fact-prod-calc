@@ -1,5 +1,5 @@
-# Factory Production Calculator v2.0 BACKEND
-# Based off version 1.3.1 (2024-03-03)
+# Data for calculator (incl. reformatting)
+# Data from version 1.3.1
 
 from .functions import currentValue
 

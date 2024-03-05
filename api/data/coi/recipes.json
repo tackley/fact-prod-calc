@@ -1,0 +1,4402 @@
+[
+  {
+    "inputs": [{ "item": "Exhaust", "amount": 20 }],
+    "outputs": [{ "item": "Air pollution", "amount": 10 }],
+    "duration": 20,
+    "machine": "Smoke stack",
+    "id": "0"
+  },
+  {
+    "inputs": [{ "item": "Carbon dioxide", "amount": 20 }],
+    "outputs": [{ "item": "Air pollution", "amount": 5 }],
+    "duration": 20,
+    "machine": "Smoke stack",
+    "id": "1"
+  },
+  {
+    "inputs": [{ "item": "Diesel", "amount": 1 }],
+    "outputs": [
+      { "item": "Electricity", "amount": 800000 },
+      { "item": "Air pollution", "amount": 1 }
+    ],
+    "duration": 20,
+    "machine": "Diesel generator",
+    "id": "2"
+  },
+  {
+    "inputs": [{ "item": "Waste", "amount": 6 }],
+    "outputs": [{ "item": "Air pollution", "amount": 3 }],
+    "duration": 20,
+    "machine": "Burner (solid)",
+    "id": "3"
+  },
+  {
+    "inputs": [{ "item": "Animal feed", "amount": 6 }],
+    "outputs": [{ "item": "Air pollution", "amount": 2 }],
+    "duration": 10,
+    "machine": "Burner (solid)",
+    "id": "4"
+  },
+  {
+    "inputs": [{ "item": "Exhaust", "amount": 200 }],
+    "outputs": [{ "item": "Air pollution", "amount": 100 }],
+    "duration": 20,
+    "machine": "Smoke stack (large)",
+    "id": "5"
+  },
+  {
+    "inputs": [{ "item": "Carbon dioxide", "amount": 200 }],
+    "outputs": [{ "item": "Air pollution", "amount": 50 }],
+    "duration": 20,
+    "machine": "Smoke stack (large)",
+    "id": "6"
+  },
+  {
+    "inputs": [{ "item": "Diesel", "amount": 12 }],
+    "outputs": [{ "item": "Air pollution", "amount": 10 }],
+    "duration": 20,
+    "machine": "Flare",
+    "id": "7"
+  },
+  {
+    "inputs": [{ "item": "Heavy oil", "amount": 8 }],
+    "outputs": [{ "item": "Air pollution", "amount": 10 }],
+    "duration": 20,
+    "machine": "Flare",
+    "id": "8"
+  },
+  {
+    "inputs": [{ "item": "Light oil", "amount": 12 }],
+    "outputs": [{ "item": "Air pollution", "amount": 8 }],
+    "duration": 20,
+    "machine": "Flare",
+    "id": "9"
+  },
+  {
+    "inputs": [{ "item": "Fuel gas", "amount": 16 }],
+    "outputs": [{ "item": "Air pollution", "amount": 4 }],
+    "duration": 20,
+    "machine": "Flare",
+    "id": "10"
+  },
+  {
+    "inputs": [{ "item": "Biomass", "amount": 6 }],
+    "outputs": [{ "item": "Air pollution", "amount": 2 }],
+    "duration": 10,
+    "machine": "Burner (solid)",
+    "id": "11"
+  },
+  {
+    "inputs": [{ "item": "Meat trimmings", "amount": 4 }],
+    "outputs": [{ "item": "Air pollution", "amount": 3 }],
+    "duration": 20,
+    "machine": "Burner (solid)",
+    "id": "12"
+  },
+  {
+    "inputs": [{ "item": "Chicken carcass", "amount": 4 }],
+    "outputs": [{ "item": "Air pollution", "amount": 3 }],
+    "duration": 20,
+    "machine": "Burner (solid)",
+    "id": "13"
+  },
+  {
+    "inputs": [{ "item": "Sulfur", "amount": 2 }],
+    "outputs": [{ "item": "Air pollution", "amount": 8 }],
+    "duration": 10,
+    "machine": "Burner (solid)",
+    "id": "14"
+  },
+  {
+    "inputs": [{ "item": "Sludge", "amount": 6 }],
+    "outputs": [{ "item": "Air pollution", "amount": 6 }],
+    "duration": 20,
+    "machine": "Burner (solid)",
+    "id": "15"
+  },
+  {
+    "inputs": [{ "item": "Naphtha", "amount": 12 }],
+    "outputs": [{ "item": "Air pollution", "amount": 8 }],
+    "duration": 20,
+    "machine": "Flare",
+    "id": "16"
+  },
+  {
+    "inputs": [{ "item": "Ethanol", "amount": 12 }],
+    "outputs": [{ "item": "Air pollution", "amount": 4 }],
+    "duration": 20,
+    "machine": "Flare",
+    "id": "17"
+  },
+  {
+    "inputs": [{ "item": "Ammonia", "amount": 12 }],
+    "outputs": [{ "item": "Air pollution", "amount": 8 }],
+    "duration": 20,
+    "machine": "Flare",
+    "id": "18"
+  },
+  {
+    "inputs": [
+      { "item": "Exhaust", "amount": 30 },
+      { "item": "Water", "amount": 4 }
+    ],
+    "outputs": [
+      { "item": "Sulfur", "amount": 1 },
+      { "item": "Carbon dioxide", "amount": 12 },
+      { "item": "Steam (low)", "amount": 4 },
+      { "item": "Air pollution", "amount": 3 }
+    ],
+    "duration": 10,
+    "machine": "Exhaust scrubber",
+    "id": "19"
+  },
+  {
+    "inputs": [
+      { "item": "Hydrogen", "amount": 4 },
+      { "item": "Nitrogen", "amount": 8 }
+    ],
+    "outputs": [{ "item": "Ammonia", "amount": 4 }],
+    "duration": 40,
+    "machine": "Chemical plant",
+    "id": "20"
+  },
+  {
+    "inputs": [
+      { "item": "Sour water", "amount": 12 },
+      { "item": "Steam (high)", "amount": 1 }
+    ],
+    "outputs": [
+      { "item": "Sulfur", "amount": 4 },
+      { "item": "Ammonia", "amount": 3 },
+      { "item": "Water", "amount": 7 }
+    ],
+    "duration": 20,
+    "machine": "Sour water stripper",
+    "id": "21"
+  },
+  {
+    "inputs": [
+      { "item": "Hydrogen", "amount": 4 },
+      { "item": "Nitrogen", "amount": 8 }
+    ],
+    "outputs": [{ "item": "Ammonia", "amount": 4 }],
+    "duration": 20,
+    "machine": "Chemical plant II",
+    "id": "22"
+  },
+  {
+    "inputs": [
+      { "item": "Ammonia", "amount": 4 },
+      { "item": "Oxygen", "amount": 6 }
+    ],
+    "outputs": [{ "item": "Fertilizer I", "amount": 10 }],
+    "duration": 20,
+    "machine": "Chemical plant",
+    "id": "23"
+  },
+  {
+    "inputs": [{ "item": "Ammonia", "amount": 4 }],
+    "outputs": [
+      { "item": "Nitrogen", "amount": 8 },
+      { "item": "Hydrogen", "amount": 4 }
+    ],
+    "duration": 10,
+    "machine": "Electrolyzer",
+    "id": "24"
+  },
+  {
+    "inputs": [
+      { "item": "Sugar", "amount": 4 },
+      { "item": "Ammonia", "amount": 1 },
+      { "item": "Oxygen", "amount": 8 }
+    ],
+    "outputs": [
+      { "item": "Antibiotics", "amount": 8 },
+      { "item": "Carbon dioxide", "amount": 4 }
+    ],
+    "duration": 80,
+    "machine": "Fermentation tank",
+    "id": "25"
+  },
+  {
+    "inputs": [{ "item": "Ammonia", "amount": 16 }],
+    "outputs": [
+      { "item": "Nitrogen", "amount": 32 },
+      { "item": "Hydrogen", "amount": 16 }
+    ],
+    "duration": 10,
+    "machine": "Electrolyzer II",
+    "id": "26"
+  },
+  {
+    "inputs": [
+      { "item": "Ammonia", "amount": 4 },
+      { "item": "Oxygen", "amount": 6 }
+    ],
+    "outputs": [{ "item": "Fertilizer I", "amount": 10 }],
+    "duration": 10,
+    "machine": "Chemical plant II",
+    "id": "27"
+  },
+  {
+    "inputs": [
+      { "item": "Ammonia", "amount": 2 },
+      { "item": "Hydrogen fluoride", "amount": 4 },
+      { "item": "Steel", "amount": 1 }
+    ],
+    "outputs": [{ "item": "Anesthetics", "amount": 8 }],
+    "duration": 20,
+    "machine": "Chemical plant II",
+    "id": "28"
+  },
+  {
+    "inputs": [
+      { "item": "Medical supplies II", "amount": 8 },
+      { "item": "Anesthetics", "amount": 4 },
+      { "item": "Morphine", "amount": 4 }
+    ],
+    "outputs": [{ "item": "Medical supplies III", "amount": 8 }],
+    "duration": 20,
+    "machine": "Assembly (electric) II",
+    "id": "29"
+  },
+  {
+    "inputs": [
+      { "item": "Medical supplies II", "amount": 8 },
+      { "item": "Anesthetics", "amount": 4 },
+      { "item": "Morphine", "amount": 4 }
+    ],
+    "outputs": [{ "item": "Medical supplies III", "amount": 8 }],
+    "duration": 10,
+    "machine": "Assembly (robotic)",
+    "id": "30"
+  },
+  {
+    "inputs": [{ "item": "Wheat", "amount": 8 }],
+    "outputs": [
+      { "item": "Flour", "amount": 8 },
+      { "item": "Animal feed", "amount": 1 }
+    ],
+    "duration": 30,
+    "machine": "Mill",
+    "id": "31"
+  },
+  {
+    "inputs": [{ "item": "Soybean", "amount": 8 }],
+    "outputs": [
+      { "item": "Cooking oil", "amount": 3 },
+      { "item": "Animal feed", "amount": 4 }
+    ],
+    "duration": 30,
+    "machine": "Mill",
+    "id": "32"
+  },
+  {
+    "inputs": [{ "item": "Canola", "amount": 8 }],
+    "outputs": [
+      { "item": "Cooking oil", "amount": 6 },
+      { "item": "Animal feed", "amount": 2 }
+    ],
+    "duration": 30,
+    "machine": "Mill",
+    "id": "33"
+  },
+  {
+    "inputs": [
+      { "item": "Corn", "amount": 8 },
+      { "item": "Water", "amount": 2 }
+    ],
+    "outputs": [
+      { "item": "Corn mash", "amount": 6 },
+      { "item": "Animal feed", "amount": 2 }
+    ],
+    "duration": 40,
+    "machine": "Mill",
+    "id": "34"
+  },
+  {
+    "inputs": [{ "item": "Potato", "amount": 10 }],
+    "outputs": [{ "item": "Animal feed", "amount": 8 }],
+    "duration": 10,
+    "machine": "Mixer",
+    "id": "35"
+  },
+  {
+    "inputs": [{ "item": "Wheat", "amount": 10 }],
+    "outputs": [{ "item": "Animal feed", "amount": 16 }],
+    "duration": 10,
+    "machine": "Mixer",
+    "id": "36"
+  },
+  {
+    "inputs": [{ "item": "Corn", "amount": 10 }],
+    "outputs": [{ "item": "Animal feed", "amount": 12 }],
+    "duration": 10,
+    "machine": "Mixer",
+    "id": "37"
+  },
+  {
+    "inputs": [{ "item": "Soybean", "amount": 10 }],
+    "outputs": [{ "item": "Animal feed", "amount": 18 }],
+    "duration": 10,
+    "machine": "Mixer",
+    "id": "38"
+  },
+  {
+    "inputs": [
+      { "item": "Soybean", "amount": 6 },
+      { "item": "Water", "amount": 4 },
+      { "item": "Sulfur", "amount": 1 },
+      { "item": "Limestone", "amount": 1 }
+    ],
+    "outputs": [
+      { "item": "Tofu", "amount": 8 },
+      { "item": "Animal feed", "amount": 3 }
+    ],
+    "duration": 40,
+    "machine": "Food processor",
+    "id": "39"
+  },
+  {
+    "inputs": [{ "item": "Potato", "amount": 20 }],
+    "outputs": [{ "item": "Animal feed", "amount": 16 }],
+    "duration": 10,
+    "machine": "Mixer II",
+    "id": "40"
+  },
+  {
+    "inputs": [{ "item": "Wheat", "amount": 20 }],
+    "outputs": [{ "item": "Animal feed", "amount": 32 }],
+    "duration": 10,
+    "machine": "Mixer II",
+    "id": "41"
+  },
+  {
+    "inputs": [{ "item": "Corn", "amount": 20 }],
+    "outputs": [{ "item": "Animal feed", "amount": 24 }],
+    "duration": 10,
+    "machine": "Mixer II",
+    "id": "42"
+  },
+  {
+    "inputs": [{ "item": "Soybean", "amount": 20 }],
+    "outputs": [{ "item": "Animal feed", "amount": 36 }],
+    "duration": 10,
+    "machine": "Mixer II",
+    "id": "43"
+  },
+  {
+    "inputs": [
+      { "item": "Water", "amount": 8 },
+      { "item": "Animal feed", "amount": 18 }
+    ],
+    "outputs": [
+      { "item": "Steam (high)", "amount": 8 },
+      { "item": "Exhaust", "amount": 6 }
+    ],
+    "duration": 10,
+    "machine": "Boiler",
+    "id": "44"
+  },
+  {
+    "inputs": [{ "item": "Animal feed", "amount": 12 }],
+    "outputs": [{ "item": "Compost", "amount": 6 }],
+    "duration": 60,
+    "machine": "Mixer",
+    "id": "45"
+  },
+  {
+    "inputs": [{ "item": "Animal feed", "amount": 12 }],
+    "outputs": [{ "item": "Compost", "amount": 6 }],
+    "duration": 30,
+    "machine": "Mixer II",
+    "id": "46"
+  },
+  {
+    "inputs": [
+      { "item": "Medical supplies", "amount": 8 },
+      { "item": "Antibiotics", "amount": 4 }
+    ],
+    "outputs": [{ "item": "Medical supplies II", "amount": 8 }],
+    "duration": 20,
+    "machine": "Assembly (electric) II",
+    "id": "47"
+  },
+  {
+    "inputs": [
+      { "item": "Medical supplies", "amount": 8 },
+      { "item": "Antibiotics", "amount": 4 }
+    ],
+    "outputs": [{ "item": "Medical supplies II", "amount": 8 }],
+    "duration": 10,
+    "machine": "Assembly (robotic)",
+    "id": "48"
+  },
+  {
+    "inputs": [
+      { "item": "Potato", "amount": 8 },
+      { "item": "Sugar", "amount": 2 },
+      { "item": "Cooking oil", "amount": 1 },
+      { "item": "Plastic", "amount": 1 }
+    ],
+    "outputs": [
+      { "item": "Snack", "amount": 12 },
+      { "item": "Biomass", "amount": 1 }
+    ],
+    "duration": 20,
+    "machine": "Food processor",
+    "id": "49"
+  },
+  {
+    "inputs": [
+      { "item": "Corn", "amount": 8 },
+      { "item": "Sugar", "amount": 2 },
+      { "item": "Cooking oil", "amount": 1 },
+      { "item": "Plastic", "amount": 1 }
+    ],
+    "outputs": [
+      { "item": "Snack", "amount": 16 },
+      { "item": "Biomass", "amount": 1 }
+    ],
+    "duration": 20,
+    "machine": "Food processor",
+    "id": "50"
+  },
+  {
+    "inputs": [
+      { "item": "Sugar cane", "amount": 10 },
+      { "item": "Water", "amount": 2 }
+    ],
+    "outputs": [
+      { "item": "Sugar", "amount": 8 },
+      { "item": "Biomass", "amount": 2 }
+    ],
+    "duration": 40,
+    "machine": "Food processor",
+    "id": "51"
+  },
+  {
+    "inputs": [
+      { "item": "Water", "amount": 8 },
+      { "item": "Biomass", "amount": 18 }
+    ],
+    "outputs": [
+      { "item": "Steam (high)", "amount": 8 },
+      { "item": "Exhaust", "amount": 6 }
+    ],
+    "duration": 10,
+    "machine": "Boiler",
+    "id": "52"
+  },
+  {
+    "inputs": [{ "item": "Biomass", "amount": 12 }],
+    "outputs": [{ "item": "Compost", "amount": 8 }],
+    "duration": 60,
+    "machine": "Mixer",
+    "id": "53"
+  },
+  {
+    "inputs": [{ "item": "Biomass", "amount": 12 }],
+    "outputs": [{ "item": "Compost", "amount": 8 }],
+    "duration": 30,
+    "machine": "Mixer II",
+    "id": "54"
+  },
+  {
+    "inputs": [
+      { "item": "Flour", "amount": 8 },
+      { "item": "Water", "amount": 4 }
+    ],
+    "outputs": [{ "item": "Bread", "amount": 12 }],
+    "duration": 30,
+    "machine": "Baking unit",
+    "id": "55"
+  },
+  {
+    "inputs": [
+      { "item": "Meat", "amount": 2 },
+      { "item": "Bread", "amount": 4 },
+      { "item": "Snack", "amount": 6 }
+    ],
+    "outputs": [{ "item": "Food pack", "amount": 4 }],
+    "duration": 20,
+    "machine": "Assembly (electric) II",
+    "id": "56"
+  },
+  {
+    "inputs": [
+      { "item": "Eggs", "amount": 2 },
+      { "item": "Bread", "amount": 4 },
+      { "item": "Snack", "amount": 6 }
+    ],
+    "outputs": [{ "item": "Food pack", "amount": 4 }],
+    "duration": 20,
+    "machine": "Assembly (electric) II",
+    "id": "57"
+  },
+  {
+    "inputs": [
+      { "item": "Dirt", "amount": 14 },
+      { "item": "Coal", "amount": 4 },
+      { "item": "Water", "amount": 4 }
+    ],
+    "outputs": [
+      { "item": "Bricks", "amount": 8 },
+      { "item": "Exhaust", "amount": 8 }
+    ],
+    "duration": 40,
+    "machine": "Brickworks",
+    "id": "58"
+  },
+  {
+    "inputs": [
+      { "item": "Iron", "amount": 3 },
+      { "item": "Wood", "amount": 3 },
+      { "item": "Bricks", "amount": 4 }
+    ],
+    "outputs": [{ "item": "Construction parts", "amount": 4 }],
+    "duration": 40,
+    "machine": "Assembly (manual)",
+    "id": "59"
+  },
+  {
+    "inputs": [
+      { "item": "Iron", "amount": 3 },
+      { "item": "Wood", "amount": 3 },
+      { "item": "Bricks", "amount": 4 }
+    ],
+    "outputs": [{ "item": "Construction parts", "amount": 4 }],
+    "duration": 20,
+    "machine": "Assembly (electric)",
+    "id": "60"
+  },
+  {
+    "inputs": [
+      { "item": "Iron", "amount": 3 },
+      { "item": "Wood", "amount": 3 },
+      { "item": "Bricks", "amount": 4 }
+    ],
+    "outputs": [{ "item": "Construction parts", "amount": 4 }],
+    "duration": 10,
+    "machine": "Assembly (electric) II",
+    "id": "61"
+  },
+  {
+    "inputs": [
+      { "item": "Iron", "amount": 6 },
+      { "item": "Wood", "amount": 6 },
+      { "item": "Bricks", "amount": 8 }
+    ],
+    "outputs": [{ "item": "Construction parts", "amount": 8 }],
+    "duration": 10,
+    "machine": "Assembly (robotic)",
+    "id": "62"
+  },
+  {
+    "inputs": [
+      { "item": "Water", "amount": 8 },
+      { "item": "Ethanol", "amount": 9 }
+    ],
+    "outputs": [
+      { "item": "Steam (high)", "amount": 8 },
+      { "item": "Carbon dioxide", "amount": 12 }
+    ],
+    "duration": 10,
+    "machine": "Boiler (gas)",
+    "id": "63"
+  },
+  {
+    "inputs": [
+      { "item": "Water", "amount": 8 },
+      { "item": "Fuel gas", "amount": 12 }
+    ],
+    "outputs": [
+      { "item": "Steam (high)", "amount": 8 },
+      { "item": "Carbon dioxide", "amount": 12 }
+    ],
+    "duration": 10,
+    "machine": "Boiler (gas)",
+    "id": "64"
+  },
+  {
+    "inputs": [
+      { "item": "Sugar", "amount": 8 },
+      { "item": "Oxygen", "amount": 8 }
+    ],
+    "outputs": [
+      { "item": "Ethanol", "amount": 6 },
+      { "item": "Carbon dioxide", "amount": 8 }
+    ],
+    "duration": 40,
+    "machine": "Fermentation tank",
+    "id": "65"
+  },
+  {
+    "inputs": [
+      { "item": "Corn mash", "amount": 6 },
+      { "item": "Oxygen", "amount": 8 }
+    ],
+    "outputs": [
+      { "item": "Ethanol", "amount": 3 },
+      { "item": "Carbon dioxide", "amount": 6 }
+    ],
+    "duration": 40,
+    "machine": "Fermentation tank",
+    "id": "66"
+  },
+  {
+    "inputs": [
+      { "item": "Limestone", "amount": 12 },
+      { "item": "Fuel gas", "amount": 4 }
+    ],
+    "outputs": [
+      { "item": "Cement", "amount": 4 },
+      { "item": "Carbon dioxide", "amount": 12 }
+    ],
+    "duration": 40,
+    "machine": "Rotary kiln (gas)",
+    "id": "67"
+  },
+  {
+    "inputs": [
+      { "item": "Limestone", "amount": 12 },
+      { "item": "Hydrogen", "amount": 4 }
+    ],
+    "outputs": [
+      { "item": "Cement", "amount": 4 },
+      { "item": "Carbon dioxide", "amount": 8 }
+    ],
+    "duration": 40,
+    "machine": "Rotary kiln (gas)",
+    "id": "68"
+  },
+  {
+    "inputs": [
+      { "item": "Fuel gas", "amount": 12 },
+      { "item": "Steam (high)", "amount": 1 }
+    ],
+    "outputs": [
+      { "item": "Hydrogen", "amount": 14 },
+      { "item": "Carbon dioxide", "amount": 12 }
+    ],
+    "duration": 20,
+    "machine": "Hydrogen reformer",
+    "id": "69"
+  },
+  {
+    "inputs": [
+      { "item": "Carbon dioxide", "amount": 12 },
+      { "item": "Seawater", "amount": 4 }
+    ],
+    "outputs": [],
+    "duration": 10,
+    "machine": "Gas injection pump",
+    "id": "70"
+  },
+  {
+    "inputs": [
+      { "item": "Hydrogen", "amount": 14 },
+      { "item": "Carbon dioxide", "amount": 12 }
+    ],
+    "outputs": [
+      { "item": "Fuel gas", "amount": 12 },
+      { "item": "Water", "amount": 1 }
+    ],
+    "duration": 20,
+    "machine": "Chemical plant II",
+    "id": "71"
+  },
+  {
+    "inputs": [{ "item": "Carbon dioxide", "amount": 48 }],
+    "outputs": [{ "item": "Graphite", "amount": 2 }],
+    "duration": 20,
+    "machine": "Chemical plant II",
+    "id": "72"
+  },
+  {
+    "inputs": [
+      { "item": "Limestone", "amount": 6 },
+      { "item": "Coal", "amount": 1 }
+    ],
+    "outputs": [
+      { "item": "Cement", "amount": 2 },
+      { "item": "Exhaust", "amount": 6 }
+    ],
+    "duration": 40,
+    "machine": "Rotary kiln",
+    "id": "73"
+  },
+  {
+    "inputs": [
+      { "item": "Cement", "amount": 1 },
+      { "item": "Sand", "amount": 2 },
+      { "item": "Slag crushed", "amount": 6 },
+      { "item": "Water", "amount": 4 }
+    ],
+    "outputs": [{ "item": "Concrete slab", "amount": 8 }],
+    "duration": 40,
+    "machine": "Concrete mixer",
+    "id": "74"
+  },
+  {
+    "inputs": [
+      { "item": "Cement", "amount": 1 },
+      { "item": "Sand", "amount": 2 },
+      { "item": "Gravel", "amount": 6 },
+      { "item": "Water", "amount": 4 }
+    ],
+    "outputs": [{ "item": "Concrete slab", "amount": 8 }],
+    "duration": 40,
+    "machine": "Concrete mixer",
+    "id": "75"
+  },
+  {
+    "inputs": [
+      { "item": "Cement", "amount": 1 },
+      { "item": "Manufactured sand", "amount": 2 },
+      { "item": "Slag crushed", "amount": 6 },
+      { "item": "Water", "amount": 4 }
+    ],
+    "outputs": [{ "item": "Concrete slab", "amount": 8 }],
+    "duration": 40,
+    "machine": "Concrete mixer",
+    "id": "76"
+  },
+  {
+    "inputs": [
+      { "item": "Cement", "amount": 1 },
+      { "item": "Manufactured sand", "amount": 2 },
+      { "item": "Gravel", "amount": 6 },
+      { "item": "Water", "amount": 4 }
+    ],
+    "outputs": [{ "item": "Concrete slab", "amount": 8 }],
+    "duration": 40,
+    "machine": "Concrete mixer",
+    "id": "77"
+  },
+  {
+    "inputs": [
+      { "item": "Cement", "amount": 1 },
+      { "item": "Sand", "amount": 2 },
+      { "item": "Slag crushed", "amount": 6 },
+      { "item": "Water", "amount": 4 }
+    ],
+    "outputs": [{ "item": "Concrete slab", "amount": 8 }],
+    "duration": 20,
+    "machine": "Concrete mixer II",
+    "id": "78"
+  },
+  {
+    "inputs": [
+      { "item": "Cement", "amount": 1 },
+      { "item": "Sand", "amount": 2 },
+      { "item": "Gravel", "amount": 6 },
+      { "item": "Water", "amount": 4 }
+    ],
+    "outputs": [{ "item": "Concrete slab", "amount": 8 }],
+    "duration": 20,
+    "machine": "Concrete mixer II",
+    "id": "79"
+  },
+  {
+    "inputs": [
+      { "item": "Cement", "amount": 1 },
+      { "item": "Manufactured sand", "amount": 2 },
+      { "item": "Slag crushed", "amount": 6 },
+      { "item": "Water", "amount": 4 }
+    ],
+    "outputs": [{ "item": "Concrete slab", "amount": 8 }],
+    "duration": 20,
+    "machine": "Concrete mixer II",
+    "id": "80"
+  },
+  {
+    "inputs": [
+      { "item": "Cement", "amount": 1 },
+      { "item": "Manufactured sand", "amount": 2 },
+      { "item": "Gravel", "amount": 6 },
+      { "item": "Water", "amount": 4 }
+    ],
+    "outputs": [{ "item": "Concrete slab", "amount": 8 }],
+    "duration": 20,
+    "machine": "Concrete mixer II",
+    "id": "81"
+  },
+  {
+    "inputs": [
+      { "item": "Cement", "amount": 2 },
+      { "item": "Sand", "amount": 4 },
+      { "item": "Slag crushed", "amount": 12 },
+      { "item": "Water", "amount": 8 }
+    ],
+    "outputs": [{ "item": "Concrete slab", "amount": 16 }],
+    "duration": 20,
+    "machine": "Concrete mixer III",
+    "id": "82"
+  },
+  {
+    "inputs": [
+      { "item": "Cement", "amount": 2 },
+      { "item": "Sand", "amount": 4 },
+      { "item": "Gravel", "amount": 12 },
+      { "item": "Water", "amount": 8 }
+    ],
+    "outputs": [{ "item": "Concrete slab", "amount": 16 }],
+    "duration": 20,
+    "machine": "Concrete mixer III",
+    "id": "83"
+  },
+  {
+    "inputs": [
+      { "item": "Cement", "amount": 2 },
+      { "item": "Manufactured sand", "amount": 4 },
+      { "item": "Slag crushed", "amount": 12 },
+      { "item": "Water", "amount": 8 }
+    ],
+    "outputs": [{ "item": "Concrete slab", "amount": 16 }],
+    "duration": 20,
+    "machine": "Concrete mixer III",
+    "id": "84"
+  },
+  {
+    "inputs": [
+      { "item": "Cement", "amount": 2 },
+      { "item": "Manufactured sand", "amount": 4 },
+      { "item": "Gravel", "amount": 12 },
+      { "item": "Water", "amount": 8 }
+    ],
+    "outputs": [{ "item": "Concrete slab", "amount": 16 }],
+    "duration": 20,
+    "machine": "Concrete mixer III",
+    "id": "85"
+  },
+  {
+    "inputs": [
+      { "item": "Chicken carcass", "amount": 10 },
+      { "item": "Water", "amount": 3 },
+      { "item": "Salt", "amount": 1 }
+    ],
+    "outputs": [
+      { "item": "Meat", "amount": 5 },
+      { "item": "Meat trimmings", "amount": 2 }
+    ],
+    "duration": 20,
+    "machine": "Food processor",
+    "id": "86"
+  },
+  {
+    "inputs": [{ "item": "Chicken carcass", "amount": 10 }],
+    "outputs": [{ "item": "Meat trimmings", "amount": 9 }],
+    "duration": 20,
+    "machine": "Food processor",
+    "id": "87"
+  },
+  {
+    "inputs": [{ "item": "Wood", "amount": 12 }],
+    "outputs": [
+      { "item": "Coal", "amount": 5 },
+      { "item": "Exhaust", "amount": 4 }
+    ],
+    "duration": 40,
+    "machine": "Coal maker",
+    "id": "88"
+  },
+  {
+    "inputs": [
+      { "item": "Iron scrap", "amount": 8 },
+      { "item": "Coal", "amount": 3 }
+    ],
+    "outputs": [
+      { "item": "Molten iron", "amount": 8 },
+      { "item": "Exhaust", "amount": 6 }
+    ],
+    "duration": 20,
+    "machine": "Blast furnace",
+    "id": "89"
+  },
+  {
+    "inputs": [
+      { "item": "Iron ore", "amount": 8 },
+      { "item": "Coal", "amount": 3 }
+    ],
+    "outputs": [
+      { "item": "Molten iron", "amount": 8 },
+      { "item": "Slag", "amount": 4 },
+      { "item": "Exhaust", "amount": 8 }
+    ],
+    "duration": 20,
+    "machine": "Blast furnace",
+    "id": "90"
+  },
+  {
+    "inputs": [
+      { "item": "Copper scrap", "amount": 8 },
+      { "item": "Coal", "amount": 3 }
+    ],
+    "outputs": [
+      { "item": "Molten copper", "amount": 8 },
+      { "item": "Exhaust", "amount": 6 }
+    ],
+    "duration": 20,
+    "machine": "Blast furnace",
+    "id": "91"
+  },
+  {
+    "inputs": [
+      { "item": "Copper ore", "amount": 8 },
+      { "item": "Coal", "amount": 3 }
+    ],
+    "outputs": [
+      { "item": "Molten copper", "amount": 8 },
+      { "item": "Slag", "amount": 4 },
+      { "item": "Exhaust", "amount": 8 }
+    ],
+    "duration": 20,
+    "machine": "Blast furnace",
+    "id": "92"
+  },
+  {
+    "inputs": [
+      { "item": "Crude oil", "amount": 18 },
+      { "item": "Coal", "amount": 2 }
+    ],
+    "outputs": [
+      { "item": "Diesel", "amount": 8 },
+      { "item": "Waste water", "amount": 4 },
+      { "item": "Exhaust", "amount": 12 }
+    ],
+    "duration": 20,
+    "machine": "Basic distiller",
+    "id": "93"
+  },
+  {
+    "inputs": [
+      { "item": "Diesel", "amount": 4 },
+      { "item": "Coal", "amount": 1 }
+    ],
+    "outputs": [
+      { "item": "Rubber", "amount": 6 },
+      { "item": "Waste water", "amount": 2 }
+    ],
+    "duration": 30,
+    "machine": "Rubber maker",
+    "id": "94"
+  },
+  {
+    "inputs": [
+      { "item": "Water", "amount": 8 },
+      { "item": "Coal", "amount": 5 }
+    ],
+    "outputs": [
+      { "item": "Steam (high)", "amount": 8 },
+      { "item": "Exhaust", "amount": 10 }
+    ],
+    "duration": 10,
+    "machine": "Boiler",
+    "id": "95"
+  },
+  {
+    "inputs": [
+      { "item": "Glass mix", "amount": 8 },
+      { "item": "Coal", "amount": 3 }
+    ],
+    "outputs": [
+      { "item": "Molten glass", "amount": 8 },
+      { "item": "Slag", "amount": 4 },
+      { "item": "Exhaust", "amount": 8 }
+    ],
+    "duration": 20,
+    "machine": "Blast furnace",
+    "id": "96"
+  },
+  {
+    "inputs": [
+      { "item": "Broken glass", "amount": 12 },
+      { "item": "Coal", "amount": 3 }
+    ],
+    "outputs": [
+      { "item": "Molten glass", "amount": 8 },
+      { "item": "Exhaust", "amount": 6 }
+    ],
+    "duration": 20,
+    "machine": "Blast furnace",
+    "id": "97"
+  },
+  {
+    "inputs": [
+      { "item": "Seawater", "amount": 10 },
+      { "item": "Coal", "amount": 1 }
+    ],
+    "outputs": [
+      { "item": "Water", "amount": 6 },
+      { "item": "Brine", "amount": 4 },
+      { "item": "Exhaust", "amount": 2 }
+    ],
+    "duration": 10,
+    "machine": "Basic distiller",
+    "id": "98"
+  },
+  {
+    "inputs": [
+      { "item": "Naphtha", "amount": 4 },
+      { "item": "Coal", "amount": 1 }
+    ],
+    "outputs": [
+      { "item": "Rubber", "amount": 6 },
+      { "item": "Waste water", "amount": 1 }
+    ],
+    "duration": 30,
+    "machine": "Rubber maker",
+    "id": "99"
+  },
+  {
+    "inputs": [
+      { "item": "Gravel", "amount": 8 },
+      { "item": "Sand", "amount": 4 },
+      { "item": "Coal", "amount": 1 }
+    ],
+    "outputs": [{ "item": "Filter media", "amount": 12 }],
+    "duration": 20,
+    "machine": "Mixer",
+    "id": "100"
+  },
+  {
+    "inputs": [
+      { "item": "Gravel", "amount": 8 },
+      { "item": "Manufactured sand", "amount": 4 },
+      { "item": "Coal", "amount": 1 }
+    ],
+    "outputs": [{ "item": "Filter media", "amount": 12 }],
+    "duration": 20,
+    "machine": "Mixer",
+    "id": "101"
+  },
+  {
+    "inputs": [
+      { "item": "Coal", "amount": 4 },
+      { "item": "Chlorine", "amount": 2 }
+    ],
+    "outputs": [
+      { "item": "Graphite", "amount": 8 },
+      { "item": "Sour water", "amount": 4 }
+    ],
+    "duration": 40,
+    "machine": "Chemical plant",
+    "id": "102"
+  },
+  {
+    "inputs": [
+      { "item": "Gravel", "amount": 8 },
+      { "item": "Sand", "amount": 4 },
+      { "item": "Coal", "amount": 1 }
+    ],
+    "outputs": [{ "item": "Filter media", "amount": 12 }],
+    "duration": 10,
+    "machine": "Mixer II",
+    "id": "103"
+  },
+  {
+    "inputs": [
+      { "item": "Gravel", "amount": 8 },
+      { "item": "Manufactured sand", "amount": 4 },
+      { "item": "Coal", "amount": 1 }
+    ],
+    "outputs": [{ "item": "Filter media", "amount": 12 }],
+    "duration": 10,
+    "machine": "Mixer II",
+    "id": "104"
+  },
+  {
+    "inputs": [
+      { "item": "Iron scrap", "amount": 16 },
+      { "item": "Coal", "amount": 5 }
+    ],
+    "outputs": [
+      { "item": "Molten iron", "amount": 16 },
+      { "item": "Exhaust", "amount": 10 }
+    ],
+    "duration": 20,
+    "machine": "Blast furnace II",
+    "id": "105"
+  },
+  {
+    "inputs": [
+      { "item": "Iron ore crushed", "amount": 12 },
+      { "item": "Limestone", "amount": 1 },
+      { "item": "Coal", "amount": 5 }
+    ],
+    "outputs": [
+      { "item": "Molten iron", "amount": 16 },
+      { "item": "Slag", "amount": 6 },
+      { "item": "Exhaust", "amount": 12 }
+    ],
+    "duration": 20,
+    "machine": "Blast furnace II",
+    "id": "106"
+  },
+  {
+    "inputs": [
+      { "item": "Copper scrap", "amount": 16 },
+      { "item": "Coal", "amount": 5 }
+    ],
+    "outputs": [
+      { "item": "Molten copper", "amount": 16 },
+      { "item": "Exhaust", "amount": 10 }
+    ],
+    "duration": 20,
+    "machine": "Blast furnace II",
+    "id": "107"
+  },
+  {
+    "inputs": [
+      { "item": "Copper ore crushed", "amount": 12 },
+      { "item": "Sand", "amount": 2 },
+      { "item": "Coal", "amount": 5 }
+    ],
+    "outputs": [
+      { "item": "Molten copper", "amount": 16 },
+      { "item": "Slag", "amount": 6 },
+      { "item": "Exhaust", "amount": 12 }
+    ],
+    "duration": 20,
+    "machine": "Blast furnace II",
+    "id": "108"
+  },
+  {
+    "inputs": [
+      { "item": "Glass mix", "amount": 16 },
+      { "item": "Coal", "amount": 5 }
+    ],
+    "outputs": [
+      { "item": "Molten glass", "amount": 16 },
+      { "item": "Slag", "amount": 4 },
+      { "item": "Exhaust", "amount": 12 }
+    ],
+    "duration": 20,
+    "machine": "Blast furnace II",
+    "id": "109"
+  },
+  {
+    "inputs": [
+      { "item": "Broken glass", "amount": 24 },
+      { "item": "Coal", "amount": 5 }
+    ],
+    "outputs": [
+      { "item": "Molten glass", "amount": 16 },
+      { "item": "Exhaust", "amount": 10 }
+    ],
+    "duration": 20,
+    "machine": "Blast furnace II",
+    "id": "110"
+  },
+  {
+    "inputs": [
+      { "item": "Broken glass", "amount": 24 },
+      { "item": "Graphite", "amount": 1 },
+      { "item": "Water", "amount": 2 }
+    ],
+    "outputs": [
+      { "item": "Molten glass", "amount": 16 },
+      { "item": "Steam (low)", "amount": 2 },
+      { "item": "Exhaust", "amount": 2 }
+    ],
+    "duration": 20,
+    "machine": "Arc furnace II",
+    "id": "111"
+  },
+  {
+    "inputs": [
+      { "item": "Sand", "amount": 8 },
+      { "item": "Coal", "amount": 2 },
+      { "item": "Graphite", "amount": 1 }
+    ],
+    "outputs": [
+      { "item": "Molten silicon", "amount": 8 },
+      { "item": "Slag", "amount": 3 },
+      { "item": "Exhaust", "amount": 6 }
+    ],
+    "duration": 20,
+    "machine": "Arc furnace",
+    "id": "112"
+  },
+  {
+    "inputs": [
+      { "item": "Coal", "amount": 4 },
+      { "item": "Chlorine", "amount": 2 }
+    ],
+    "outputs": [
+      { "item": "Graphite", "amount": 8 },
+      { "item": "Sour water", "amount": 4 }
+    ],
+    "duration": 20,
+    "machine": "Chemical plant II",
+    "id": "113"
+  },
+  {
+    "inputs": [
+      { "item": "Sand", "amount": 16 },
+      { "item": "Coal", "amount": 2 },
+      { "item": "Graphite", "amount": 1 },
+      { "item": "Water", "amount": 2 }
+    ],
+    "outputs": [
+      { "item": "Molten silicon", "amount": 16 },
+      { "item": "Slag", "amount": 6 },
+      { "item": "Steam (low)", "amount": 2 },
+      { "item": "Exhaust", "amount": 12 }
+    ],
+    "duration": 20,
+    "machine": "Arc furnace II",
+    "id": "114"
+  },
+  {
+    "inputs": [
+      { "item": "Salt", "amount": 8 },
+      { "item": "Water", "amount": 8 }
+    ],
+    "outputs": [{ "item": "Brine", "amount": 16 }],
+    "duration": 20,
+    "machine": "Mixer",
+    "id": "115"
+  },
+  {
+    "inputs": [{ "item": "Seawater", "amount": 30 }],
+    "outputs": [{ "item": "Brine", "amount": 16 }],
+    "duration": 20,
+    "machine": "Evaporation pond (heated)",
+    "id": "116"
+  },
+  {
+    "inputs": [{ "item": "Seawater", "amount": 30 }],
+    "outputs": [{ "item": "Brine", "amount": 16 }],
+    "duration": 40,
+    "machine": "Evaporation pond",
+    "id": "117"
+  },
+  {
+    "inputs": [
+      { "item": "Seawater", "amount": 18 },
+      { "item": "Steam (super)", "amount": 1 }
+    ],
+    "outputs": [
+      { "item": "Water", "amount": 12 },
+      { "item": "Brine", "amount": 7 }
+    ],
+    "duration": 10,
+    "machine": "Thermal desalinator",
+    "id": "118"
+  },
+  {
+    "inputs": [
+      { "item": "Seawater", "amount": 18 },
+      { "item": "Steam (high)", "amount": 2 }
+    ],
+    "outputs": [
+      { "item": "Water", "amount": 13 },
+      { "item": "Brine", "amount": 7 }
+    ],
+    "duration": 10,
+    "machine": "Thermal desalinator",
+    "id": "119"
+  },
+  {
+    "inputs": [
+      { "item": "Seawater", "amount": 12 },
+      { "item": "Steam (low)", "amount": 4 }
+    ],
+    "outputs": [
+      { "item": "Water", "amount": 12 },
+      { "item": "Brine", "amount": 4 }
+    ],
+    "duration": 10,
+    "machine": "Thermal desalinator",
+    "id": "120"
+  },
+  {
+    "inputs": [
+      { "item": "Seawater", "amount": 3 },
+      { "item": "Steam depleted", "amount": 4 }
+    ],
+    "outputs": [
+      { "item": "Water", "amount": 6 },
+      { "item": "Brine", "amount": 1 }
+    ],
+    "duration": 10,
+    "machine": "Thermal desalinator",
+    "id": "121"
+  },
+  {
+    "inputs": [
+      { "item": "Salt", "amount": 8 },
+      { "item": "Water", "amount": 8 }
+    ],
+    "outputs": [{ "item": "Brine", "amount": 16 }],
+    "duration": 10,
+    "machine": "Mixer II",
+    "id": "122"
+  },
+  {
+    "inputs": [{ "item": "Brine", "amount": 2 }],
+    "outputs": [],
+    "duration": 2,
+    "machine": "Liquid dump",
+    "id": "123"
+  },
+  {
+    "inputs": [
+      { "item": "Toxic slurry", "amount": 36 },
+      { "item": "Filter media", "amount": 2 },
+      { "item": "Brine", "amount": 6 }
+    ],
+    "outputs": [
+      { "item": "Water", "amount": 12 },
+      { "item": "Slag", "amount": 24 }
+    ],
+    "duration": 20,
+    "machine": "Wastewater treatment",
+    "id": "124"
+  },
+  {
+    "inputs": [{ "item": "Brine", "amount": 16 }],
+    "outputs": [{ "item": "Salt", "amount": 8 }],
+    "duration": 20,
+    "machine": "Evaporation pond (heated)",
+    "id": "125"
+  },
+  {
+    "inputs": [{ "item": "Brine", "amount": 16 }],
+    "outputs": [{ "item": "Salt", "amount": 8 }],
+    "duration": 40,
+    "machine": "Evaporation pond",
+    "id": "126"
+  },
+  {
+    "inputs": [{ "item": "Brine", "amount": 6 }],
+    "outputs": [{ "item": "Chlorine", "amount": 4 }],
+    "duration": 10,
+    "machine": "Electrolyzer",
+    "id": "127"
+  },
+  {
+    "inputs": [{ "item": "Brine", "amount": 24 }],
+    "outputs": [{ "item": "Chlorine", "amount": 16 }],
+    "duration": 10,
+    "machine": "Electrolyzer II",
+    "id": "128"
+  },
+  {
+    "inputs": [
+      { "item": "Waste water", "amount": 40 },
+      { "item": "Sand", "amount": 4 },
+      { "item": "Chlorine", "amount": 4 }
+    ],
+    "outputs": [
+      { "item": "Water", "amount": 40 },
+      { "item": "Sludge", "amount": 12 }
+    ],
+    "duration": 30,
+    "machine": "Wastewater treatment",
+    "id": "129"
+  },
+  {
+    "inputs": [
+      { "item": "Waste water", "amount": 80 },
+      { "item": "Filter media", "amount": 4 },
+      { "item": "Chlorine", "amount": 8 }
+    ],
+    "outputs": [
+      { "item": "Water", "amount": 60 },
+      { "item": "Sludge", "amount": 18 }
+    ],
+    "duration": 30,
+    "machine": "Wastewater treatment",
+    "id": "130"
+  },
+  {
+    "inputs": [
+      { "item": "Naphtha", "amount": 4 },
+      { "item": "Chlorine", "amount": 2 }
+    ],
+    "outputs": [
+      { "item": "Plastic", "amount": 16 },
+      { "item": "Exhaust", "amount": 8 }
+    ],
+    "duration": 20,
+    "machine": "Polymerization plant",
+    "id": "131"
+  },
+  {
+    "inputs": [
+      { "item": "Ethanol", "amount": 4 },
+      { "item": "Chlorine", "amount": 2 }
+    ],
+    "outputs": [
+      { "item": "Plastic", "amount": 16 },
+      { "item": "Exhaust", "amount": 8 }
+    ],
+    "duration": 20,
+    "machine": "Polymerization plant",
+    "id": "132"
+  },
+  {
+    "inputs": [{ "item": "Sludge", "amount": 12 }],
+    "outputs": [
+      { "item": "Fuel gas", "amount": 5 },
+      { "item": "Compost", "amount": 1 }
+    ],
+    "duration": 40,
+    "machine": "Anaerobic digester",
+    "id": "133"
+  },
+  {
+    "inputs": [{ "item": "Potato", "amount": 14 }],
+    "outputs": [
+      { "item": "Fuel gas", "amount": 6 },
+      { "item": "Compost", "amount": 1 }
+    ],
+    "duration": 60,
+    "machine": "Anaerobic digester",
+    "id": "134"
+  },
+  {
+    "inputs": [{ "item": "Vegetables", "amount": 14 }],
+    "outputs": [
+      { "item": "Fuel gas", "amount": 6 },
+      { "item": "Compost", "amount": 1 }
+    ],
+    "duration": 60,
+    "machine": "Anaerobic digester",
+    "id": "135"
+  },
+  {
+    "inputs": [{ "item": "Fruit", "amount": 12 }],
+    "outputs": [
+      { "item": "Fuel gas", "amount": 10 },
+      { "item": "Compost", "amount": 1 }
+    ],
+    "duration": 90,
+    "machine": "Anaerobic digester",
+    "id": "136"
+  },
+  {
+    "inputs": [{ "item": "Poppy", "amount": 14 }],
+    "outputs": [
+      { "item": "Fuel gas", "amount": 6 },
+      { "item": "Compost", "amount": 1 }
+    ],
+    "duration": 60,
+    "machine": "Anaerobic digester",
+    "id": "137"
+  },
+  {
+    "inputs": [{ "item": "Wheat", "amount": 11 }],
+    "outputs": [
+      { "item": "Fuel gas", "amount": 10 },
+      { "item": "Compost", "amount": 1 }
+    ],
+    "duration": 90,
+    "machine": "Anaerobic digester",
+    "id": "138"
+  },
+  {
+    "inputs": [{ "item": "Meat trimmings", "amount": 8 }],
+    "outputs": [
+      { "item": "Fuel gas", "amount": 4 },
+      { "item": "Compost", "amount": 2 }
+    ],
+    "duration": 120,
+    "machine": "Anaerobic digester",
+    "id": "139"
+  },
+  {
+    "inputs": [{ "item": "Meat trimmings", "amount": 12 }],
+    "outputs": [{ "item": "Compost", "amount": 4 }],
+    "duration": 60,
+    "machine": "Mixer",
+    "id": "140"
+  },
+  {
+    "inputs": [{ "item": "Meat trimmings", "amount": 8 }],
+    "outputs": [{ "item": "Compost", "amount": 3 }],
+    "duration": 20,
+    "machine": "Mixer II",
+    "id": "141"
+  },
+  {
+    "inputs": [
+      { "item": "Compost", "amount": 12 },
+      { "item": "Water", "amount": 4 }
+    ],
+    "outputs": [{ "item": "Fertilizer (organic)", "amount": 16 }],
+    "duration": 20,
+    "machine": "Mixer",
+    "id": "142"
+  },
+  {
+    "inputs": [
+      { "item": "Gravel", "amount": 8 },
+      { "item": "Compost", "amount": 8 }
+    ],
+    "outputs": [{ "item": "Dirt", "amount": 16 }],
+    "duration": 20,
+    "machine": "Mixer",
+    "id": "143"
+  },
+  {
+    "inputs": [
+      { "item": "Compost", "amount": 12 },
+      { "item": "Water", "amount": 4 }
+    ],
+    "outputs": [{ "item": "Fertilizer (organic)", "amount": 16 }],
+    "duration": 10,
+    "machine": "Mixer II",
+    "id": "144"
+  },
+  {
+    "inputs": [
+      { "item": "Gravel", "amount": 8 },
+      { "item": "Compost", "amount": 8 }
+    ],
+    "outputs": [{ "item": "Dirt", "amount": 16 }],
+    "duration": 10,
+    "machine": "Mixer II",
+    "id": "145"
+  },
+  {
+    "inputs": [
+      { "item": "Iron", "amount": 3 },
+      { "item": "Wood", "amount": 3 },
+      { "item": "Concrete slab", "amount": 4 }
+    ],
+    "outputs": [{ "item": "Construction parts", "amount": 4 }],
+    "duration": 40,
+    "machine": "Assembly (manual)",
+    "id": "146"
+  },
+  {
+    "inputs": [
+      { "item": "Iron", "amount": 3 },
+      { "item": "Wood", "amount": 3 },
+      { "item": "Concrete slab", "amount": 4 }
+    ],
+    "outputs": [{ "item": "Construction parts", "amount": 4 }],
+    "duration": 20,
+    "machine": "Assembly (electric)",
+    "id": "147"
+  },
+  {
+    "inputs": [
+      { "item": "Iron", "amount": 3 },
+      { "item": "Wood", "amount": 3 },
+      { "item": "Concrete slab", "amount": 4 }
+    ],
+    "outputs": [{ "item": "Construction parts", "amount": 4 }],
+    "duration": 10,
+    "machine": "Assembly (electric) II",
+    "id": "148"
+  },
+  {
+    "inputs": [
+      { "item": "Iron", "amount": 6 },
+      { "item": "Wood", "amount": 6 },
+      { "item": "Concrete slab", "amount": 8 }
+    ],
+    "outputs": [{ "item": "Construction parts", "amount": 8 }],
+    "duration": 10,
+    "machine": "Assembly (robotic)",
+    "id": "149"
+  },
+  {
+    "inputs": [
+      { "item": "Construction parts", "amount": 8 },
+      { "item": "Electronics", "amount": 4 }
+    ],
+    "outputs": [{ "item": "Construction parts II", "amount": 4 }],
+    "duration": 80,
+    "machine": "Assembly (manual)",
+    "id": "150"
+  },
+  {
+    "inputs": [
+      { "item": "Construction parts", "amount": 8 },
+      { "item": "Electronics", "amount": 4 }
+    ],
+    "outputs": [{ "item": "Construction parts II", "amount": 4 }],
+    "duration": 40,
+    "machine": "Assembly (electric)",
+    "id": "151"
+  },
+  {
+    "inputs": [
+      { "item": "Construction parts", "amount": 8 },
+      { "item": "Electronics", "amount": 4 }
+    ],
+    "outputs": [{ "item": "Construction parts II", "amount": 4 }],
+    "duration": 20,
+    "machine": "Assembly (electric) II",
+    "id": "152"
+  },
+  {
+    "inputs": [
+      { "item": "Construction parts", "amount": 8 },
+      { "item": "Electronics", "amount": 4 }
+    ],
+    "outputs": [{ "item": "Construction parts II", "amount": 4 }],
+    "duration": 10,
+    "machine": "Assembly (robotic)",
+    "id": "153"
+  },
+  {
+    "inputs": [
+      { "item": "Construction parts II", "amount": 8 },
+      { "item": "Steel", "amount": 4 }
+    ],
+    "outputs": [{ "item": "Construction parts III", "amount": 4 }],
+    "duration": 80,
+    "machine": "Assembly (electric)",
+    "id": "154"
+  },
+  {
+    "inputs": [
+      { "item": "Construction parts II", "amount": 8 },
+      { "item": "Steel", "amount": 4 }
+    ],
+    "outputs": [{ "item": "Construction parts III", "amount": 4 }],
+    "duration": 40,
+    "machine": "Assembly (electric) II",
+    "id": "155"
+  },
+  {
+    "inputs": [
+      { "item": "Construction parts II", "amount": 8 },
+      { "item": "Steel", "amount": 4 }
+    ],
+    "outputs": [{ "item": "Construction parts III", "amount": 4 }],
+    "duration": 20,
+    "machine": "Assembly (robotic)",
+    "id": "156"
+  },
+  {
+    "inputs": [
+      { "item": "Construction parts III", "amount": 8 },
+      { "item": "Electronics II", "amount": 4 }
+    ],
+    "outputs": [{ "item": "Construction parts IV", "amount": 4 }],
+    "duration": 80,
+    "machine": "Assembly (electric) II",
+    "id": "157"
+  },
+  {
+    "inputs": [
+      { "item": "Construction parts III", "amount": 8 },
+      { "item": "Electronics II", "amount": 4 }
+    ],
+    "outputs": [{ "item": "Construction parts IV", "amount": 4 }],
+    "duration": 40,
+    "machine": "Assembly (robotic)",
+    "id": "158"
+  },
+  {
+    "inputs": [
+      { "item": "Construction parts III", "amount": 8 },
+      { "item": "Electronics II", "amount": 4 }
+    ],
+    "outputs": [{ "item": "Construction parts IV", "amount": 4 }],
+    "duration": 20,
+    "machine": "Assembly (robotic) II",
+    "id": "159"
+  },
+  {
+    "inputs": [
+      { "item": "Flour", "amount": 5 },
+      { "item": "Sugar", "amount": 2 },
+      { "item": "Cooking oil", "amount": 1 },
+      { "item": "Eggs", "amount": 1 },
+      { "item": "Fruit", "amount": 1 }
+    ],
+    "outputs": [{ "item": "Cake", "amount": 7 }],
+    "duration": 30,
+    "machine": "Baking unit",
+    "id": "160"
+  },
+  {
+    "inputs": [
+      { "item": "Ethanol", "amount": 5 },
+      { "item": "Cooking oil", "amount": 9 }
+    ],
+    "outputs": [{ "item": "Diesel", "amount": 18 }],
+    "duration": 40,
+    "machine": "Chemical plant",
+    "id": "161"
+  },
+  {
+    "inputs": [
+      { "item": "Potato", "amount": 8 },
+      { "item": "Salt", "amount": 2 },
+      { "item": "Cooking oil", "amount": 1 },
+      { "item": "Plastic", "amount": 1 }
+    ],
+    "outputs": [
+      { "item": "Snack", "amount": 12 },
+      { "item": "Biomass", "amount": 1 }
+    ],
+    "duration": 20,
+    "machine": "Food processor",
+    "id": "162"
+  },
+  {
+    "inputs": [
+      { "item": "Corn", "amount": 8 },
+      { "item": "Salt", "amount": 2 },
+      { "item": "Cooking oil", "amount": 1 },
+      { "item": "Plastic", "amount": 1 }
+    ],
+    "outputs": [
+      { "item": "Snack", "amount": 16 },
+      { "item": "Biomass", "amount": 1 }
+    ],
+    "duration": 20,
+    "machine": "Food processor",
+    "id": "163"
+  },
+  {
+    "inputs": [
+      { "item": "Ethanol", "amount": 5 },
+      { "item": "Cooking oil", "amount": 9 }
+    ],
+    "outputs": [{ "item": "Diesel", "amount": 18 }],
+    "duration": 20,
+    "machine": "Chemical plant II",
+    "id": "164"
+  },
+  {
+    "inputs": [
+      { "item": "Impure copper", "amount": 16 },
+      { "item": "Water", "amount": 4 }
+    ],
+    "outputs": [{ "item": "Copper", "amount": 13 }],
+    "duration": 40,
+    "machine": "Copper electrolysis",
+    "id": "165"
+  },
+  {
+    "inputs": [
+      { "item": "Impure copper", "amount": 16 },
+      { "item": "Acid", "amount": 4 }
+    ],
+    "outputs": [{ "item": "Copper", "amount": 16 }],
+    "duration": 40,
+    "machine": "Copper electrolysis",
+    "id": "166"
+  },
+  {
+    "inputs": [
+      { "item": "Rubber", "amount": 1 },
+      { "item": "Copper", "amount": 4 }
+    ],
+    "outputs": [{ "item": "Electronics", "amount": 4 }],
+    "duration": 60,
+    "machine": "Assembly (manual)",
+    "id": "167"
+  },
+  {
+    "inputs": [
+      { "item": "Rubber", "amount": 1 },
+      { "item": "Copper", "amount": 4 }
+    ],
+    "outputs": [{ "item": "Electronics", "amount": 4 }],
+    "duration": 20,
+    "machine": "Assembly (electric)",
+    "id": "168"
+  },
+  {
+    "inputs": [
+      { "item": "Rubber", "amount": 1 },
+      { "item": "Copper", "amount": 4 }
+    ],
+    "outputs": [{ "item": "Electronics", "amount": 4 }],
+    "duration": 10,
+    "machine": "Assembly (electric) II",
+    "id": "169"
+  },
+  {
+    "inputs": [
+      { "item": "Rubber", "amount": 2 },
+      { "item": "Copper", "amount": 8 }
+    ],
+    "outputs": [{ "item": "Electronics", "amount": 8 }],
+    "duration": 10,
+    "machine": "Assembly (robotic)",
+    "id": "170"
+  },
+  {
+    "inputs": [
+      { "item": "Rubber", "amount": 4 },
+      { "item": "Copper", "amount": 16 }
+    ],
+    "outputs": [{ "item": "Electronics", "amount": 16 }],
+    "duration": 10,
+    "machine": "Assembly (robotic) II",
+    "id": "171"
+  },
+  {
+    "inputs": [
+      { "item": "Glass", "amount": 8 },
+      { "item": "Plastic", "amount": 4 },
+      { "item": "Copper", "amount": 2 }
+    ],
+    "outputs": [{ "item": "PCB", "amount": 8 }],
+    "duration": 40,
+    "machine": "Assembly (electric) II",
+    "id": "172"
+  },
+  {
+    "inputs": [
+      { "item": "Glass", "amount": 8 },
+      { "item": "Plastic", "amount": 4 },
+      { "item": "Copper", "amount": 2 }
+    ],
+    "outputs": [{ "item": "PCB", "amount": 8 }],
+    "duration": 20,
+    "machine": "Assembly (robotic)",
+    "id": "173"
+  },
+  {
+    "inputs": [
+      { "item": "Glass", "amount": 16 },
+      { "item": "Plastic", "amount": 8 },
+      { "item": "Copper", "amount": 4 }
+    ],
+    "outputs": [{ "item": "PCB", "amount": 16 }],
+    "duration": 20,
+    "machine": "Assembly (robotic) II",
+    "id": "174"
+  },
+  {
+    "inputs": [
+      { "item": "Microchips (stage 1a)", "amount": 1 },
+      { "item": "Copper", "amount": 1 },
+      { "item": "Plastic", "amount": 1 }
+    ],
+    "outputs": [{ "item": "Microchips (stage 1b)", "amount": 1 }],
+    "duration": 30,
+    "machine": "Microchip machine",
+    "id": "175"
+  },
+  {
+    "inputs": [
+      { "item": "Microchips (stage 2a)", "amount": 1 },
+      { "item": "Copper", "amount": 1 },
+      { "item": "Plastic", "amount": 1 }
+    ],
+    "outputs": [{ "item": "Microchips (stage 2b)", "amount": 1 }],
+    "duration": 30,
+    "machine": "Microchip machine",
+    "id": "176"
+  },
+  {
+    "inputs": [
+      { "item": "Microchips (stage 3a)", "amount": 1 },
+      { "item": "Copper", "amount": 1 },
+      { "item": "Plastic", "amount": 1 }
+    ],
+    "outputs": [{ "item": "Microchips (stage 3b)", "amount": 1 }],
+    "duration": 30,
+    "machine": "Microchip machine",
+    "id": "177"
+  },
+  {
+    "inputs": [
+      { "item": "Microchips (stage 4a)", "amount": 1 },
+      { "item": "Copper", "amount": 1 },
+      { "item": "Plastic", "amount": 1 }
+    ],
+    "outputs": [{ "item": "Microchips (stage 4b)", "amount": 1 }],
+    "duration": 30,
+    "machine": "Microchip machine",
+    "id": "178"
+  },
+  {
+    "inputs": [
+      { "item": "Microchips (stage 1a)", "amount": 1 },
+      { "item": "Copper", "amount": 1 },
+      { "item": "Plastic", "amount": 1 }
+    ],
+    "outputs": [{ "item": "Microchips (stage 1b)", "amount": 1 }],
+    "duration": 15,
+    "machine": "Microchip machine II",
+    "id": "179"
+  },
+  {
+    "inputs": [
+      { "item": "Microchips (stage 2a)", "amount": 1 },
+      { "item": "Copper", "amount": 1 },
+      { "item": "Plastic", "amount": 1 }
+    ],
+    "outputs": [{ "item": "Microchips (stage 2b)", "amount": 1 }],
+    "duration": 15,
+    "machine": "Microchip machine II",
+    "id": "180"
+  },
+  {
+    "inputs": [
+      { "item": "Microchips (stage 3a)", "amount": 1 },
+      { "item": "Copper", "amount": 1 },
+      { "item": "Plastic", "amount": 1 }
+    ],
+    "outputs": [{ "item": "Microchips (stage 3b)", "amount": 1 }],
+    "duration": 15,
+    "machine": "Microchip machine II",
+    "id": "181"
+  },
+  {
+    "inputs": [
+      { "item": "Microchips (stage 4a)", "amount": 1 },
+      { "item": "Copper", "amount": 1 },
+      { "item": "Plastic", "amount": 1 }
+    ],
+    "outputs": [{ "item": "Microchips (stage 4b)", "amount": 1 }],
+    "duration": 15,
+    "machine": "Microchip machine II",
+    "id": "182"
+  },
+  {
+    "inputs": [{ "item": "Copper ore", "amount": 12 }],
+    "outputs": [{ "item": "Copper ore crushed", "amount": 12 }],
+    "duration": 20,
+    "machine": "Crusher",
+    "id": "183"
+  },
+  {
+    "inputs": [{ "item": "Copper ore", "amount": 72 }],
+    "outputs": [{ "item": "Copper ore crushed", "amount": 72 }],
+    "duration": 20,
+    "machine": "Crusher (large)",
+    "id": "184"
+  },
+  {
+    "inputs": [
+      { "item": "Copper ore crushed", "amount": 12 },
+      { "item": "Sand", "amount": 2 },
+      { "item": "Graphite", "amount": 1 },
+      { "item": "Water", "amount": 2 }
+    ],
+    "outputs": [
+      { "item": "Molten copper", "amount": 16 },
+      { "item": "Slag", "amount": 6 },
+      { "item": "Steam (low)", "amount": 2 },
+      { "item": "Exhaust", "amount": 4 }
+    ],
+    "duration": 20,
+    "machine": "Arc furnace II",
+    "id": "185"
+  },
+  {
+    "inputs": [{ "item": "Copper scrap pressed", "amount": 4 }],
+    "outputs": [{ "item": "Copper scrap", "amount": 12 }],
+    "duration": 10,
+    "machine": "Shredder",
+    "id": "186"
+  },
+  {
+    "inputs": [{ "item": "Copper scrap", "amount": 6 }],
+    "outputs": [{ "item": "Copper scrap pressed", "amount": 2 }],
+    "duration": 5,
+    "machine": "Compactor",
+    "id": "187"
+  },
+  {
+    "inputs": [
+      { "item": "Copper scrap", "amount": 16 },
+      { "item": "Graphite", "amount": 1 },
+      { "item": "Water", "amount": 2 }
+    ],
+    "outputs": [
+      { "item": "Molten copper", "amount": 16 },
+      { "item": "Steam (low)", "amount": 2 },
+      { "item": "Exhaust", "amount": 2 }
+    ],
+    "duration": 20,
+    "machine": "Arc furnace II",
+    "id": "188"
+  },
+  {
+    "inputs": [],
+    "outputs": [{ "item": "Crude oil", "amount": 6 }],
+    "duration": 20,
+    "machine": "Oil pump",
+    "id": "189"
+  },
+  {
+    "inputs": [
+      { "item": "Crude oil", "amount": 18 },
+      { "item": "Steam (high)", "amount": 2 }
+    ],
+    "outputs": [
+      { "item": "Medium oil", "amount": 16 },
+      { "item": "Heavy oil", "amount": 2 },
+      { "item": "Sour water", "amount": 6 }
+    ],
+    "duration": 20,
+    "machine": "Distillation (stage I)",
+    "id": "190"
+  },
+  {
+    "inputs": [
+      { "item": "Sulfur", "amount": 2 },
+      { "item": "Water", "amount": 10 }
+    ],
+    "outputs": [{ "item": "Acid", "amount": 12 }],
+    "duration": 20,
+    "machine": "Mixer",
+    "id": "191"
+  },
+  {
+    "inputs": [
+      { "item": "Sulfur", "amount": 2 },
+      { "item": "Water", "amount": 10 }
+    ],
+    "outputs": [{ "item": "Acid", "amount": 12 }],
+    "duration": 10,
+    "machine": "Mixer II",
+    "id": "192"
+  },
+  {
+    "inputs": [{ "item": "Acid", "amount": 2 }],
+    "outputs": [{ "item": "Water pollution", "amount": 4 }],
+    "duration": 2,
+    "machine": "Liquid dump",
+    "id": "193"
+  },
+  {
+    "inputs": [
+      { "item": "Sand", "amount": 16 },
+      { "item": "Limestone", "amount": 4 },
+      { "item": "Salt", "amount": 4 },
+      { "item": "Acid", "amount": 4 }
+    ],
+    "outputs": [{ "item": "Glass mix", "amount": 16 }],
+    "duration": 20,
+    "machine": "Mixer",
+    "id": "194"
+  },
+  {
+    "inputs": [
+      { "item": "Sand", "amount": 16 },
+      { "item": "Limestone", "amount": 4 },
+      { "item": "Salt", "amount": 4 },
+      { "item": "Acid", "amount": 4 }
+    ],
+    "outputs": [{ "item": "Glass mix", "amount": 16 }],
+    "duration": 10,
+    "machine": "Mixer II",
+    "id": "195"
+  },
+  {
+    "inputs": [
+      { "item": "Poppy", "amount": 4 },
+      { "item": "Acid", "amount": 2 },
+      { "item": "Glass", "amount": 2 }
+    ],
+    "outputs": [{ "item": "Morphine", "amount": 8 }],
+    "duration": 20,
+    "machine": "Chemical plant II",
+    "id": "196"
+  },
+  {
+    "inputs": [
+      { "item": "Gold ore powder", "amount": 12 },
+      { "item": "Acid", "amount": 4 }
+    ],
+    "outputs": [
+      { "item": "Gold ore concentrate", "amount": 3 },
+      { "item": "Toxic slurry", "amount": 9 }
+    ],
+    "duration": 20,
+    "machine": "Settling tank",
+    "id": "197"
+  },
+  {
+    "inputs": [
+      { "item": "Uranium ore crushed", "amount": 12 },
+      { "item": "Acid", "amount": 3 }
+    ],
+    "outputs": [
+      { "item": "Yellowcake", "amount": 6 },
+      { "item": "Toxic slurry", "amount": 6 }
+    ],
+    "duration": 40,
+    "machine": "Settling tank",
+    "id": "198"
+  },
+  {
+    "inputs": [
+      { "item": "Rock", "amount": 8 },
+      { "item": "Acid", "amount": 4 }
+    ],
+    "outputs": [
+      { "item": "Hydrogen fluoride", "amount": 8 },
+      { "item": "Slag", "amount": 2 }
+    ],
+    "duration": 40,
+    "machine": "Settling tank",
+    "id": "199"
+  },
+  {
+    "inputs": [
+      { "item": "Silicon wafer", "amount": 2 },
+      { "item": "Acid", "amount": 1 },
+      { "item": "Water", "amount": 1 }
+    ],
+    "outputs": [{ "item": "Microchips (stage 1a)", "amount": 1 }],
+    "duration": 30,
+    "machine": "Microchip machine",
+    "id": "200"
+  },
+  {
+    "inputs": [
+      { "item": "Microchips (stage 1c)", "amount": 1 },
+      { "item": "Acid", "amount": 1 },
+      { "item": "Water", "amount": 1 }
+    ],
+    "outputs": [{ "item": "Microchips (stage 2a)", "amount": 1 }],
+    "duration": 30,
+    "machine": "Microchip machine",
+    "id": "201"
+  },
+  {
+    "inputs": [
+      { "item": "Microchips (stage 2c)", "amount": 1 },
+      { "item": "Acid", "amount": 1 },
+      { "item": "Water", "amount": 1 }
+    ],
+    "outputs": [{ "item": "Microchips (stage 3a)", "amount": 1 }],
+    "duration": 30,
+    "machine": "Microchip machine",
+    "id": "202"
+  },
+  {
+    "inputs": [
+      { "item": "Microchips (stage 3c)", "amount": 1 },
+      { "item": "Acid", "amount": 1 },
+      { "item": "Water", "amount": 1 }
+    ],
+    "outputs": [{ "item": "Microchips (stage 4a)", "amount": 1 }],
+    "duration": 30,
+    "machine": "Microchip machine",
+    "id": "203"
+  },
+  {
+    "inputs": [
+      { "item": "Silicon wafer", "amount": 2 },
+      { "item": "Acid", "amount": 1 },
+      { "item": "Water", "amount": 1 }
+    ],
+    "outputs": [{ "item": "Microchips (stage 1a)", "amount": 1 }],
+    "duration": 15,
+    "machine": "Microchip machine II",
+    "id": "204"
+  },
+  {
+    "inputs": [
+      { "item": "Microchips (stage 1c)", "amount": 1 },
+      { "item": "Acid", "amount": 1 },
+      { "item": "Water", "amount": 1 }
+    ],
+    "outputs": [{ "item": "Microchips (stage 2a)", "amount": 1 }],
+    "duration": 15,
+    "machine": "Microchip machine II",
+    "id": "205"
+  },
+  {
+    "inputs": [
+      { "item": "Microchips (stage 2c)", "amount": 1 },
+      { "item": "Acid", "amount": 1 },
+      { "item": "Water", "amount": 1 }
+    ],
+    "outputs": [{ "item": "Microchips (stage 3a)", "amount": 1 }],
+    "duration": 15,
+    "machine": "Microchip machine II",
+    "id": "206"
+  },
+  {
+    "inputs": [
+      { "item": "Microchips (stage 3c)", "amount": 1 },
+      { "item": "Acid", "amount": 1 },
+      { "item": "Water", "amount": 1 }
+    ],
+    "outputs": [{ "item": "Microchips (stage 4a)", "amount": 1 }],
+    "duration": 15,
+    "machine": "Microchip machine II",
+    "id": "207"
+  },
+  {
+    "inputs": [
+      { "item": "Spent fuel", "amount": 18 },
+      { "item": "Acid", "amount": 8 },
+      { "item": "Molten glass", "amount": 3 }
+    ],
+    "outputs": [
+      { "item": "Reprocessed uranium (1%)", "amount": 16 },
+      { "item": "Plutonium", "amount": 1 },
+      { "item": "Fission product", "amount": 3 }
+    ],
+    "duration": 60,
+    "machine": "Nuclear reprocessing plant",
+    "id": "208"
+  },
+  {
+    "inputs": [
+      { "item": "Spent fuel", "amount": 1 },
+      { "item": "Acid", "amount": 1 },
+      { "item": "Molten glass", "amount": 1 },
+      { "item": "Salt", "amount": 1 }
+    ],
+    "outputs": [
+      { "item": "Blanket fuel", "amount": 1 },
+      { "item": "Fission product", "amount": 1 }
+    ],
+    "duration": 20,
+    "machine": "Nuclear reprocessing plant",
+    "id": "209"
+  },
+  {
+    "inputs": [
+      { "item": "Spent MOX", "amount": 1 },
+      { "item": "Acid", "amount": 1 },
+      { "item": "Molten glass", "amount": 1 },
+      { "item": "Salt", "amount": 1 }
+    ],
+    "outputs": [
+      { "item": "Blanket fuel", "amount": 1 },
+      { "item": "Fission product", "amount": 1 }
+    ],
+    "duration": 20,
+    "machine": "Nuclear reprocessing plant",
+    "id": "210"
+  },
+  {
+    "inputs": [
+      { "item": "Core fuel (spent)", "amount": 10 },
+      { "item": "Acid", "amount": 1 },
+      { "item": "Molten glass", "amount": 2 },
+      { "item": "Steel", "amount": 1 }
+    ],
+    "outputs": [
+      { "item": "Core fuel", "amount": 8 },
+      { "item": "Fission product", "amount": 2 }
+    ],
+    "duration": 60,
+    "machine": "Nuclear reprocessing plant",
+    "id": "211"
+  },
+  {
+    "inputs": [
+      { "item": "Depleted uranium", "amount": 1 },
+      { "item": "Salt", "amount": 1 }
+    ],
+    "outputs": [{ "item": "Blanket fuel", "amount": 1 }],
+    "duration": 20,
+    "machine": "Chemical plant II",
+    "id": "212"
+  },
+  {
+    "inputs": [
+      { "item": "Yellowcake", "amount": 1 },
+      { "item": "Salt", "amount": 1 }
+    ],
+    "outputs": [{ "item": "Blanket fuel", "amount": 1 }],
+    "duration": 20,
+    "machine": "Chemical plant II",
+    "id": "213"
+  },
+  {
+    "inputs": [{ "item": "Blanket fuel (enriched)", "amount": 5 }],
+    "outputs": [
+      { "item": "Blanket fuel", "amount": 4 },
+      { "item": "Core fuel", "amount": 1 }
+    ],
+    "duration": 20,
+    "machine": "Enrichment plant",
+    "id": "214"
+  },
+  {
+    "inputs": [{ "item": "Blanket fuel", "amount": 0 }],
+    "outputs": [{ "item": "Blanket fuel (enriched)", "amount": 0 }],
+    "duration": 15,
+    "machine": "Fast breeder reactor",
+    "id": "215"
+  },
+  {
+    "inputs": [
+      { "item": "Enriched uranium (20%)", "amount": 1 },
+      { "item": "Salt", "amount": 1 }
+    ],
+    "outputs": [{ "item": "Core fuel", "amount": 1 }],
+    "duration": 20,
+    "machine": "Chemical plant II",
+    "id": "216"
+  },
+  {
+    "inputs": [
+      { "item": "Water", "amount": 96 },
+      { "item": "Core fuel", "amount": 1 }
+    ],
+    "outputs": [
+      { "item": "Steam (super)", "amount": 96 },
+      { "item": "Core fuel (spent)", "amount": 1 }
+    ],
+    "duration": 15,
+    "machine": "Fast breeder reactor",
+    "id": "217"
+  },
+  {
+    "inputs": [
+      { "item": "Yellowcake", "amount": 6 },
+      { "item": "Hydrogen fluoride", "amount": 1 }
+    ],
+    "outputs": [
+      { "item": "Enriched uranium (4%)", "amount": 1 },
+      { "item": "Depleted uranium", "amount": 5 }
+    ],
+    "duration": 80,
+    "machine": "Enrichment plant",
+    "id": "218"
+  },
+  {
+    "inputs": [
+      { "item": "Reprocessed uranium (1%)", "amount": 4 },
+      { "item": "Hydrogen fluoride", "amount": 1 }
+    ],
+    "outputs": [
+      { "item": "Enriched uranium (4%)", "amount": 1 },
+      { "item": "Depleted uranium", "amount": 3 }
+    ],
+    "duration": 80,
+    "machine": "Enrichment plant",
+    "id": "219"
+  },
+  {
+    "inputs": [
+      { "item": "Enriched uranium (4%)", "amount": 5 },
+      { "item": "Hydrogen fluoride", "amount": 1 }
+    ],
+    "outputs": [
+      { "item": "Enriched uranium (20%)", "amount": 1 },
+      { "item": "Depleted uranium", "amount": 4 }
+    ],
+    "duration": 160,
+    "machine": "Enrichment plant",
+    "id": "220"
+  },
+  {
+    "inputs": [
+      { "item": "Plutonium", "amount": 1 },
+      { "item": "Depleted uranium", "amount": 3 }
+    ],
+    "outputs": [{ "item": "MOX rod", "amount": 3 }],
+    "duration": 90,
+    "machine": "Chemical plant II",
+    "id": "221"
+  },
+  {
+    "inputs": [
+      { "item": "Medium oil", "amount": 16 },
+      { "item": "Steam (high)", "amount": 1 }
+    ],
+    "outputs": [
+      { "item": "Diesel", "amount": 12 },
+      { "item": "Light oil", "amount": 4 }
+    ],
+    "duration": 20,
+    "machine": "Distillation (stage II)",
+    "id": "222"
+  },
+  {
+    "inputs": [
+      { "item": "Heavy oil", "amount": 4 },
+      { "item": "Hydrogen", "amount": 4 }
+    ],
+    "outputs": [
+      { "item": "Diesel", "amount": 8 },
+      { "item": "Fuel gas", "amount": 2 }
+    ],
+    "duration": 20,
+    "machine": "Cracking unit",
+    "id": "223"
+  },
+  {
+    "inputs": [
+      { "item": "Naphtha", "amount": 6 },
+      { "item": "Hydrogen", "amount": 4 }
+    ],
+    "outputs": [
+      { "item": "Diesel", "amount": 8 },
+      { "item": "Fuel gas", "amount": 2 }
+    ],
+    "duration": 20,
+    "machine": "Cracking unit",
+    "id": "224"
+  },
+  {
+    "inputs": [
+      { "item": "Fuel gas", "amount": 12 },
+      { "item": "Oxygen", "amount": 6 }
+    ],
+    "outputs": [
+      { "item": "Diesel", "amount": 8 },
+      { "item": "Water", "amount": 2 }
+    ],
+    "duration": 20,
+    "machine": "Cracking unit",
+    "id": "225"
+  },
+  {
+    "inputs": [
+      { "item": "Diesel", "amount": 4 },
+      { "item": "Sulfur", "amount": 1 }
+    ],
+    "outputs": [{ "item": "Rubber", "amount": 6 }],
+    "duration": 20,
+    "machine": "Rubber maker",
+    "id": "226"
+  },
+  {
+    "inputs": [
+      { "item": "Diesel", "amount": 8 },
+      { "item": "Steam (high)", "amount": 1 }
+    ],
+    "outputs": [
+      { "item": "Naphtha", "amount": 6 },
+      { "item": "Sour water", "amount": 2 }
+    ],
+    "duration": 20,
+    "machine": "Cracking unit",
+    "id": "227"
+  },
+  {
+    "inputs": [{ "item": "Diesel", "amount": 6 }],
+    "outputs": [
+      { "item": "Electricity", "amount": 1666666.6666666667 },
+      { "item": "Exhaust", "amount": 8 }
+    ],
+    "duration": 20,
+    "machine": "Diesel generator II",
+    "id": "228"
+  },
+  {
+    "inputs": [{ "item": "Mechanical power", "amount": 3000000 }],
+    "outputs": [{ "item": "Electricity", "amount": 2000000 }],
+    "duration": 60,
+    "machine": "Power generator",
+    "id": "229"
+  },
+  {
+    "inputs": [{ "item": "Mechanical power", "amount": 18000000 }],
+    "outputs": [{ "item": "Electricity", "amount": 15000000 }],
+    "duration": 60,
+    "machine": "Power generator (large)",
+    "id": "230"
+  },
+  {
+    "inputs": [
+      { "item": "Iron", "amount": 4 },
+      { "item": "Mechanical parts", "amount": 2 },
+      { "item": "Electronics", "amount": 2 }
+    ],
+    "outputs": [{ "item": "Vehicle parts", "amount": 4 }],
+    "duration": 80,
+    "machine": "Assembly (manual)",
+    "id": "231"
+  },
+  {
+    "inputs": [
+      { "item": "Iron", "amount": 4 },
+      { "item": "Mechanical parts", "amount": 2 },
+      { "item": "Electronics", "amount": 2 }
+    ],
+    "outputs": [{ "item": "Vehicle parts", "amount": 4 }],
+    "duration": 40,
+    "machine": "Assembly (electric)",
+    "id": "232"
+  },
+  {
+    "inputs": [
+      { "item": "Iron", "amount": 4 },
+      { "item": "Mechanical parts", "amount": 2 },
+      { "item": "Electronics", "amount": 2 }
+    ],
+    "outputs": [{ "item": "Vehicle parts", "amount": 4 }],
+    "duration": 20,
+    "machine": "Assembly (electric) II",
+    "id": "233"
+  },
+  {
+    "inputs": [
+      { "item": "Iron", "amount": 4 },
+      { "item": "Mechanical parts", "amount": 2 },
+      { "item": "Electronics", "amount": 2 }
+    ],
+    "outputs": [{ "item": "Vehicle parts", "amount": 4 }],
+    "duration": 10,
+    "machine": "Assembly (robotic)",
+    "id": "234"
+  },
+  {
+    "inputs": [
+      { "item": "Mechanical parts", "amount": 2 },
+      { "item": "Electronics", "amount": 1 }
+    ],
+    "outputs": [{ "item": "Maintenance I", "amount": 35 }],
+    "duration": 20,
+    "machine": "Maintenance depot (basic)",
+    "id": "235"
+  },
+  {
+    "inputs": [
+      { "item": "Mechanical parts", "amount": 8 },
+      { "item": "Electronics", "amount": 4 }
+    ],
+    "outputs": [{ "item": "Maintenance I", "amount": 160 }],
+    "duration": 20,
+    "machine": "Maintenance depot",
+    "id": "236"
+  },
+  {
+    "inputs": [
+      { "item": "Mechanical parts", "amount": 8 },
+      { "item": "Electronics", "amount": 4 }
+    ],
+    "outputs": [
+      { "item": "Maintenance I", "amount": 160 },
+      { "item": "Recyclables", "amount": 6 }
+    ],
+    "duration": 20,
+    "machine": "Maintenance depot",
+    "id": "237"
+  },
+  {
+    "inputs": [
+      { "item": "Mechanical parts", "amount": 4 },
+      { "item": "Electronics", "amount": 4 }
+    ],
+    "outputs": [{ "item": "Lab equipment", "amount": 8 }],
+    "duration": 20,
+    "machine": "Assembly (electric)",
+    "id": "238"
+  },
+  {
+    "inputs": [
+      { "item": "Mechanical parts", "amount": 4 },
+      { "item": "Electronics", "amount": 4 }
+    ],
+    "outputs": [{ "item": "Lab equipment", "amount": 8 }],
+    "duration": 10,
+    "machine": "Assembly (electric) II",
+    "id": "239"
+  },
+  {
+    "inputs": [
+      { "item": "Mechanical parts", "amount": 8 },
+      { "item": "Electronics", "amount": 8 }
+    ],
+    "outputs": [{ "item": "Lab equipment", "amount": 16 }],
+    "duration": 10,
+    "machine": "Assembly (robotic)",
+    "id": "240"
+  },
+  {
+    "inputs": [
+      { "item": "Electronics", "amount": 12 },
+      { "item": "Electronics II", "amount": 4 },
+      { "item": "Steel", "amount": 4 }
+    ],
+    "outputs": [{ "item": "Household appliances", "amount": 12 }],
+    "duration": 60,
+    "machine": "Assembly (electric) II",
+    "id": "241"
+  },
+  {
+    "inputs": [
+      { "item": "Electronics", "amount": 12 },
+      { "item": "Electronics II", "amount": 4 },
+      { "item": "Steel", "amount": 4 }
+    ],
+    "outputs": [{ "item": "Household appliances", "amount": 12 }],
+    "duration": 30,
+    "machine": "Assembly (robotic)",
+    "id": "242"
+  },
+  {
+    "inputs": [
+      { "item": "Electronics", "amount": 12 },
+      { "item": "Electronics II", "amount": 4 },
+      { "item": "Steel", "amount": 4 }
+    ],
+    "outputs": [{ "item": "Household appliances", "amount": 12 }],
+    "duration": 15,
+    "machine": "Assembly (robotic) II",
+    "id": "243"
+  },
+  {
+    "inputs": [
+      { "item": "PCB", "amount": 4 },
+      { "item": "Electronics", "amount": 4 },
+      { "item": "Silicon (poly)", "amount": 4 }
+    ],
+    "outputs": [{ "item": "Electronics II", "amount": 4 }],
+    "duration": 40,
+    "machine": "Assembly (electric) II",
+    "id": "244"
+  },
+  {
+    "inputs": [
+      { "item": "PCB", "amount": 4 },
+      { "item": "Electronics", "amount": 4 },
+      { "item": "Silicon (poly)", "amount": 4 }
+    ],
+    "outputs": [{ "item": "Electronics II", "amount": 4 }],
+    "duration": 20,
+    "machine": "Assembly (robotic)",
+    "id": "245"
+  },
+  {
+    "inputs": [
+      { "item": "PCB", "amount": 8 },
+      { "item": "Electronics", "amount": 8 },
+      { "item": "Silicon (poly)", "amount": 8 }
+    ],
+    "outputs": [{ "item": "Electronics II", "amount": 8 }],
+    "duration": 20,
+    "machine": "Assembly (robotic) II",
+    "id": "246"
+  },
+  {
+    "inputs": [
+      { "item": "Vehicle parts II", "amount": 4 },
+      { "item": "Electronics II", "amount": 2 }
+    ],
+    "outputs": [{ "item": "Vehicle parts III", "amount": 4 }],
+    "duration": 40,
+    "machine": "Assembly (electric) II",
+    "id": "247"
+  },
+  {
+    "inputs": [
+      { "item": "Vehicle parts II", "amount": 4 },
+      { "item": "Electronics II", "amount": 2 }
+    ],
+    "outputs": [{ "item": "Vehicle parts III", "amount": 4 }],
+    "duration": 20,
+    "machine": "Assembly (robotic)",
+    "id": "248"
+  },
+  {
+    "inputs": [
+      { "item": "Lab equipment II", "amount": 8 },
+      { "item": "Electronics II", "amount": 2 }
+    ],
+    "outputs": [{ "item": "Lab equipment III", "amount": 4 }],
+    "duration": 40,
+    "machine": "Assembly (electric) II",
+    "id": "249"
+  },
+  {
+    "inputs": [
+      { "item": "Lab equipment II", "amount": 8 },
+      { "item": "Electronics II", "amount": 2 }
+    ],
+    "outputs": [{ "item": "Lab equipment III", "amount": 4 }],
+    "duration": 20,
+    "machine": "Assembly (robotic)",
+    "id": "250"
+  },
+  {
+    "inputs": [
+      { "item": "Mechanical parts", "amount": 6 },
+      { "item": "Electronics II", "amount": 4 }
+    ],
+    "outputs": [{ "item": "Maintenance II", "amount": 160 }],
+    "duration": 20,
+    "machine": "Maintenance II depot",
+    "id": "251"
+  },
+  {
+    "inputs": [
+      { "item": "Mechanical parts", "amount": 6 },
+      { "item": "Electronics II", "amount": 4 }
+    ],
+    "outputs": [
+      { "item": "Maintenance II", "amount": 160 },
+      { "item": "Recyclables", "amount": 8 }
+    ],
+    "duration": 20,
+    "machine": "Maintenance II depot",
+    "id": "252"
+  },
+  {
+    "inputs": [
+      { "item": "Microchips", "amount": 2 },
+      { "item": "Electronics II", "amount": 2 }
+    ],
+    "outputs": [{ "item": "Electronics III", "amount": 2 }],
+    "duration": 40,
+    "machine": "Assembly (robotic)",
+    "id": "253"
+  },
+  {
+    "inputs": [
+      { "item": "Microchips", "amount": 2 },
+      { "item": "Electronics II", "amount": 2 }
+    ],
+    "outputs": [{ "item": "Electronics III", "amount": 2 }],
+    "duration": 20,
+    "machine": "Assembly (robotic) II",
+    "id": "254"
+  },
+  {
+    "inputs": [
+      { "item": "Lab equipment III", "amount": 8 },
+      { "item": "Electronics III", "amount": 2 }
+    ],
+    "outputs": [{ "item": "Lab equipment IV", "amount": 4 }],
+    "duration": 40,
+    "machine": "Assembly (robotic)",
+    "id": "255"
+  },
+  {
+    "inputs": [
+      { "item": "Steel", "amount": 1 },
+      { "item": "Electronics III", "amount": 5 }
+    ],
+    "outputs": [{ "item": "Server", "amount": 4 }],
+    "duration": 80,
+    "machine": "Assembly (robotic)",
+    "id": "256"
+  },
+  {
+    "inputs": [
+      { "item": "Steel", "amount": 1 },
+      { "item": "Electronics III", "amount": 5 }
+    ],
+    "outputs": [{ "item": "Server", "amount": 4 }],
+    "duration": 40,
+    "machine": "Assembly (robotic) II",
+    "id": "257"
+  },
+  {
+    "inputs": [
+      { "item": "Mechanical parts", "amount": 2 },
+      { "item": "Electronics III", "amount": 2 }
+    ],
+    "outputs": [{ "item": "Maintenance III", "amount": 60 }],
+    "duration": 20,
+    "machine": "Maintenance III depot",
+    "id": "258"
+  },
+  {
+    "inputs": [
+      { "item": "Mechanical parts", "amount": 2 },
+      { "item": "Electronics III", "amount": 2 }
+    ],
+    "outputs": [
+      { "item": "Maintenance III", "amount": 60 },
+      { "item": "Recyclables", "amount": 5 }
+    ],
+    "duration": 20,
+    "machine": "Maintenance III depot",
+    "id": "259"
+  },
+  {
+    "inputs": [
+      { "item": "Electronics III", "amount": 2 },
+      { "item": "Plastic", "amount": 2 },
+      { "item": "Steel", "amount": 2 }
+    ],
+    "outputs": [{ "item": "Consumer electronics", "amount": 4 }],
+    "duration": 40,
+    "machine": "Assembly (robotic) II",
+    "id": "260"
+  },
+  {
+    "inputs": [
+      { "item": "Enriched uranium (4%)", "amount": 4 },
+      { "item": "Steel", "amount": 1 }
+    ],
+    "outputs": [{ "item": "Uranium rod", "amount": 4 }],
+    "duration": 80,
+    "machine": "Assembly (electric) II",
+    "id": "261"
+  },
+  {
+    "inputs": [
+      { "item": "Enriched uranium (4%)", "amount": 1 },
+      { "item": "Plutonium", "amount": 1 }
+    ],
+    "outputs": [{ "item": "Enriched uranium (20%)", "amount": 1 }],
+    "duration": 20,
+    "machine": "Assembly (robotic)",
+    "id": "262"
+  },
+  {
+    "inputs": [
+      { "item": "Ethanol", "amount": 4 },
+      { "item": "Sulfur", "amount": 1 }
+    ],
+    "outputs": [{ "item": "Rubber", "amount": 6 }],
+    "duration": 20,
+    "machine": "Rubber maker",
+    "id": "263"
+  },
+  {
+    "inputs": [
+      { "item": "Ethanol", "amount": 3 },
+      { "item": "Plastic", "amount": 2 }
+    ],
+    "outputs": [{ "item": "Disinfectant", "amount": 8 }],
+    "duration": 40,
+    "machine": "Chemical plant",
+    "id": "264"
+  },
+  {
+    "inputs": [
+      { "item": "Ethanol", "amount": 3 },
+      { "item": "Plastic", "amount": 2 }
+    ],
+    "outputs": [{ "item": "Disinfectant", "amount": 8 }],
+    "duration": 20,
+    "machine": "Chemical plant II",
+    "id": "265"
+  },
+  {
+    "inputs": [
+      { "item": "Medical equipment", "amount": 4 },
+      { "item": "Disinfectant", "amount": 4 }
+    ],
+    "outputs": [{ "item": "Medical supplies", "amount": 8 }],
+    "duration": 20,
+    "machine": "Assembly (electric) II",
+    "id": "266"
+  },
+  {
+    "inputs": [
+      { "item": "Medical equipment", "amount": 4 },
+      { "item": "Disinfectant", "amount": 4 }
+    ],
+    "outputs": [{ "item": "Medical supplies", "amount": 8 }],
+    "duration": 10,
+    "machine": "Assembly (robotic)",
+    "id": "267"
+  },
+  {
+    "inputs": [
+      { "item": "Molten iron", "amount": 16 },
+      { "item": "Oxygen", "amount": 12 }
+    ],
+    "outputs": [
+      { "item": "Molten steel", "amount": 8 },
+      { "item": "Exhaust", "amount": 16 }
+    ],
+    "duration": 40,
+    "machine": "Oxygen furnace",
+    "id": "268"
+  },
+  {
+    "inputs": [
+      { "item": "Water", "amount": 8 },
+      { "item": "Woodchips", "amount": 8 }
+    ],
+    "outputs": [
+      { "item": "Steam (high)", "amount": 8 },
+      { "item": "Exhaust", "amount": 6 }
+    ],
+    "duration": 10,
+    "machine": "Boiler",
+    "id": "269"
+  },
+  {
+    "inputs": [
+      { "item": "Water", "amount": 8 },
+      { "item": "Heavy oil", "amount": 6 }
+    ],
+    "outputs": [
+      { "item": "Steam (high)", "amount": 8 },
+      { "item": "Exhaust", "amount": 15 }
+    ],
+    "duration": 10,
+    "machine": "Boiler (gas)",
+    "id": "270"
+  },
+  {
+    "inputs": [
+      { "item": "Water", "amount": 8 },
+      { "item": "Medium oil", "amount": 9 }
+    ],
+    "outputs": [
+      { "item": "Steam (high)", "amount": 8 },
+      { "item": "Exhaust", "amount": 15 }
+    ],
+    "duration": 10,
+    "machine": "Boiler (gas)",
+    "id": "271"
+  },
+  {
+    "inputs": [
+      { "item": "Water", "amount": 8 },
+      { "item": "Light oil", "amount": 9 }
+    ],
+    "outputs": [
+      { "item": "Steam (high)", "amount": 8 },
+      { "item": "Exhaust", "amount": 12 }
+    ],
+    "duration": 10,
+    "machine": "Boiler (gas)",
+    "id": "272"
+  },
+  {
+    "inputs": [
+      { "item": "Water", "amount": 8 },
+      { "item": "Naphtha", "amount": 9 }
+    ],
+    "outputs": [
+      { "item": "Steam (high)", "amount": 8 },
+      { "item": "Exhaust", "amount": 12 }
+    ],
+    "duration": 10,
+    "machine": "Boiler (gas)",
+    "id": "273"
+  },
+  {
+    "inputs": [
+      { "item": "Waste", "amount": 48 },
+      { "item": "Fuel gas", "amount": 2 },
+      { "item": "Water", "amount": 6 }
+    ],
+    "outputs": [
+      { "item": "Exhaust", "amount": 24 },
+      { "item": "Steam (high)", "amount": 6 }
+    ],
+    "duration": 20,
+    "machine": "Incineration plant",
+    "id": "274"
+  },
+  {
+    "inputs": [
+      { "item": "Waste pressed", "amount": 16 },
+      { "item": "Fuel gas", "amount": 2 },
+      { "item": "Water", "amount": 6 }
+    ],
+    "outputs": [
+      { "item": "Exhaust", "amount": 24 },
+      { "item": "Steam (high)", "amount": 6 }
+    ],
+    "duration": 20,
+    "machine": "Incineration plant",
+    "id": "275"
+  },
+  {
+    "inputs": [
+      { "item": "Waste", "amount": 48 },
+      { "item": "Hydrogen", "amount": 2 },
+      { "item": "Water", "amount": 6 }
+    ],
+    "outputs": [
+      { "item": "Exhaust", "amount": 24 },
+      { "item": "Steam (high)", "amount": 6 }
+    ],
+    "duration": 20,
+    "machine": "Incineration plant",
+    "id": "276"
+  },
+  {
+    "inputs": [
+      { "item": "Waste pressed", "amount": 16 },
+      { "item": "Hydrogen", "amount": 2 },
+      { "item": "Water", "amount": 6 }
+    ],
+    "outputs": [
+      { "item": "Exhaust", "amount": 24 },
+      { "item": "Steam (high)", "amount": 6 }
+    ],
+    "duration": 20,
+    "machine": "Incineration plant",
+    "id": "277"
+  },
+  {
+    "inputs": [
+      { "item": "Molten iron", "amount": 32 },
+      { "item": "Oxygen", "amount": 12 }
+    ],
+    "outputs": [
+      { "item": "Molten steel", "amount": 16 },
+      { "item": "Exhaust", "amount": 24 }
+    ],
+    "duration": 40,
+    "machine": "Oxygen furnace II",
+    "id": "278"
+  },
+  {
+    "inputs": [
+      { "item": "Gold ore concentrate", "amount": 6 },
+      { "item": "Sand", "amount": 1 }
+    ],
+    "outputs": [
+      { "item": "Gold", "amount": 3 },
+      { "item": "Exhaust", "amount": 4 }
+    ],
+    "duration": 20,
+    "machine": "Gold furnace",
+    "id": "279"
+  },
+  {
+    "inputs": [{ "item": "Gold scrap", "amount": 3 }],
+    "outputs": [
+      { "item": "Gold", "amount": 3 },
+      { "item": "Exhaust", "amount": 3 }
+    ],
+    "duration": 20,
+    "machine": "Gold furnace",
+    "id": "280"
+  },
+  {
+    "inputs": [
+      { "item": "Iron scrap", "amount": 16 },
+      { "item": "Graphite", "amount": 1 },
+      { "item": "Water", "amount": 2 }
+    ],
+    "outputs": [
+      { "item": "Molten iron", "amount": 16 },
+      { "item": "Steam (low)", "amount": 2 },
+      { "item": "Exhaust", "amount": 2 }
+    ],
+    "duration": 20,
+    "machine": "Arc furnace II",
+    "id": "281"
+  },
+  {
+    "inputs": [
+      { "item": "Iron ore crushed", "amount": 12 },
+      { "item": "Limestone", "amount": 1 },
+      { "item": "Graphite", "amount": 1 },
+      { "item": "Water", "amount": 2 }
+    ],
+    "outputs": [
+      { "item": "Molten iron", "amount": 16 },
+      { "item": "Slag", "amount": 6 },
+      { "item": "Steam (low)", "amount": 2 },
+      { "item": "Exhaust", "amount": 4 }
+    ],
+    "duration": 20,
+    "machine": "Arc furnace II",
+    "id": "282"
+  },
+  {
+    "inputs": [
+      { "item": "Glass mix", "amount": 16 },
+      { "item": "Graphite", "amount": 1 },
+      { "item": "Water", "amount": 2 }
+    ],
+    "outputs": [
+      { "item": "Molten glass", "amount": 16 },
+      { "item": "Slag", "amount": 4 },
+      { "item": "Steam (low)", "amount": 2 },
+      { "item": "Exhaust", "amount": 4 }
+    ],
+    "duration": 20,
+    "machine": "Arc furnace II",
+    "id": "283"
+  },
+  {
+    "inputs": [{ "item": "Fertilizer (organic)", "amount": 4 }],
+    "outputs": [{ "item": "Water pollution", "amount": 1 }],
+    "duration": 4,
+    "machine": "Liquid dump",
+    "id": "284"
+  },
+  {
+    "inputs": [{ "item": "Fertilizer I", "amount": 2 }],
+    "outputs": [{ "item": "Water pollution", "amount": 1 }],
+    "duration": 4,
+    "machine": "Liquid dump",
+    "id": "285"
+  },
+  {
+    "inputs": [
+      { "item": "Fertilizer I", "amount": 10 },
+      { "item": "Limestone", "amount": 2 },
+      { "item": "Sulfur", "amount": 2 }
+    ],
+    "outputs": [{ "item": "Fertilizer II", "amount": 14 }],
+    "duration": 20,
+    "machine": "Mixer",
+    "id": "286"
+  },
+  {
+    "inputs": [
+      { "item": "Fertilizer I", "amount": 10 },
+      { "item": "Limestone", "amount": 2 },
+      { "item": "Sulfur", "amount": 2 }
+    ],
+    "outputs": [{ "item": "Fertilizer II", "amount": 14 }],
+    "duration": 10,
+    "machine": "Mixer II",
+    "id": "287"
+  },
+  {
+    "inputs": [{ "item": "Fertilizer II", "amount": 2 }],
+    "outputs": [{ "item": "Water pollution", "amount": 2 }],
+    "duration": 4,
+    "machine": "Liquid dump",
+    "id": "288"
+  },
+  {
+    "inputs": [{ "item": "Fission product", "amount": 1600 }],
+    "outputs": [{ "item": "Retired waste", "amount": 1600 }],
+    "duration": 72000,
+    "machine": "Radioactive waste storage",
+    "id": "289"
+  },
+  {
+    "inputs": [
+      { "item": "Meat trimmings", "amount": 8 },
+      { "item": "Flour", "amount": 2 },
+      { "item": "Salt", "amount": 3 }
+    ],
+    "outputs": [{ "item": "Sausage", "amount": 8 }],
+    "duration": 20,
+    "machine": "Food processor",
+    "id": "290"
+  },
+  {
+    "inputs": [
+      { "item": "Heavy oil", "amount": 4 },
+      { "item": "Hydrogen", "amount": 4 }
+    ],
+    "outputs": [
+      { "item": "Naphtha", "amount": 6 },
+      { "item": "Fuel gas", "amount": 4 }
+    ],
+    "duration": 20,
+    "machine": "Cracking unit",
+    "id": "291"
+  },
+  {
+    "inputs": [
+      { "item": "Naphtha", "amount": 8 },
+      { "item": "Steam (high)", "amount": 1 }
+    ],
+    "outputs": [
+      { "item": "Fuel gas", "amount": 10 },
+      { "item": "Sour water", "amount": 2 }
+    ],
+    "duration": 20,
+    "machine": "Cracking unit",
+    "id": "292"
+  },
+  {
+    "inputs": [
+      { "item": "Light oil", "amount": 4 },
+      { "item": "Steam (high)", "amount": 1 }
+    ],
+    "outputs": [
+      { "item": "Naphtha", "amount": 4 },
+      { "item": "Fuel gas", "amount": 6 }
+    ],
+    "duration": 20,
+    "machine": "Distillation (stage III)",
+    "id": "293"
+  },
+  {
+    "inputs": [
+      { "item": "Microchips (stage 1b)", "amount": 1 },
+      { "item": "Gold", "amount": 1 }
+    ],
+    "outputs": [{ "item": "Microchips (stage 1c)", "amount": 1 }],
+    "duration": 30,
+    "machine": "Microchip machine",
+    "id": "294"
+  },
+  {
+    "inputs": [
+      { "item": "Microchips (stage 2b)", "amount": 1 },
+      { "item": "Gold", "amount": 1 }
+    ],
+    "outputs": [{ "item": "Microchips (stage 2c)", "amount": 1 }],
+    "duration": 30,
+    "machine": "Microchip machine",
+    "id": "295"
+  },
+  {
+    "inputs": [
+      { "item": "Microchips (stage 3b)", "amount": 1 },
+      { "item": "Gold", "amount": 1 }
+    ],
+    "outputs": [{ "item": "Microchips (stage 3c)", "amount": 1 }],
+    "duration": 30,
+    "machine": "Microchip machine",
+    "id": "296"
+  },
+  {
+    "inputs": [
+      { "item": "Microchips (stage 4b)", "amount": 1 },
+      { "item": "Gold", "amount": 1 }
+    ],
+    "outputs": [{ "item": "Microchips", "amount": 4 }],
+    "duration": 30,
+    "machine": "Microchip machine",
+    "id": "297"
+  },
+  {
+    "inputs": [
+      { "item": "Microchips (stage 1b)", "amount": 1 },
+      { "item": "Gold", "amount": 1 }
+    ],
+    "outputs": [{ "item": "Microchips (stage 1c)", "amount": 1 }],
+    "duration": 15,
+    "machine": "Microchip machine II",
+    "id": "298"
+  },
+  {
+    "inputs": [
+      { "item": "Microchips (stage 2b)", "amount": 1 },
+      { "item": "Gold", "amount": 1 }
+    ],
+    "outputs": [{ "item": "Microchips (stage 2c)", "amount": 1 }],
+    "duration": 15,
+    "machine": "Microchip machine II",
+    "id": "299"
+  },
+  {
+    "inputs": [
+      { "item": "Microchips (stage 3b)", "amount": 1 },
+      { "item": "Gold", "amount": 1 }
+    ],
+    "outputs": [{ "item": "Microchips (stage 3c)", "amount": 1 }],
+    "duration": 15,
+    "machine": "Microchip machine II",
+    "id": "300"
+  },
+  {
+    "inputs": [
+      { "item": "Microchips (stage 4b)", "amount": 1 },
+      { "item": "Gold", "amount": 1 }
+    ],
+    "outputs": [{ "item": "Microchips", "amount": 4 }],
+    "duration": 15,
+    "machine": "Microchip machine II",
+    "id": "301"
+  },
+  {
+    "inputs": [{ "item": "Gold ore crushed", "amount": 8 }],
+    "outputs": [{ "item": "Gold ore powder", "amount": 8 }],
+    "duration": 40,
+    "machine": "Crusher",
+    "id": "302"
+  },
+  {
+    "inputs": [{ "item": "Gold ore crushed", "amount": 48 }],
+    "outputs": [{ "item": "Gold ore powder", "amount": 48 }],
+    "duration": 40,
+    "machine": "Crusher (large)",
+    "id": "303"
+  },
+  {
+    "inputs": [{ "item": "Gold ore", "amount": 8 }],
+    "outputs": [{ "item": "Gold ore crushed", "amount": 8 }],
+    "duration": 20,
+    "machine": "Crusher",
+    "id": "304"
+  },
+  {
+    "inputs": [{ "item": "Gold ore", "amount": 48 }],
+    "outputs": [{ "item": "Gold ore crushed", "amount": 48 }],
+    "duration": 20,
+    "machine": "Crusher (large)",
+    "id": "305"
+  },
+  {
+    "inputs": [{ "item": "Gold scrap pressed", "amount": 4 }],
+    "outputs": [{ "item": "Gold scrap", "amount": 12 }],
+    "duration": 10,
+    "machine": "Shredder",
+    "id": "306"
+  },
+  {
+    "inputs": [{ "item": "Gold scrap", "amount": 6 }],
+    "outputs": [{ "item": "Gold scrap pressed", "amount": 2 }],
+    "duration": 5,
+    "machine": "Compactor",
+    "id": "307"
+  },
+  {
+    "inputs": [{ "item": "Molten glass", "amount": 8 }],
+    "outputs": [
+      { "item": "Glass", "amount": 8 },
+      { "item": "Slag", "amount": 2 }
+    ],
+    "duration": 20,
+    "machine": "Glass maker",
+    "id": "308"
+  },
+  {
+    "inputs": [{ "item": "Molten glass", "amount": 16 }],
+    "outputs": [{ "item": "Glass", "amount": 24 }],
+    "duration": 20,
+    "machine": "Glass maker II",
+    "id": "309"
+  },
+  {
+    "inputs": [
+      { "item": "Glass", "amount": 8 },
+      { "item": "Steel", "amount": 1 },
+      { "item": "Wood", "amount": 4 }
+    ],
+    "outputs": [{ "item": "Household goods", "amount": 8 }],
+    "duration": 60,
+    "machine": "Assembly (electric)",
+    "id": "310"
+  },
+  {
+    "inputs": [
+      { "item": "Glass", "amount": 8 },
+      { "item": "Steel", "amount": 1 },
+      { "item": "Wood", "amount": 4 }
+    ],
+    "outputs": [{ "item": "Household goods", "amount": 8 }],
+    "duration": 30,
+    "machine": "Assembly (electric) II",
+    "id": "311"
+  },
+  {
+    "inputs": [
+      { "item": "Glass", "amount": 8 },
+      { "item": "Steel", "amount": 1 },
+      { "item": "Wood", "amount": 4 }
+    ],
+    "outputs": [{ "item": "Household goods", "amount": 8 }],
+    "duration": 15,
+    "machine": "Assembly (robotic)",
+    "id": "312"
+  },
+  {
+    "inputs": [
+      { "item": "Vehicle parts", "amount": 4 },
+      { "item": "Steel", "amount": 2 },
+      { "item": "Glass", "amount": 2 }
+    ],
+    "outputs": [{ "item": "Vehicle parts II", "amount": 4 }],
+    "duration": 40,
+    "machine": "Assembly (electric) II",
+    "id": "313"
+  },
+  {
+    "inputs": [
+      { "item": "Vehicle parts", "amount": 4 },
+      { "item": "Steel", "amount": 2 },
+      { "item": "Glass", "amount": 2 }
+    ],
+    "outputs": [{ "item": "Vehicle parts II", "amount": 4 }],
+    "duration": 20,
+    "machine": "Assembly (robotic)",
+    "id": "314"
+  },
+  {
+    "inputs": [
+      { "item": "Steel", "amount": 1 },
+      { "item": "Silicon (poly)", "amount": 12 },
+      { "item": "Glass", "amount": 4 }
+    ],
+    "outputs": [{ "item": "Solar cell", "amount": 8 }],
+    "duration": 120,
+    "machine": "Assembly (electric) II",
+    "id": "315"
+  },
+  {
+    "inputs": [
+      { "item": "Steel", "amount": 1 },
+      { "item": "Silicon (poly)", "amount": 12 },
+      { "item": "Glass", "amount": 4 }
+    ],
+    "outputs": [{ "item": "Solar cell", "amount": 8 }],
+    "duration": 60,
+    "machine": "Assembly (robotic)",
+    "id": "316"
+  },
+  {
+    "inputs": [
+      { "item": "Steel", "amount": 1 },
+      { "item": "Silicon (poly)", "amount": 12 },
+      { "item": "Glass", "amount": 4 }
+    ],
+    "outputs": [{ "item": "Solar cell", "amount": 8 }],
+    "duration": 40,
+    "machine": "Assembly (robotic) II",
+    "id": "317"
+  },
+  {
+    "inputs": [
+      { "item": "Steel", "amount": 1 },
+      { "item": "Silicon wafer", "amount": 12 },
+      { "item": "Glass", "amount": 4 }
+    ],
+    "outputs": [{ "item": "Solar cell mono", "amount": 8 }],
+    "duration": 60,
+    "machine": "Assembly (robotic) II",
+    "id": "318"
+  },
+  {
+    "inputs": [
+      { "item": "Sand", "amount": 16 },
+      { "item": "Limestone", "amount": 4 },
+      { "item": "Salt", "amount": 4 }
+    ],
+    "outputs": [{ "item": "Glass mix", "amount": 12 }],
+    "duration": 20,
+    "machine": "Mixer",
+    "id": "319"
+  },
+  {
+    "inputs": [
+      { "item": "Sand", "amount": 16 },
+      { "item": "Limestone", "amount": 4 },
+      { "item": "Salt", "amount": 4 }
+    ],
+    "outputs": [{ "item": "Glass mix", "amount": 12 }],
+    "duration": 10,
+    "machine": "Mixer II",
+    "id": "320"
+  },
+  {
+    "inputs": [{ "item": "Rock", "amount": 8 }],
+    "outputs": [{ "item": "Gravel", "amount": 8 }],
+    "duration": 20,
+    "machine": "Crusher",
+    "id": "321"
+  },
+  {
+    "inputs": [{ "item": "Rock", "amount": 48 }],
+    "outputs": [{ "item": "Gravel", "amount": 48 }],
+    "duration": 20,
+    "machine": "Crusher (large)",
+    "id": "322"
+  },
+  {
+    "inputs": [{ "item": "Gravel", "amount": 8 }],
+    "outputs": [{ "item": "Manufactured sand", "amount": 8 }],
+    "duration": 60,
+    "machine": "Crusher",
+    "id": "323"
+  },
+  {
+    "inputs": [{ "item": "Gravel", "amount": 48 }],
+    "outputs": [{ "item": "Manufactured sand", "amount": 48 }],
+    "duration": 60,
+    "machine": "Crusher (large)",
+    "id": "324"
+  },
+  {
+    "inputs": [{ "item": "Water", "amount": 1 }],
+    "outputs": [
+      { "item": "Oxygen", "amount": 4 },
+      { "item": "Hydrogen", "amount": 2 }
+    ],
+    "duration": 40,
+    "machine": "Electrolyzer",
+    "id": "325"
+  },
+  {
+    "inputs": [
+      { "item": "Water", "amount": 6 },
+      { "item": "Steam (super)", "amount": 4 }
+    ],
+    "outputs": [
+      { "item": "Hydrogen", "amount": 12 },
+      { "item": "Oxygen", "amount": 12 },
+      { "item": "Steam depleted", "amount": 4 }
+    ],
+    "duration": 20,
+    "machine": "Hydrogen reformer",
+    "id": "326"
+  },
+  {
+    "inputs": [{ "item": "Water", "amount": 1 }],
+    "outputs": [
+      { "item": "Oxygen", "amount": 4 },
+      { "item": "Hydrogen", "amount": 2 }
+    ],
+    "duration": 10,
+    "machine": "Electrolyzer II",
+    "id": "327"
+  },
+  {
+    "inputs": [
+      { "item": "Water", "amount": 8 },
+      { "item": "Hydrogen", "amount": 12 }
+    ],
+    "outputs": [
+      { "item": "Steam (high)", "amount": 8 },
+      { "item": "Steam depleted", "amount": 6 }
+    ],
+    "duration": 10,
+    "machine": "Boiler (gas)",
+    "id": "328"
+  },
+  {
+    "inputs": [
+      { "item": "Molten silicon", "amount": 4 },
+      { "item": "Hydrogen", "amount": 1 }
+    ],
+    "outputs": [{ "item": "Silicon (poly)", "amount": 4 }],
+    "duration": 20,
+    "machine": "Silicon reactor",
+    "id": "329"
+  },
+  {
+    "inputs": [{ "item": "Hydrogen", "amount": 16 }],
+    "outputs": [],
+    "duration": 20,
+    "machine": "Flare",
+    "id": "330"
+  },
+  {
+    "inputs": [{ "item": "Molten copper", "amount": 8 }],
+    "outputs": [{ "item": "Impure copper", "amount": 8 }],
+    "duration": 40,
+    "machine": "Metal caster",
+    "id": "331"
+  },
+  {
+    "inputs": [{ "item": "Molten copper", "amount": 8 }],
+    "outputs": [{ "item": "Impure copper", "amount": 8 }],
+    "duration": 20,
+    "machine": "Metal caster II",
+    "id": "332"
+  },
+  {
+    "inputs": [{ "item": "Molten iron", "amount": 8 }],
+    "outputs": [{ "item": "Iron", "amount": 8 }],
+    "duration": 40,
+    "machine": "Metal caster",
+    "id": "333"
+  },
+  {
+    "inputs": [{ "item": "Molten iron", "amount": 8 }],
+    "outputs": [{ "item": "Iron", "amount": 8 }],
+    "duration": 20,
+    "machine": "Metal caster II",
+    "id": "334"
+  },
+  {
+    "inputs": [{ "item": "Iron", "amount": 5 }],
+    "outputs": [{ "item": "Mechanical parts", "amount": 4 }],
+    "duration": 40,
+    "machine": "Assembly (manual)",
+    "id": "335"
+  },
+  {
+    "inputs": [{ "item": "Iron", "amount": 5 }],
+    "outputs": [{ "item": "Mechanical parts", "amount": 4 }],
+    "duration": 20,
+    "machine": "Assembly (electric)",
+    "id": "336"
+  },
+  {
+    "inputs": [{ "item": "Iron", "amount": 5 }],
+    "outputs": [{ "item": "Mechanical parts", "amount": 4 }],
+    "duration": 10,
+    "machine": "Assembly (electric) II",
+    "id": "337"
+  },
+  {
+    "inputs": [{ "item": "Iron ore", "amount": 12 }],
+    "outputs": [{ "item": "Iron ore crushed", "amount": 12 }],
+    "duration": 20,
+    "machine": "Crusher",
+    "id": "338"
+  },
+  {
+    "inputs": [{ "item": "Iron ore", "amount": 72 }],
+    "outputs": [{ "item": "Iron ore crushed", "amount": 72 }],
+    "duration": 20,
+    "machine": "Crusher (large)",
+    "id": "339"
+  },
+  {
+    "inputs": [{ "item": "Iron scrap pressed", "amount": 4 }],
+    "outputs": [{ "item": "Iron scrap", "amount": 12 }],
+    "duration": 10,
+    "machine": "Shredder",
+    "id": "340"
+  },
+  {
+    "inputs": [{ "item": "Iron scrap", "amount": 6 }],
+    "outputs": [{ "item": "Iron scrap pressed", "amount": 2 }],
+    "duration": 5,
+    "machine": "Compactor",
+    "id": "341"
+  },
+  {
+    "inputs": [],
+    "outputs": [{ "item": "Research I", "amount": 1 }],
+    "duration": 15,
+    "machine": "Research lab",
+    "id": "342"
+  },
+  {
+    "inputs": [{ "item": "Lab equipment", "amount": 1 }],
+    "outputs": [{ "item": "Research II", "amount": 1 }],
+    "duration": 15,
+    "machine": "Research lab II",
+    "id": "343"
+  },
+  {
+    "inputs": [{ "item": "Lab equipment", "amount": 1 }],
+    "outputs": [
+      { "item": "Research II", "amount": 1 },
+      { "item": "Recyclables", "amount": 1 }
+    ],
+    "duration": 15,
+    "machine": "Research lab II",
+    "id": "344"
+  },
+  {
+    "inputs": [
+      { "item": "Lab equipment", "amount": 8 },
+      { "item": "Paper", "amount": 2 },
+      { "item": "Steel", "amount": 1 }
+    ],
+    "outputs": [{ "item": "Lab equipment II", "amount": 4 }],
+    "duration": 20,
+    "machine": "Assembly (electric) II",
+    "id": "345"
+  },
+  {
+    "inputs": [
+      { "item": "Lab equipment", "amount": 8 },
+      { "item": "Paper", "amount": 2 },
+      { "item": "Steel", "amount": 1 }
+    ],
+    "outputs": [{ "item": "Lab equipment II", "amount": 4 }],
+    "duration": 10,
+    "machine": "Assembly (robotic)",
+    "id": "346"
+  },
+  {
+    "inputs": [{ "item": "Lab equipment II", "amount": 1 }],
+    "outputs": [{ "item": "Research III", "amount": 1 }],
+    "duration": 15,
+    "machine": "Research lab III",
+    "id": "347"
+  },
+  {
+    "inputs": [{ "item": "Lab equipment II", "amount": 1 }],
+    "outputs": [
+      { "item": "Research III", "amount": 1 },
+      { "item": "Recyclables", "amount": 2 }
+    ],
+    "duration": 15,
+    "machine": "Research lab III",
+    "id": "348"
+  },
+  {
+    "inputs": [{ "item": "Lab equipment III", "amount": 1 }],
+    "outputs": [{ "item": "Research IV", "amount": 1 }],
+    "duration": 15,
+    "machine": "Research lab IV",
+    "id": "349"
+  },
+  {
+    "inputs": [{ "item": "Lab equipment III", "amount": 1 }],
+    "outputs": [
+      { "item": "Research IV", "amount": 1 },
+      { "item": "Recyclables", "amount": 3 }
+    ],
+    "duration": 15,
+    "machine": "Research lab IV",
+    "id": "350"
+  },
+  {
+    "inputs": [{ "item": "Lab equipment IV", "amount": 1 }],
+    "outputs": [{ "item": "Research V", "amount": 2 }],
+    "duration": 15,
+    "machine": "Research lab V",
+    "id": "351"
+  },
+  {
+    "inputs": [{ "item": "Lab equipment IV", "amount": 1 }],
+    "outputs": [
+      { "item": "Research V", "amount": 2 },
+      { "item": "Recyclables", "amount": 8 }
+    ],
+    "duration": 15,
+    "machine": "Research lab V",
+    "id": "352"
+  },
+  {
+    "inputs": [
+      { "item": "Sulfur", "amount": 10 },
+      { "item": "Limestone", "amount": 2 }
+    ],
+    "outputs": [{ "item": "Slag", "amount": 5 }],
+    "duration": 20,
+    "machine": "Mixer",
+    "id": "353"
+  },
+  {
+    "inputs": [
+      { "item": "Sulfur", "amount": 10 },
+      { "item": "Limestone", "amount": 2 }
+    ],
+    "outputs": [{ "item": "Slag", "amount": 5 }],
+    "duration": 10,
+    "machine": "Mixer II",
+    "id": "354"
+  },
+  {
+    "inputs": [
+      { "item": "Woodchips", "amount": 4 },
+      { "item": "Limestone", "amount": 1 },
+      { "item": "Steam (high)", "amount": 1 }
+    ],
+    "outputs": [{ "item": "Paper", "amount": 8 }],
+    "duration": 40,
+    "machine": "Chemical plant",
+    "id": "355"
+  },
+  {
+    "inputs": [
+      { "item": "Woodchips", "amount": 4 },
+      { "item": "Limestone", "amount": 1 },
+      { "item": "Steam (high)", "amount": 1 }
+    ],
+    "outputs": [{ "item": "Paper", "amount": 8 }],
+    "duration": 20,
+    "machine": "Chemical plant II",
+    "id": "356"
+  },
+  {
+    "inputs": [{ "item": "Steel", "amount": 4 }],
+    "outputs": [{ "item": "Mechanical parts", "amount": 8 }],
+    "duration": 20,
+    "machine": "Assembly (electric) II",
+    "id": "357"
+  },
+  {
+    "inputs": [{ "item": "Steel", "amount": 6 }],
+    "outputs": [{ "item": "Mechanical parts", "amount": 12 }],
+    "duration": 15,
+    "machine": "Assembly (robotic)",
+    "id": "358"
+  },
+  {
+    "inputs": [{ "item": "Steam (high)", "amount": 4 }],
+    "outputs": [
+      { "item": "Mechanical power", "amount": 1000000 },
+      { "item": "Steam (low)", "amount": 4 }
+    ],
+    "duration": 10,
+    "machine": "High-pressure turbine",
+    "id": "359"
+  },
+  {
+    "inputs": [{ "item": "Steam (high)", "amount": 8 }],
+    "outputs": [
+      { "item": "Mechanical power", "amount": 2000000 },
+      { "item": "Steam (low)", "amount": 8 }
+    ],
+    "duration": 10,
+    "machine": "High-pressure turbine II",
+    "id": "360"
+  },
+  {
+    "inputs": [{ "item": "Steam (low)", "amount": 4 }],
+    "outputs": [
+      { "item": "Mechanical power", "amount": 500000 },
+      { "item": "Steam depleted", "amount": 4 }
+    ],
+    "duration": 10,
+    "machine": "Low-pressure turbine",
+    "id": "361"
+  },
+  {
+    "inputs": [{ "item": "Steam (low)", "amount": 8 }],
+    "outputs": [
+      { "item": "Mechanical power", "amount": 1000000 },
+      { "item": "Steam depleted", "amount": 8 }
+    ],
+    "duration": 10,
+    "machine": "Low-pressure turbine II",
+    "id": "362"
+  },
+  {
+    "inputs": [{ "item": "Steam (super)", "amount": 8 }],
+    "outputs": [
+      { "item": "Mechanical power", "amount": 3000000 },
+      { "item": "Steam (high)", "amount": 8 }
+    ],
+    "duration": 10,
+    "machine": "Super-pressure turbine",
+    "id": "363"
+  },
+  {
+    "inputs": [
+      { "item": "Steel", "amount": 4 },
+      { "item": "Plastic", "amount": 4 }
+    ],
+    "outputs": [{ "item": "Medical equipment", "amount": 4 }],
+    "duration": 40,
+    "machine": "Assembly (electric) II",
+    "id": "364"
+  },
+  {
+    "inputs": [
+      { "item": "Steel", "amount": 4 },
+      { "item": "Plastic", "amount": 4 }
+    ],
+    "outputs": [{ "item": "Medical equipment", "amount": 4 }],
+    "duration": 20,
+    "machine": "Assembly (robotic)",
+    "id": "365"
+  },
+  {
+    "inputs": [
+      { "item": "Molten steel", "amount": 8 },
+      { "item": "Water", "amount": 4 }
+    ],
+    "outputs": [{ "item": "Steel", "amount": 8 }],
+    "duration": 40,
+    "machine": "Cooled caster",
+    "id": "366"
+  },
+  {
+    "inputs": [
+      { "item": "Molten steel", "amount": 8 },
+      { "item": "Water", "amount": 4 }
+    ],
+    "outputs": [{ "item": "Steel", "amount": 8 }],
+    "duration": 20,
+    "machine": "Cooled caster II",
+    "id": "367"
+  },
+  {
+    "inputs": [
+      { "item": "Water", "amount": 192 },
+      { "item": "MOX rod", "amount": 1 }
+    ],
+    "outputs": [
+      { "item": "Steam (high)", "amount": 192 },
+      { "item": "Spent MOX", "amount": 1 }
+    ],
+    "duration": 30,
+    "machine": "Nuclear reactor II",
+    "id": "368"
+  },
+  {
+    "inputs": [
+      { "item": "Naphtha", "amount": 4 },
+      { "item": "Sulfur", "amount": 1 }
+    ],
+    "outputs": [{ "item": "Rubber", "amount": 6 }],
+    "duration": 20,
+    "machine": "Rubber maker",
+    "id": "369"
+  },
+  {
+    "inputs": [],
+    "outputs": [
+      { "item": "Oxygen", "amount": 12 },
+      { "item": "Nitrogen", "amount": 12 }
+    ],
+    "duration": 20,
+    "machine": "Air separator",
+    "id": "370"
+  },
+  {
+    "inputs": [{ "item": "Nitrogen", "amount": 20 }],
+    "outputs": [],
+    "duration": 20,
+    "machine": "Smoke stack",
+    "id": "371"
+  },
+  {
+    "inputs": [{ "item": "Nitrogen", "amount": 200 }],
+    "outputs": [],
+    "duration": 20,
+    "machine": "Smoke stack (large)",
+    "id": "372"
+  },
+  {
+    "inputs": [{ "item": "Oxygen", "amount": 20 }],
+    "outputs": [],
+    "duration": 20,
+    "machine": "Smoke stack",
+    "id": "373"
+  },
+  {
+    "inputs": [{ "item": "Oxygen", "amount": 200 }],
+    "outputs": [],
+    "duration": 20,
+    "machine": "Smoke stack (large)",
+    "id": "374"
+  },
+  {
+    "inputs": [{ "item": "Quartz", "amount": 8 }],
+    "outputs": [{ "item": "Quartz crushed", "amount": 8 }],
+    "duration": 20,
+    "machine": "Crusher",
+    "id": "375"
+  },
+  {
+    "inputs": [{ "item": "Quartz", "amount": 48 }],
+    "outputs": [{ "item": "Quartz crushed", "amount": 48 }],
+    "duration": 20,
+    "machine": "Crusher (large)",
+    "id": "376"
+  },
+  {
+    "inputs": [{ "item": "Quartz crushed", "amount": 8 }],
+    "outputs": [{ "item": "Sand", "amount": 8 }],
+    "duration": 60,
+    "machine": "Crusher",
+    "id": "377"
+  },
+  {
+    "inputs": [{ "item": "Quartz crushed", "amount": 48 }],
+    "outputs": [{ "item": "Sand", "amount": 48 }],
+    "duration": 60,
+    "machine": "Crusher (large)",
+    "id": "378"
+  },
+  {
+    "inputs": [{ "item": "Retired waste", "amount": 1 }],
+    "outputs": [{ "item": "Recyclables", "amount": 1 }],
+    "duration": 10,
+    "machine": "Shredder",
+    "id": "379"
+  },
+  {
+    "inputs": [{ "item": "Solar panel", "amount": 1 }],
+    "outputs": [{ "item": "Recyclables", "amount": 1 }],
+    "duration": 10,
+    "machine": "Shredder",
+    "id": "380"
+  },
+  {
+    "inputs": [{ "item": "Recyclables", "amount": 6 }],
+    "outputs": [{ "item": "Recyclables pressed", "amount": 2 }],
+    "duration": 5,
+    "machine": "Compactor",
+    "id": "381"
+  },
+  {
+    "inputs": [{ "item": "Recyclables", "amount": 48 }],
+    "outputs": [],
+    "duration": 20,
+    "machine": "Waste sorting plant",
+    "id": "382"
+  },
+  {
+    "inputs": [{ "item": "Recyclables pressed", "amount": 16 }],
+    "outputs": [],
+    "duration": 20,
+    "machine": "Waste sorting plant",
+    "id": "383"
+  },
+  {
+    "inputs": [{ "item": "Seawater", "amount": 30 }],
+    "outputs": [{ "item": "Salt", "amount": 8 }],
+    "duration": 40,
+    "machine": "Evaporation pond (heated)",
+    "id": "384"
+  },
+  {
+    "inputs": [{ "item": "Seawater", "amount": 30 }],
+    "outputs": [{ "item": "Salt", "amount": 8 }],
+    "duration": 80,
+    "machine": "Evaporation pond",
+    "id": "385"
+  },
+  {
+    "inputs": [],
+    "outputs": [{ "item": "Seawater", "amount": 18 }],
+    "duration": 10,
+    "machine": "Seawater pump",
+    "id": "386"
+  },
+  {
+    "inputs": [],
+    "outputs": [{ "item": "Seawater", "amount": 18 }],
+    "duration": 10,
+    "machine": "Seawater pump (tall)",
+    "id": "387"
+  },
+  {
+    "inputs": [{ "item": "Seawater", "amount": 2 }],
+    "outputs": [],
+    "duration": 2,
+    "machine": "Liquid dump",
+    "id": "388"
+  },
+  {
+    "inputs": [
+      { "item": "Silicon (poly)", "amount": 24 },
+      { "item": "Water", "amount": 1 }
+    ],
+    "outputs": [{ "item": "Silicon wafer", "amount": 8 }],
+    "duration": 60,
+    "machine": "Silicon crystallizer",
+    "id": "389"
+  },
+  {
+    "inputs": [{ "item": "Slag", "amount": 8 }],
+    "outputs": [{ "item": "Slag crushed", "amount": 8 }],
+    "duration": 20,
+    "machine": "Crusher",
+    "id": "390"
+  },
+  {
+    "inputs": [{ "item": "Slag", "amount": 48 }],
+    "outputs": [{ "item": "Slag crushed", "amount": 48 }],
+    "duration": 20,
+    "machine": "Crusher (large)",
+    "id": "391"
+  },
+  {
+    "inputs": [{ "item": "Sour water", "amount": 2 }],
+    "outputs": [{ "item": "Water pollution", "amount": 4 }],
+    "duration": 2,
+    "machine": "Liquid dump",
+    "id": "392"
+  },
+  {
+    "inputs": [
+      { "item": "Water", "amount": 192 },
+      { "item": "Uranium rod", "amount": 1 }
+    ],
+    "outputs": [
+      { "item": "Steam (high)", "amount": 192 },
+      { "item": "Spent fuel", "amount": 1 }
+    ],
+    "duration": 40,
+    "machine": "Nuclear reactor",
+    "id": "393"
+  },
+  {
+    "inputs": [
+      { "item": "Water", "amount": 192 },
+      { "item": "Uranium rod", "amount": 1 }
+    ],
+    "outputs": [
+      { "item": "Steam (high)", "amount": 192 },
+      { "item": "Spent fuel", "amount": 1 }
+    ],
+    "duration": 30,
+    "machine": "Nuclear reactor II",
+    "id": "394"
+  },
+  {
+    "inputs": [
+      { "item": "Water", "amount": 1 },
+      { "item": "Heat", "amount": 20 }
+    ],
+    "outputs": [{ "item": "Steam (super)", "amount": 1 }],
+    "duration": 0.1,
+    "machine": "Thermal storage",
+    "id": "395"
+  },
+  {
+    "inputs": [{ "item": "Water", "amount": 2 }],
+    "outputs": [{ "item": "Steam (super)", "amount": 2 }],
+    "duration": 10,
+    "machine": "Boiler (electric)",
+    "id": "396"
+  },
+  {
+    "inputs": [{ "item": "Steam (super)", "amount": 20 }],
+    "outputs": [],
+    "duration": 20,
+    "machine": "Smoke stack",
+    "id": "397"
+  },
+  {
+    "inputs": [{ "item": "Steam (super)", "amount": 200 }],
+    "outputs": [],
+    "duration": 20,
+    "machine": "Smoke stack (large)",
+    "id": "398"
+  },
+  {
+    "inputs": [{ "item": "Steam (super)", "amount": 1 }],
+    "outputs": [
+      { "item": "Heat", "amount": 16 },
+      { "item": "Steam depleted", "amount": 1 }
+    ],
+    "duration": 0.1,
+    "machine": "Thermal storage",
+    "id": "399"
+  },
+  {
+    "inputs": [{ "item": "Steam (super)", "amount": 26 }],
+    "outputs": [{ "item": "Water", "amount": 13 }],
+    "duration": 16,
+    "machine": "Cooling tower (large)",
+    "id": "400"
+  },
+  {
+    "inputs": [
+      { "item": "Water", "amount": 1 },
+      { "item": "Heat", "amount": 10 }
+    ],
+    "outputs": [{ "item": "Steam (high)", "amount": 1 }],
+    "duration": 0.1,
+    "machine": "Thermal storage",
+    "id": "401"
+  },
+  {
+    "inputs": [{ "item": "Water", "amount": 4 }],
+    "outputs": [{ "item": "Steam (high)", "amount": 4 }],
+    "duration": 10,
+    "machine": "Boiler (electric)",
+    "id": "402"
+  },
+  {
+    "inputs": [{ "item": "Steam (high)", "amount": 20 }],
+    "outputs": [],
+    "duration": 20,
+    "machine": "Smoke stack",
+    "id": "403"
+  },
+  {
+    "inputs": [{ "item": "Steam (high)", "amount": 200 }],
+    "outputs": [],
+    "duration": 20,
+    "machine": "Smoke stack (large)",
+    "id": "404"
+  },
+  {
+    "inputs": [{ "item": "Steam (high)", "amount": 4 }],
+    "outputs": [{ "item": "Water", "amount": 2 }],
+    "duration": 10,
+    "machine": "Cooling tower",
+    "id": "405"
+  },
+  {
+    "inputs": [{ "item": "Steam (high)", "amount": 1 }],
+    "outputs": [
+      { "item": "Heat", "amount": 8 },
+      { "item": "Steam depleted", "amount": 1 }
+    ],
+    "duration": 0.1,
+    "machine": "Thermal storage",
+    "id": "406"
+  },
+  {
+    "inputs": [{ "item": "Steam (high)", "amount": 16 }],
+    "outputs": [{ "item": "Water", "amount": 10 }],
+    "duration": 10,
+    "machine": "Cooling tower (large)",
+    "id": "407"
+  },
+  {
+    "inputs": [
+      { "item": "Water", "amount": 1 },
+      { "item": "Heat", "amount": 5 }
+    ],
+    "outputs": [{ "item": "Steam (low)", "amount": 1 }],
+    "duration": 0.1,
+    "machine": "Thermal storage",
+    "id": "408"
+  },
+  {
+    "inputs": [{ "item": "Steam (low)", "amount": 20 }],
+    "outputs": [],
+    "duration": 20,
+    "machine": "Smoke stack",
+    "id": "409"
+  },
+  {
+    "inputs": [{ "item": "Steam (low)", "amount": 200 }],
+    "outputs": [],
+    "duration": 20,
+    "machine": "Smoke stack (large)",
+    "id": "410"
+  },
+  {
+    "inputs": [{ "item": "Steam (low)", "amount": 4 }],
+    "outputs": [{ "item": "Water", "amount": 2 }],
+    "duration": 10,
+    "machine": "Cooling tower",
+    "id": "411"
+  },
+  {
+    "inputs": [{ "item": "Steam (high)", "amount": 1 }],
+    "outputs": [
+      { "item": "Heat", "amount": 4 },
+      { "item": "Steam depleted", "amount": 1 }
+    ],
+    "duration": 0.1,
+    "machine": "Thermal storage",
+    "id": "412"
+  },
+  {
+    "inputs": [{ "item": "Steam (low)", "amount": 16 }],
+    "outputs": [{ "item": "Water", "amount": 12 }],
+    "duration": 10,
+    "machine": "Cooling tower (large)",
+    "id": "413"
+  },
+  {
+    "inputs": [{ "item": "Steam depleted", "amount": 20 }],
+    "outputs": [],
+    "duration": 20,
+    "machine": "Smoke stack",
+    "id": "414"
+  },
+  {
+    "inputs": [{ "item": "Steam depleted", "amount": 200 }],
+    "outputs": [],
+    "duration": 20,
+    "machine": "Smoke stack (large)",
+    "id": "415"
+  },
+  {
+    "inputs": [{ "item": "Steam depleted", "amount": 4 }],
+    "outputs": [{ "item": "Water", "amount": 2 }],
+    "duration": 10,
+    "machine": "Cooling tower",
+    "id": "416"
+  },
+  {
+    "inputs": [{ "item": "Steam depleted", "amount": 16 }],
+    "outputs": [{ "item": "Water", "amount": 12 }],
+    "duration": 10,
+    "machine": "Cooling tower (large)",
+    "id": "417"
+  },
+  {
+    "inputs": [{ "item": "Toxic slurry", "amount": 2 }],
+    "outputs": [{ "item": "Water pollution", "amount": 5 }],
+    "duration": 2,
+    "machine": "Liquid dump",
+    "id": "418"
+  },
+  {
+    "inputs": [{ "item": "Uranium ore", "amount": 12 }],
+    "outputs": [{ "item": "Uranium ore crushed", "amount": 12 }],
+    "duration": 40,
+    "machine": "Crusher",
+    "id": "419"
+  },
+  {
+    "inputs": [{ "item": "Uranium ore", "amount": 72 }],
+    "outputs": [{ "item": "Uranium ore crushed", "amount": 72 }],
+    "duration": 40,
+    "machine": "Crusher (large)",
+    "id": "420"
+  },
+  {
+    "inputs": [{ "item": "Waste pressed", "amount": 4 }],
+    "outputs": [{ "item": "Waste", "amount": 12 }],
+    "duration": 10,
+    "machine": "Shredder",
+    "id": "421"
+  },
+  {
+    "inputs": [{ "item": "Waste", "amount": 6 }],
+    "outputs": [{ "item": "Waste pressed", "amount": 2 }],
+    "duration": 5,
+    "machine": "Compactor",
+    "id": "422"
+  },
+  {
+    "inputs": [{ "item": "Waste water", "amount": 2 }],
+    "outputs": [{ "item": "Water pollution", "amount": 2 }],
+    "duration": 2,
+    "machine": "Liquid dump",
+    "id": "423"
+  },
+  {
+    "inputs": [],
+    "outputs": [{ "item": "Water", "amount": 8 }],
+    "duration": 10,
+    "machine": "Groundwater pump",
+    "id": "424"
+  },
+  {
+    "inputs": [{ "item": "Water", "amount": 2 }],
+    "outputs": [],
+    "duration": 2,
+    "machine": "Liquid dump",
+    "id": "425"
+  },
+  {
+    "inputs": [{ "item": "Water", "amount": 10 }],
+    "outputs": [{ "item": "Chilled water", "amount": 8 }],
+    "duration": 20,
+    "machine": "Water chiller",
+    "id": "426"
+  },
+  {
+    "inputs": [{ "item": "Wood", "amount": 4 }],
+    "outputs": [{ "item": "Woodchips", "amount": 4 }],
+    "duration": 10,
+    "machine": "Shredder",
+    "id": "427"
+  },
+  {
+    "inputs": [],
+    "outputs": [{ "item": "Crude oil", "amount": 9 }],
+    "duration": 20,
+    "machine": "Oil rig",
+    "id": "428"
+  },
+  {
+    "inputs": [],
+    "outputs": [{ "item": "Sulfur", "amount": 6 }],
+    "duration": 20,
+    "machine": "Sulfur mine",
+    "id": "429"
+  },
+  {
+    "inputs": [],
+    "outputs": [{ "item": "Quartz", "amount": 8 }],
+    "duration": 20,
+    "machine": "Quartz mine",
+    "id": "430"
+  },
+  {
+    "inputs": [],
+    "outputs": [{ "item": "Uranium ore", "amount": 3 }],
+    "duration": 20,
+    "machine": "Uranium mine",
+    "id": "431"
+  },
+  {
+    "inputs": [],
+    "outputs": [{ "item": "Coal", "amount": 9 }],
+    "duration": 20,
+    "machine": "Coal mine",
+    "id": "432"
+  },
+  {
+    "inputs": [],
+    "outputs": [{ "item": "Research V", "amount": 6 }],
+    "duration": 20,
+    "machine": "Rock mine",
+    "id": "433"
+  },
+  {
+    "inputs": [],
+    "outputs": [{ "item": "Limestone", "amount": 6 }],
+    "duration": 20,
+    "machine": "Limestone quarry",
+    "id": "434"
+  },
+  {
+    "inputs": [],
+    "outputs": [{ "item": "Water", "amount": 8 }],
+    "duration": 20,
+    "machine": "Groundwater well",
+    "id": "435"
+  }
+]

@@ -1,0 +1,1346 @@
+[
+  {
+    "name": "Air separator",
+    "requirements": {
+      "Power": 250000,
+      "Workers": 6,
+      "Maintenance I": 6,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Anaerobic digester",
+    "requirements": {
+      "Power": 50000,
+      "Workers": 4,
+      "Maintenance I": 1,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Arc furnace",
+    "requirements": {
+      "Power": 3000000,
+      "Workers": 12,
+      "Maintenance I": 5,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Arc furnace II",
+    "requirements": {
+      "Power": 5500000,
+      "Workers": 18,
+      "Maintenance I": 0,
+      "Maintenance II": 5,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 4
+    }
+  },
+  {
+    "name": "Assembly (manual)",
+    "requirements": {
+      "Power": 0,
+      "Workers": 4,
+      "Maintenance I": 0,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Assembly (electric)",
+    "requirements": {
+      "Power": 80000,
+      "Workers": 6,
+      "Maintenance I": 2,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Assembly (electric) II",
+    "requirements": {
+      "Power": 150000,
+      "Workers": 8,
+      "Maintenance I": 4,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Assembly (robotic)",
+    "requirements": {
+      "Power": 250000,
+      "Workers": 2,
+      "Maintenance I": 0,
+      "Maintenance II": 4,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 4
+    }
+  },
+  {
+    "name": "Assembly (robotic) II",
+    "requirements": {
+      "Power": 400000,
+      "Workers": 2,
+      "Maintenance I": 0,
+      "Maintenance II": 7,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 8
+    }
+  },
+  {
+    "name": "Baking unit",
+    "requirements": {
+      "Power": 200000,
+      "Workers": 8,
+      "Maintenance I": 4,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Basic distiller",
+    "requirements": {
+      "Power": 0,
+      "Workers": 6,
+      "Maintenance I": 0,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Blast furnace",
+    "requirements": {
+      "Power": 0,
+      "Workers": 8,
+      "Maintenance I": 0,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Blast furnace II",
+    "requirements": {
+      "Power": 0,
+      "Workers": 18,
+      "Maintenance I": 5,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Boiler",
+    "requirements": {
+      "Power": 0,
+      "Workers": 6,
+      "Maintenance I": 0,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Boiler (electric)",
+    "requirements": {
+      "Power": 8000000,
+      "Workers": 2,
+      "Maintenance I": 0,
+      "Maintenance II": 2,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Boiler (gas)",
+    "requirements": {
+      "Power": 0,
+      "Workers": 6,
+      "Maintenance I": 0,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Brickworks",
+    "requirements": {
+      "Power": 0,
+      "Workers": 6,
+      "Maintenance I": 4,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Burner (solid)",
+    "requirements": {
+      "Power": 0,
+      "Workers": 1,
+      "Maintenance I": 0,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Chemical plant",
+    "requirements": {
+      "Power": 250000,
+      "Workers": 8,
+      "Maintenance I": 4,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Chemical plant II",
+    "requirements": {
+      "Power": 400000,
+      "Workers": 14,
+      "Maintenance I": 0,
+      "Maintenance II": 4,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Coal maker",
+    "requirements": {
+      "Power": 0,
+      "Workers": 2,
+      "Maintenance I": 0,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Compactor",
+    "requirements": {
+      "Power": 100,
+      "Workers": 2,
+      "Maintenance I": 0,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Concrete mixer",
+    "requirements": {
+      "Power": 100000,
+      "Workers": 4,
+      "Maintenance I": 2,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Concrete mixer II",
+    "requirements": {
+      "Power": 200000,
+      "Workers": 7,
+      "Maintenance I": 4,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Concrete mixer III",
+    "requirements": {
+      "Power": 400000,
+      "Workers": 10,
+      "Maintenance I": 6,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Cooled caster",
+    "requirements": {
+      "Power": 0,
+      "Workers": 4,
+      "Maintenance I": 0,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Cooled caster II",
+    "requirements": {
+      "Power": 0,
+      "Workers": 6,
+      "Maintenance I": 0,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Cooling tower",
+    "requirements": {
+      "Power": 0,
+      "Workers": 2,
+      "Maintenance I": 0,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Cooling tower (large)",
+    "requirements": {
+      "Power": 0,
+      "Workers": 4,
+      "Maintenance I": 0,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Copper electrolysis",
+    "requirements": {
+      "Power": 400000,
+      "Workers": 5,
+      "Maintenance I": 4,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Cracking unit",
+    "requirements": {
+      "Power": 160000,
+      "Workers": 12,
+      "Maintenance I": 4,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Crusher",
+    "requirements": {
+      "Power": 300000,
+      "Workers": 2,
+      "Maintenance I": 2,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Crusher (large)",
+    "requirements": {
+      "Power": 1200000,
+      "Workers": 6,
+      "Maintenance I": 8,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Diesel generator",
+    "requirements": {
+      "Power": 0,
+      "Workers": 2,
+      "Maintenance I": 6,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Diesel generator II",
+    "requirements": {
+      "Power": 0,
+      "Workers": 2,
+      "Maintenance I": 10,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Distillation (stage I)",
+    "requirements": {
+      "Power": 0,
+      "Workers": 6,
+      "Maintenance I": 3,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Distillation (stage II)",
+    "requirements": {
+      "Power": 0,
+      "Workers": 8,
+      "Maintenance I": 3,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Distillation (stage III)",
+    "requirements": {
+      "Power": 0,
+      "Workers": 8,
+      "Maintenance I": 3,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Electrolyzer",
+    "requirements": {
+      "Power": 900000,
+      "Workers": 3,
+      "Maintenance I": 2,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Electrolyzer II",
+    "requirements": {
+      "Power": 3600000,
+      "Workers": 4,
+      "Maintenance I": 4,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Enrichment plant",
+    "requirements": {
+      "Power": 1200000,
+      "Workers": 14,
+      "Maintenance I": 0,
+      "Maintenance II": 4,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Evaporation pond",
+    "requirements": {
+      "Power": 0,
+      "Workers": 4,
+      "Maintenance I": 1,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Evaporation pond (heated)",
+    "requirements": {
+      "Power": 250000,
+      "Workers": 6,
+      "Maintenance I": 2,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Exhaust scrubber",
+    "requirements": {
+      "Power": 200000,
+      "Workers": 8,
+      "Maintenance I": 4,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Fast breeder reactor",
+    "requirements": {
+      "Power": 0,
+      "Workers": 200,
+      "Maintenance I": 0,
+      "Maintenance II": 0,
+      "Maintenance III": 36,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Fermentation tank",
+    "requirements": {
+      "Power": 20000,
+      "Workers": 4,
+      "Maintenance I": 2,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Flare",
+    "requirements": {
+      "Power": 0,
+      "Workers": 1,
+      "Maintenance I": 0,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Food processor",
+    "requirements": {
+      "Power": 100000,
+      "Workers": 8,
+      "Maintenance I": 4,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Gas injection pump",
+    "requirements": {
+      "Power": 400000,
+      "Workers": 4,
+      "Maintenance I": 4,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Glass maker",
+    "requirements": {
+      "Power": 350000,
+      "Workers": 6,
+      "Maintenance I": 4,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Glass maker II",
+    "requirements": {
+      "Power": 800000,
+      "Workers": 14,
+      "Maintenance I": 8,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Gold furnace",
+    "requirements": {
+      "Power": 800000,
+      "Workers": 6,
+      "Maintenance I": 2,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Groundwater pump",
+    "requirements": {
+      "Power": 120000,
+      "Workers": 2,
+      "Maintenance I": 4,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "High-pressure turbine",
+    "requirements": {
+      "Power": 0,
+      "Workers": 2,
+      "Maintenance I": 2,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "High-pressure turbine II",
+    "requirements": {
+      "Power": 0,
+      "Workers": 2,
+      "Maintenance I": 0,
+      "Maintenance II": 2,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Hydrogen reformer",
+    "requirements": {
+      "Power": 250000,
+      "Workers": 12,
+      "Maintenance I": 4,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Incineration plant",
+    "requirements": {
+      "Power": 500000,
+      "Workers": 18,
+      "Maintenance I": 0,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Liquid dump",
+    "requirements": {
+      "Power": 0,
+      "Workers": 1,
+      "Maintenance I": 0,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Low-pressure turbine",
+    "requirements": {
+      "Power": 0,
+      "Workers": 2,
+      "Maintenance I": 2,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Low-pressure turbine II",
+    "requirements": {
+      "Power": 0,
+      "Workers": 2,
+      "Maintenance I": 0,
+      "Maintenance II": 2,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Maintenance depot (basic)",
+    "requirements": {
+      "Power": 100000,
+      "Workers": 6,
+      "Maintenance I": 0,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Maintenance depot",
+    "requirements": {
+      "Power": 250000,
+      "Workers": 20,
+      "Maintenance I": 0,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Maintenance II depot",
+    "requirements": {
+      "Power": 400000,
+      "Workers": 28,
+      "Maintenance I": 0,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Maintenance III depot",
+    "requirements": {
+      "Power": 600000,
+      "Workers": 28,
+      "Maintenance I": 0,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 3
+    }
+  },
+  {
+    "name": "Metal caster",
+    "requirements": {
+      "Power": 0,
+      "Workers": 2,
+      "Maintenance I": 0,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Metal caster II",
+    "requirements": {
+      "Power": 0,
+      "Workers": 3,
+      "Maintenance I": 0,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Microchip machine",
+    "requirements": {
+      "Power": 200000,
+      "Workers": 4,
+      "Maintenance I": 0,
+      "Maintenance II": 6,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 3
+    }
+  },
+  {
+    "name": "Microchip machine II",
+    "requirements": {
+      "Power": 400000,
+      "Workers": 6,
+      "Maintenance I": 0,
+      "Maintenance II": 10,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 6
+    }
+  },
+  {
+    "name": "Mill",
+    "requirements": {
+      "Power": 120000,
+      "Workers": 5,
+      "Maintenance I": 2,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Mixer",
+    "requirements": {
+      "Power": 100000,
+      "Workers": 4,
+      "Maintenance I": 2,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Mixer II",
+    "requirements": {
+      "Power": 200000,
+      "Workers": 4,
+      "Maintenance I": 4,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Nuclear reactor",
+    "requirements": {
+      "Power": 0,
+      "Workers": 80,
+      "Maintenance I": 0,
+      "Maintenance II": 24,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Nuclear reactor II",
+    "requirements": {
+      "Power": 0,
+      "Workers": 110,
+      "Maintenance I": 0,
+      "Maintenance II": 36,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Nuclear reprocessing plant",
+    "requirements": {
+      "Power": 1200000,
+      "Workers": 30,
+      "Maintenance I": 0,
+      "Maintenance II": 10,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 16
+    }
+  },
+  {
+    "name": "Oil pump",
+    "requirements": {
+      "Power": 80000,
+      "Workers": 1,
+      "Maintenance I": 2,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Oxygen furnace",
+    "requirements": {
+      "Power": 120000,
+      "Workers": 6,
+      "Maintenance I": 4,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Oxygen furnace II",
+    "requirements": {
+      "Power": 200000,
+      "Workers": 10,
+      "Maintenance I": 6,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Polymerization plant",
+    "requirements": {
+      "Power": 400000,
+      "Workers": 12,
+      "Maintenance I": 6,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Power generator",
+    "requirements": {
+      "Power": 0,
+      "Workers": 0,
+      "Maintenance I": 1,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Power generator (large)",
+    "requirements": {
+      "Power": 0,
+      "Workers": 0,
+      "Maintenance I": 6,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Radioactive waste storage",
+    "requirements": {
+      "Power": 0,
+      "Workers": 10,
+      "Maintenance I": 0,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Research lab",
+    "requirements": {
+      "Power": 0,
+      "Workers": 4,
+      "Maintenance I": 0,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0.25,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Research lab II",
+    "requirements": {
+      "Power": 200000,
+      "Workers": 8,
+      "Maintenance I": 8,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0.25,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Research lab III",
+    "requirements": {
+      "Power": 400000,
+      "Workers": 16,
+      "Maintenance I": 12,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0.2,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Research lab IV",
+    "requirements": {
+      "Power": 600000,
+      "Workers": 30,
+      "Maintenance I": 0,
+      "Maintenance II": 8,
+      "Maintenance III": 0,
+      "Unity": 0.2,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Research lab V",
+    "requirements": {
+      "Power": 1000000,
+      "Workers": 48,
+      "Maintenance I": 0,
+      "Maintenance II": 16,
+      "Maintenance III": 0,
+      "Unity": 0.2,
+      "Computing": 12
+    }
+  },
+  {
+    "name": "Rotary kiln",
+    "requirements": {
+      "Power": 100000,
+      "Workers": 6,
+      "Maintenance I": 2,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Rotary kiln (gas)",
+    "requirements": {
+      "Power": 100000,
+      "Workers": 10,
+      "Maintenance I": 3,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Rubber maker",
+    "requirements": {
+      "Power": 300000,
+      "Workers": 6,
+      "Maintenance I": 2,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Seawater pump",
+    "requirements": {
+      "Power": 100000,
+      "Workers": 1,
+      "Maintenance I": 2,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Seawater pump (tall)",
+    "requirements": {
+      "Power": 300000,
+      "Workers": 1,
+      "Maintenance I": 4,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Settling tank",
+    "requirements": {
+      "Power": 120000,
+      "Workers": 6,
+      "Maintenance I": 2,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Shredder",
+    "requirements": {
+      "Power": 100000,
+      "Workers": 2,
+      "Maintenance I": 0,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Silicon crystallizer",
+    "requirements": {
+      "Power": 500000,
+      "Workers": 8,
+      "Maintenance I": 0,
+      "Maintenance II": 5,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 4
+    }
+  },
+  {
+    "name": "Silicon reactor",
+    "requirements": {
+      "Power": 80000,
+      "Workers": 2,
+      "Maintenance I": 1,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Smoke stack",
+    "requirements": {
+      "Power": 0,
+      "Workers": 0,
+      "Maintenance I": 0,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Smoke stack (large)",
+    "requirements": {
+      "Power": 0,
+      "Workers": 0,
+      "Maintenance I": 0,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Sour water stripper",
+    "requirements": {
+      "Power": 160000,
+      "Workers": 10,
+      "Maintenance I": 4,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Super-pressure turbine",
+    "requirements": {
+      "Power": 0,
+      "Workers": 1,
+      "Maintenance I": 0,
+      "Maintenance II": 3,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Thermal desalinator",
+    "requirements": {
+      "Power": 400000,
+      "Workers": 4,
+      "Maintenance I": 2,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Thermal storage",
+    "requirements": {
+      "Power": 200000,
+      "Workers": 4,
+      "Maintenance I": 4,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Waste sorting plant",
+    "requirements": {
+      "Power": 300000,
+      "Workers": 45,
+      "Maintenance I": 20,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Wastewater treatment",
+    "requirements": {
+      "Power": 600000,
+      "Workers": 26,
+      "Maintenance I": 10,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Water chiller",
+    "requirements": {
+      "Power": 800000,
+      "Workers": 3,
+      "Maintenance I": 2,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Oil rig",
+    "requirements": {
+      "Power": 0,
+      "Workers": 18,
+      "Maintenance I": 8,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0.4,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Sulfur mine",
+    "requirements": {
+      "Power": 0,
+      "Workers": 12,
+      "Maintenance I": 10,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0.2,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Quartz mine",
+    "requirements": {
+      "Power": 0,
+      "Workers": 25,
+      "Maintenance I": 12,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0.4,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Uranium mine",
+    "requirements": {
+      "Power": 0,
+      "Workers": 25,
+      "Maintenance I": 10,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0.4,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Coal mine",
+    "requirements": {
+      "Power": 0,
+      "Workers": 25,
+      "Maintenance I": 12,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0.5,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Rock mine",
+    "requirements": {
+      "Power": 0,
+      "Workers": 25,
+      "Maintenance I": 8,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0.2,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Limestone quarry",
+    "requirements": {
+      "Power": 0,
+      "Workers": 25,
+      "Maintenance I": 10,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0.4,
+      "Computing": 0
+    }
+  },
+  {
+    "name": "Groundwater well",
+    "requirements": {
+      "Power": 0,
+      "Workers": 16,
+      "Maintenance I": 4,
+      "Maintenance II": 0,
+      "Maintenance III": 0,
+      "Unity": 0.2,
+      "Computing": 0
+    }
+  }
+]

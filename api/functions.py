@@ -7,25 +7,7 @@ def currentValue(dictionary: dict, key: any, default: any = 0):
         return dictionary[key]
     else:
         return default
-
-# # item unit setter (per time-unit vs per recipe)
-# print()
-# print(f"Would you like item values to be shown {itemUnitLong}, or for the recipe's duration?")
-# print(f"Type 'y' for {itemUnitLong}; 'n' for recipe duration:")
-# perDuration = boolean[str(input(">>> "))]
-# print()
-
-# # chosen recipes table
-# notChosen = []
-# notFinal = []
-# for index in range(0, len(items.keys())):
-#     notChosen.append(-1)
-#     notFinal.append(False)
-# chosenRecipes = {
-#     1: dict(zip(list(items.keys()), notChosen)), # production recipes
-#     -1: dict(zip(list(items.keys()), notChosen)), # consumption recipes
-# }
-
+    
 
 # lookup in dictionary-lists
 def lookup(

@@ -5,13 +5,16 @@ from .functions import currentValue
 from .functions import lookup
 from .functions import roundUp
 from .functions import roundToDigit
+from .functions import sign
 
 # allowed recipe calculator
-def allowedRecipes(item: str, amount: float, recipes: list):
+def allowedRecipes(
+    item: str,
+    amount: float,
+    recipes: list[dict],
+) -> list[dict]:
     searchSide = {-1: "inputs", 1: "outputs"}
-    recipeType = 1
-    if amount < 0:
-        recipeType *= -1
+    recipeType = sign(amount)
     allowedRecipeList = []
     for index in range(len(recipes)):
         for candidate in recipes[index][searchSide[recipeType]]:
@@ -19,48 +22,57 @@ def allowedRecipes(item: str, amount: float, recipes: list):
                 allowedRecipeList.append(recipes[index])
     return allowedRecipeList
 
+
 # MAIN CALCULATOR
-def productionLine(chosenRecipes: dict[int, dict[str, str]], requiredItems: dict, recipes: list) -> dict:
-    textIndex = {0: "inputs", 1: "outputs"}
-    searchSide = {-1: "inputs", 1: "outputs"}
-    excessFactors = {0: 1, 1: -1}
+def productionLine(
+    chosenRecipes: dict[str, dict[str, str]],
+    requiredItems: list[dict],
+    recipes: list[dict],
+) -> dict[str, list[dict]]:
+    # set variables
+    typeNames = {-1:"consuming",1:"producing"}
+    recipeSides = ["inputs","outputs"]
+    searchSide = {"producing": "inputs", "consuming": "outputs"}
+    excessFactors = {"inputs": 1, "outputs": -1}
     finalProducts = {}
     recipeAmounts = {}
     zeroes = []
-    for index in range(len(list(requiredItems.keys()))):
+    # input-dependent variables
+    checklist = lookup(requiredItems, "item")
+    for index in range(len(checklist)):
         zeroes.append(0)
-    production = dict(zip(list(requiredItems.keys()), zeroes))
-    excess = requiredItems.copy()
-    checklist = list(requiredItems.keys())
+    production = dict(zip(checklist, zeroes))
+    excess = dict(zip(lookup(requiredItems, "item"), lookup(requiredItems, "amount")))
+    # iterator section
     while len(checklist) > 0:
         item = checklist[0]
         # recipe type
-        recipeType = 1
+        recipeTypeIndex = 1
         if excess[item] < 0:
-            recipeType *= -1
-        if currentValue(production, item) * recipeType < 0:
-            recipeType *= -1
-        if (currentValue(production, item) + excess[item]) * recipeType < 0:
+            recipeTypeIndex *= -1
+        if currentValue(production, item) * recipeTypeIndex < 0:
+            recipeTypeIndex *= -1
+        if (currentValue(production, item) + excess[item]) * recipeTypeIndex < 0:
             leftover = excess[item] + production[item]
             excess[item] = -production[item]
         else:
             leftover = 0
+        recipeType = typeNames[recipeTypeIndex]
         production[item] = currentValue(production, item) + excess[item]
         recipeChosen = currentValue(chosenRecipes[recipeType], item, -1) != -1
         # working out values
         if recipeChosen:
             if abs(excess[item]) > 2**-32:  # to prevent diminishing loops
                 recipeIndex = chosenRecipes[recipeType][item]
-                itemRecipe = lookup(recipes,"id",recipeIndex)
+                itemRecipe = lookup(recipes, "id", recipeIndex)
                 itemQuantity = lookup(
                     itemRecipe[searchSide[recipeType]], "item", item, "amount"
                 )
-                recipeQuantity = recipeType * excess[item] / itemQuantity
+                recipeQuantity = recipeTypeIndex * excess[item] / itemQuantity
                 recipeAmounts[recipeIndex] = (
                     currentValue(recipeAmounts, recipeIndex) + recipeQuantity
                 )
-                for recipeSideIndex in range(1):
-                    recipeSide = textIndex[recipeSideIndex]
+                for recipeSide in recipeSides:
                     for recipeItem in list(itemRecipe[recipeSide].keys()):
                         if recipeItem != item or recipeSide != searchSide[recipeType]:
                             excess[recipeItem] = (
@@ -78,14 +90,11 @@ def productionLine(chosenRecipes: dict[int, dict[str, str]], requiredItems: dict
             checklist.remove(item)
         else:
             excess[item] = leftover
-    productionRates = []
-    for item in list(production.keys()):
-        if production[item] != 0:
-            productionRates.append({"item": item, "amount": production[item]})
-    requiredInputs = []
+    # reformatting outputs
+    itemInputs = []
     for item in list(finalProducts.keys()):
         if finalProducts[item] != 0:
-            requiredInputs.append({"item": item, "amount": finalProducts[item]})
+            itemInputs.append({"item": item, "amount": finalProducts[item]})
     recipeQuantities = []
     for recipeIndex in list(recipeAmounts.keys()):
         if recipeAmounts[recipeIndex] != 0:
@@ -93,43 +102,39 @@ def productionLine(chosenRecipes: dict[int, dict[str, str]], requiredItems: dict
                 {"recipeId": recipeIndex, "quantity": recipeAmounts[recipeIndex]}
             )
     return {
-        "productionRates": productionRates,
-        "requiredInputs": requiredInputs,
+        "inputs": itemInputs,
         "recipes": recipeQuantities,
     }
 
 
 # selective rounding of machine numbers
-def requirementRounder(quantity: float, utilisationDependency: bool):
+def requirementRounder(quantity: float, utilisationDependency: bool) -> float:
     if not utilisationDependency:
         quantity = roundUp(quantity)
     return quantity
 
-# machine quantity aggregator and requirement calculator
-def machineCalculator(
+
+# machine requirement calculator
+def totalRequirements(
     recipeQuantities: list[dict],
     recipes: list[dict],
     machines: list[dict],
     requirementList: list[dict],
-):
+) -> list[dict]:
     machineAmounts = {}
     for recipe in recipeQuantities:
-        recipeMachine = lookup(
-            recipes, "id", recipes[recipe["id"]], "machine"
-        )
+        recipeMachine = lookup(recipes, "id", recipes[recipe["id"]], "machine")
         machineAmounts[recipeMachine] = (
             currentValue(machineAmounts, recipeMachine) + recipe["quantity"]
         )
     requirements = {}
-    machineQuantities = []
     for machine in list(machineAmounts.keys()):
-        machineQuantities.append(
-            {"machine": machine, "quantity": machineAmounts[machine]}
-        )
         for requirement in requirementList:
             requirements[requirement["name"]] = (
                 currentValue(requirements, requirement)
-                + requirementRounder(machineAmounts[machine], requirement["utilisationDependency"])
+                + requirementRounder(
+                    machineAmounts[machine], requirement["utilisationDependency"]
+                )
                 * machines[machine]["requirements"][requirement]
             )
     machineRequirements = []
@@ -137,10 +142,13 @@ def machineCalculator(
         machineRequirements.append(
             {"requirement": requirement, "value": requirements[requirement]}
         )
-    return {"quantities": machineQuantities, "requirements": machineRequirements}
+    return machineRequirements
+
 
 # output of machine requirements
-def requirementStrings(totalRequirements: list[dict], requirementList: list[dict]):
+def requirementStrings(
+    totalRequirements: list[dict], requirementList: list[dict]
+) -> list[str]:
     outputStrings = []
     for requirement in lookup(totalRequirements, "name"):
         requirementUnit = lookup(requirementList, "name", requirement, "unit")
@@ -151,3 +159,14 @@ def requirementStrings(totalRequirements: list[dict], requirementList: list[dict
             + requirement
         )
     return outputStrings
+
+
+def inputSplitter(itemInputs: list[dict]) -> dict[str, list[dict]]:
+    inputs = []
+    byproducts = []
+    for item in itemInputs:
+        if item["amount"] > 0:
+            inputs.append({"item": item["item"], "amount": item["amount"]})
+        if item["amount"] < 0:
+            byproducts.append({"item":item["item"],"amount":-item["amount"]})
+    return {"inputs": inputs, "byproducts": byproducts}

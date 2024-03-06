@@ -29,10 +29,6 @@ def getRawData(game: str, parameter: str):
             fileName = "./api/data/" + gameName(game, False) + "/" + field + ".json"
             with open(fileName,"r",encoding="UTF-8") as dataFile:
                 data[field] = load(dataFile)
-    #     if parameter == "recipes" or parameter == None:
-    #         for recipe in data["recipes"]:
-    #             if "2c" in recipe[1].keys():
-    #                 recipe[1]["2c"] *= settingValue("electricityMultiplier")
     if parameter == None:
         return data
     else:

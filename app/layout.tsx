@@ -1,8 +1,7 @@
-import { Inter, Roboto } from "next/font/google";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
 import { ThemeProvider } from "@mui/material/styles";
-import { theme } from "../src/theme";
-import { CssBaseline } from "@mui/material";
+import { theme } from "@/theme";
+import { Box, CssBaseline, Typography } from "@mui/material";
 
 export const metadata = {
   title: "Fact! Prod! Calc!",
@@ -19,7 +18,15 @@ export default function RootLayout({
       <body>
         <ThemeProvider theme={theme}>
           <CssBaseline />
-          <AppRouterCacheProvider>{children}</AppRouterCacheProvider>
+          <AppRouterCacheProvider>
+            <Box padding={2}>
+              <Typography variant="h1">
+                Factory! Production! Calculator!
+              </Typography>
+
+              {children}
+            </Box>
+          </AppRouterCacheProvider>
         </ThemeProvider>
       </body>
     </html>

@@ -1,17 +1,15 @@
 // src/theme.ts
 "use client";
-import { Roboto } from "next/font/google";
+import { Raleway } from "next/font/google";
 import { createTheme } from "@mui/material/styles";
 
-const roboto = Roboto({
-  weight: ["300", "400", "500", "700"],
+const font = Raleway({
   subsets: ["latin"],
   display: "swap",
 });
 
 export const theme = createTheme({
   typography: {
-    fontFamily: roboto.style.fontFamily,
+    fontFamily: font.style.fontFamily,
   },
 });
-

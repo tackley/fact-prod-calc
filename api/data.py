@@ -37,12 +37,12 @@ def getRawData(game: str, parameter: str):
 
 def getData(game: str, gameSettings: dict[str:any] = {}, parameter: str = None):
     data = getRawData(game, parameter)
-    def settingValue(setting:str):
-        defaultValue = (lookup(getRawData(game, "constants")["gameSettings"],"name","defaultValue",setting))
+    def settingValue(setting:str) -> any:
+        defaultValue = lookup(getRawData(game, "constants")["gameSettings"],"name",setting,"defaultValue")
         return currentValue(gameSettings, setting, defaultValue)
     def nullFunction(value:any) -> any:
         return value
-    def coiRecipes(recipes:list[dict]):
+    def coiRecipes(recipes:list[dict]) -> list[dict]:
         for recipe in recipes:
             for item in recipe["outputs"]:
                 if item["item"] == "Electricity":

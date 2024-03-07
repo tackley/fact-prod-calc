@@ -1,13 +1,15 @@
 "use client";
-import { Box, Button, Typography } from "@mui/material";
+import { Box } from "@mui/material";
+import { ItemSelect } from "./_components/ItemSelect";
+import { useState } from "react";
+import { fetchItems } from "./_backend/backend";
 
 export default function Home() {
+  const [item, setItem] = useState<string>();
+
   return (
-    <Box padding={2}>
-      <Typography variant="h1">Hello?</Typography>
-      <Button variant="contained" onClick={() => alert("Goodbye!")}>
-        Press Me
-      </Button>
+    <Box>
+      <ItemSelect item={item} setItem={setItem} />
     </Box>
   );
 }

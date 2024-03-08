@@ -20,15 +20,15 @@ def graphGenerator(
     for item in sortedInputs["byproducts"]:
         index = str(len(nodes))
         nodes.append(newNode(index, "byproduct", item))
-        itemNodes[item] = index
+        itemNodes[item["item"]] = index
     for item in sortedInputs["inputs"]:
         index = str(len(nodes))
         nodes.append(newNode(index, "input", item))
-        itemNodes[item] = index
+        itemNodes[item["item"]] = index
     for item in finalOutputs:
         index = str(len(nodes))
         nodes.append(newNode(index, "output", item))
-        itemNodes[item] = index
+        itemNodes[item["item"]] = index
     # recipe nodes
     usedRecipes = []
     recipeNodes = {}

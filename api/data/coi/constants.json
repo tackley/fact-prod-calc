@@ -1,6 +1,6 @@
 {
   "durationUnit": "s",
-  "gameSettings": [
+  "settings": [
     {
       "defaultValue": 1.0,
       "displayText": "Electricity multiplier",

@@ -17,46 +17,48 @@ def homepage() -> str:
     return "Welcome to the Factory Production Calculator v2.0!"
 
 
-@app.route("/api/items/<game>", method=["POST"])
-def itemList(game) -> list[str]:
-    gameSettings = request.json
-    return getData(gameName(game, True), gameSettings, "items")
+@app.route("/api/items", methods=["POST"])
+def itemList() -> list[str]:
+    game = gameName(request.json["game"], True)
+    gameSettings = currentValue(request.json, "settings", {})
+    return getData(game, gameSettings, "items")
 
 
-@app.route("/api/recipes/<game>/<item>/<itemType>", method=["POST"])
-def recipes(game: str, item: str, itemType: str) -> list[dict]:
-    # itemType = item-node type
-    recipeType = {"byproduct": "consuming", "input": "producing"}[itemType]
-    gameSettings = request.json
+@app.route("/api/recipes", methods=["POST"])
+def recipes() -> list[dict]:
+    recipeTypes = {"byproduct": "consuming", "input": "producing"}
+    gameSettings = currentValue(request.json, "settings", {})
+    game = gameName(request.json["game"], True)
+    itemName = request.json["item"]
+    recipeType = recipeTypes[request.json["nodeType"]]
     return allowedRecipes(
-        item, recipeType, getData(gameName(game, True), gameSettings, "recipes")
+        itemName, recipeType, getData(game, gameSettings, "recipes")
     )
 
 
-@app.route("/api/calculator/<game>", method=["POST"])
-def graph(game: str) -> dict[str:any]:
-    # expects game as short name (e.g. coi)
-    inputData = request.json
+@app.route("/api/calculator", methods=["POST"])
+def graph() -> dict[str:any]:
     # FORMATTING OF REQUEST:
     # {
     #     "chosenRecipes": {
-    #         "producing": [{itemName: recipeId, ... }]
-    #         "consuming": [{itemName: recipeId, ... }]
+    #         "producing": {itemName: recipeId, ... }
+    #         "consuming": {itemName: recipeId, ... }
     #     },
     #     "outputItems": [
     #         {"item":itemName, "amount":itemAmount},
     #         ...
     #     ],
-    #     "gameSettings": {
+    #     "settings": {
     #         gameSetting: settingValue,
     #         ...
     #     },
+    #     "game": shortGameName
     # }
     # (if not given, gameSettings will default to {}; all other fields are required)
-    chosenRecipes = inputData["chosenRecipes"]
-    outputItems = inputData["outputItems"]
-    gameSettings = currentValue(inputData, "gameSettings", {})
-    game = gameName(game, True)
+    chosenRecipes = request.json["chosenRecipes"]
+    outputItems = request.json["outputItems"]
+    gameSettings = currentValue(request.json, "settings", {})
+    game = gameName(request.json["game"], True)
     recipes = getData(game, gameSettings, "recipes")
     production = productionLine(chosenRecipes, outputItems, recipes)
     outputGraph = graphGenerator(
@@ -68,7 +70,7 @@ def graph(game: str) -> dict[str:any]:
         getData(game, gameSettings, "constants"),
     )
     requirements = totalRequirements(
-        production[recipes],
+        production["recipes"],
         recipes,
         getData(game, gameSettings, "machines"),
         getData(game, gameSettings, "requirements"),
@@ -78,4 +80,4 @@ def graph(game: str) -> dict[str:any]:
 
 @app.route("/api/settings/<game>")
 def settings(game: str) -> list[dict]:
-    return getData(gameName(game, True), parameter="constants")["gameSettings"]
+    return getData(gameName(game, True), parameter="constants")["settings"]

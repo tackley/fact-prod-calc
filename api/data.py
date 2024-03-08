@@ -6,14 +6,17 @@ from .functions import currentValue
 from .functions import lookup
 
 
-def gameName(value: str, index: bool):
-    games = {
-        "coi": "Captain of Industry",
-    }
-    if index:
-        return games[value]
+def gameName(value: str, shortName: bool):
+    games = [
+        {
+            "name": "Captain of Industry",
+            "shortName": "coi",
+        }
+    ]
+    if shortName:
+        return lookup(games, "shortName", value, "name")
     else:
-        return list(games.keys())[list(games.values()).index(value)]
+        return lookup(games, "name", value, "shortName")
 
 
 # getting data from data-list
@@ -42,7 +45,7 @@ def getData(game: str, gameSettings: dict[str:any] = {}, parameter: str = None):
 
     def settingValue(setting: str) -> any:
         defaultValue = lookup(
-            getRawData(game, "constants")["gameSettings"],
+            getRawData(game, "constants")["settings"],
             "name",
             setting,
             "defaultValue",

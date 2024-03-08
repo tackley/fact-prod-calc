@@ -12,6 +12,7 @@ def graphGenerator(
 ):
     def newNode(index: str, nodeType: str, details: any):
         return {"id": index, "type": nodeType, "details": details}
+
     nodes = []
     # item nodes
     itemNodes = {}
@@ -41,7 +42,11 @@ def graphGenerator(
     # edges
     edges = []
     for recipe in usedRecipes:
-        recipeQuantity = lookup(recipeQuantities, "recipeId", recipe["id"], "quantity") * constants["unitFactor"] / recipe["duration"]
+        recipeQuantity = (
+            lookup(recipeQuantities, "recipeId", recipe["id"], "quantity")
+            * constants["unitFactor"]
+            / recipe["duration"]
+        )
         for item in recipe["inputs"]:
             itemName = item["item"]
             itemAmount = item["amount"] * recipeQuantity

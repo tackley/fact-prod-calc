@@ -11,23 +11,27 @@ from .graph import graphGenerator
 
 app = Flask(__name__)
 
+
 @app.route("/api")
 def homepage():
     return "Welcome to the Factory Production Calculator v2.0!"
 
+
 @app.route("/api/items/<game>")
 def itemList(game):
-    gameSettings = {} # not yet implemented
+    gameSettings = {}  # not yet implemented
     return getData(gameName(game, True), gameSettings, "items")
+
 
 @app.route("/api/recipes/<game>/<item>/<itemType>")
 def recipes(game: str, item: str, itemType: str) -> list[dict]:
     # itemType = graph-node type
-    recipeType = {"byproduct":"consuming", "input":"producing"}[itemType]
-    gameSettings = {} # not yet implemented
+    recipeType = {"byproduct": "consuming", "input": "producing"}[itemType]
+    gameSettings = {}  # not yet implemented
     return allowedRecipes(
         item, recipeType, getData(gameName(game, True), gameSettings, "recipes")
     )
+
 
 @app.route("/api/calculator/<game>", method=["POST"])
 def graph(game: str) -> dict[str:any]:

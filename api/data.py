@@ -1,18 +1,20 @@
-# Data for calculator (incl. reformatting)
-# Data from version 1.3.1
+# Functions for data acquisition
+# Data from v1.3.1 (after reformatting)
 
 from json import load
 from .functions import currentValue
 from .functions import lookup
 
-def gameName(value:str,index:bool):
+
+def gameName(value: str, index: bool):
     games = {
-        "coi":"Captain of Industry",
+        "coi": "Captain of Industry",
     }
     if index:
         return games[value]
     else:
         return list(games.keys())[list(games.values()).index(value)]
+
 
 # getting data from data-list
 def getRawData(game: str, parameter: str):
@@ -27,7 +29,7 @@ def getRawData(game: str, parameter: str):
     for field in fieldList:
         if parameter == field or parameter == None:
             fileName = "./api/data/" + gameName(game, False) + "/" + field + ".json"
-            with open(fileName,"r",encoding="UTF-8") as dataFile:
+            with open(fileName, "r", encoding="UTF-8") as dataFile:
                 data[field] = load(dataFile)
     if parameter == None:
         return data
@@ -37,19 +39,28 @@ def getRawData(game: str, parameter: str):
 
 def getData(game: str, gameSettings: dict[str:any] = {}, parameter: str = None):
     data = getRawData(game, parameter)
-    def settingValue(setting:str) -> any:
-        defaultValue = lookup(getRawData(game, "constants")["gameSettings"],"name",setting,"defaultValue")
+
+    def settingValue(setting: str) -> any:
+        defaultValue = lookup(
+            getRawData(game, "constants")["gameSettings"],
+            "name",
+            setting,
+            "defaultValue",
+        )
         return currentValue(gameSettings, setting, defaultValue)
-    def nullFunction(value:any) -> any:
+
+    def nullFunction(value: any) -> any:
         return value
-    def coiRecipes(recipes:list[dict]) -> list[dict]:
+
+    def coiRecipes(recipes: list[dict]) -> list[dict]:
         for recipe in recipes:
             for item in recipe["outputs"]:
                 if item["item"] == "Electricity":
                     item["amount"] *= settingValue("electricityMultiplier")
         return recipes
+
     reformattingFunctions = {
-        "Captain of Industry":{
+        "Captain of Industry": {
             "recipes": lambda value: coiRecipes(value),
         }
     }

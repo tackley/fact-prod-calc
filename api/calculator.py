@@ -1,11 +1,10 @@
 # Main production calculator
-# Functions based off v1.3.1
+# Production line function based off v1.3.1
 
 from .functions import currentValue
 from .functions import lookup
 from .functions import roundUp
 from .functions import roundToDigit
-from .functions import sign
 
 
 # allowed recipe calculator
@@ -30,8 +29,8 @@ def productionLine(
     recipes: list[dict],
 ) -> dict[str, list[dict]]:
     # set variables
-    typeNames = {-1:"consuming",1:"producing"}
-    recipeSides = ["inputs","outputs"]
+    typeNames = {-1: "consuming", 1: "producing"}
+    recipeSides = ["inputs", "outputs"]
     searchSide = {"producing": "inputs", "consuming": "outputs"}
     excessFactors = {"inputs": 1, "outputs": -1}
     finalProducts = {}
@@ -168,5 +167,5 @@ def inputSplitter(itemInputs: list[dict]) -> dict[str, list[dict]]:
         if item["amount"] > 0:
             inputs.append({"item": item["item"], "amount": item["amount"]})
         if item["amount"] < 0:
-            byproducts.append({"item":item["item"],"amount":-item["amount"]})
+            byproducts.append({"item": item["item"], "amount": -item["amount"]})
     return {"inputs": inputs, "byproducts": byproducts}

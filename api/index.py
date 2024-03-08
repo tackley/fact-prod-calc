@@ -13,21 +13,21 @@ app = Flask(__name__)
 
 
 @app.route("/api")
-def homepage():
+def homepage() -> str:
     return "Welcome to the Factory Production Calculator v2.0!"
 
 
-@app.route("/api/items/<game>")
-def itemList(game):
-    gameSettings = {}  # not yet implemented
+@app.route("/api/items/<game>", method=["POST"])
+def itemList(game) -> list[str]:
+    gameSettings = request.json
     return getData(gameName(game, True), gameSettings, "items")
 
 
-@app.route("/api/recipes/<game>/<item>/<itemType>")
+@app.route("/api/recipes/<game>/<item>/<itemType>", method=["POST"])
 def recipes(game: str, item: str, itemType: str) -> list[dict]:
-    # itemType = graph-node type
+    # itemType = item-node type
     recipeType = {"byproduct": "consuming", "input": "producing"}[itemType]
-    gameSettings = {}  # not yet implemented
+    gameSettings = request.json
     return allowedRecipes(
         item, recipeType, getData(gameName(game, True), gameSettings, "recipes")
     )
@@ -74,3 +74,8 @@ def graph(game: str) -> dict[str:any]:
         getData(game, gameSettings, "requirements"),
     )
     return {"graph": outputGraph, "requirements": requirements}
+
+
+@app.route("/api/settings/<game>")
+def settings(game: str) -> list[dict]:
+    return getData(gameName(game, True), parameter="constants")["gameSettings"]

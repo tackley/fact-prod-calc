@@ -58,11 +58,11 @@ def productionLine(
             leftover = 0
         recipeType = typeNames[recipeTypeIndex]
         production[item] = currentValue(production, item) + excess[item]
-        recipeChosen = currentValue(chosenRecipes[recipeType], item, -1) != -1
+        recipeChosen = currentValue(chosenRecipes[recipeType], item, None) != None
         # working out values
         if recipeChosen:
             if abs(excess[item]) > 2**-32:  # to prevent diminishing loops
-                recipeIndex = chosenRecipes[recipeType][item]
+                recipeIndex = str(chosenRecipes[recipeType][item])
                 itemRecipe = lookup(recipes, "id", recipeIndex)
                 itemQuantity = lookup(
                     itemRecipe[searchSide[recipeType]], "item", item, "amount"

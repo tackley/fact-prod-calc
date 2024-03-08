@@ -7,14 +7,14 @@ from .functions import roundUp
 from .functions import roundToDigit
 from .functions import sign
 
+
 # allowed recipe calculator
 def allowedRecipes(
     item: str,
-    amount: float,
+    recipeType: str,
     recipes: list[dict],
 ) -> list[dict]:
-    searchSide = {-1: "inputs", 1: "outputs"}
-    recipeType = sign(amount)
+    searchSide = {"consuming": "inputs", "producing": "outputs"}
     allowedRecipeList = []
     for index in range(len(recipes)):
         for candidate in recipes[index][searchSide[recipeType]]:

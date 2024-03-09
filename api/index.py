@@ -106,3 +106,17 @@ def settings() -> list[dict]:
     # {"game": shortGameName}
     game = gameName(request.json["game"], True)
     return getData(game, parameter="constants")["settings"]
+
+@app.route("/api/item-unit", methods=["POST"])
+def getItemUnit() -> str:
+    # FORMATTING OF REQUEST:
+    # {
+    #     "settings": {
+    #         settingName: settingValue,
+    #         ...
+    #     },
+    #     "game": shortGameName,
+    # }
+    game = gameName(request.json["game"], True)
+    settings = currentValue(request.json, "settings", {})
+    return getData(game, settings, "constants")["itemUnit"]

@@ -60,7 +60,12 @@ def graph() -> dict[str:any]:
     gameSettings = currentValue(request.json, "settings", {})
     game = gameName(request.json["game"], True)
     recipes = getData(game, gameSettings, "recipes")
-    production = productionLine(chosenRecipes, outputItems, recipes)
+    production = productionLine(
+        chosenRecipes,
+        outputItems,
+        recipes,
+        getData(game, gameSettings, "constants")["unitFactor"]
+    )
     outputGraph = graphGenerator(
         production["recipes"],
         outputItems,

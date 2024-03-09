@@ -22,23 +22,25 @@ def lookup(
     if lookupValue == None:
         return [value[lookupField] for value in lookupList]
     elif returnField == None:
-        return [value for value in lookupList if value[lookupField] == lookupValue]
-    elif returnFirstOnly:
+        matches = [
+            value
+            for value in lookupList
+            if value[lookupField] == lookupValue
+        ]
+    else: 
         matches = [
             value[returnField]
             for value in lookupList
             if value[lookupField] == lookupValue
         ]
-        if len(matches) > 0:
+    if returnFirstOnly:
+        # if len(matches) > 0:
             return matches[0]
-        else:
-            return ifNotFound
+        # else:
+        #     return ifNotFound
     else:
-        return [
-            value[returnField]
-            for value in lookupList
-            if value[lookupField] == lookupValue
-        ]
+        return matches
+        
 
 
 # maths functions

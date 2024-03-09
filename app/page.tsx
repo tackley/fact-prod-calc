@@ -10,14 +10,14 @@ export default function Home() {
     outputItems: item
       ? [
           {
-            item: item,
-            amount: 1,
+            item,
+            amount: 3,
           },
         ]
       : [],
     chosenRecipes: {
       consuming: {},
-      producing: {},
+      producing: { Ammonia: "21" },
     },
   });
 

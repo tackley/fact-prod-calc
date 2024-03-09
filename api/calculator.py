@@ -27,11 +27,12 @@ def productionLine(
     chosenRecipes: dict[str, dict[str, str]],
     requiredItems: list[dict],
     recipes: list[dict],
+    unitFactor: float,
 ) -> dict[str, list[dict]]:
     # set variables
     typeNames = {-1: "consuming", 1: "producing"}
     recipeSides = ["inputs", "outputs"]
-    searchSide = {"producing": "inputs", "consuming": "outputs"}
+    searchSide = {"producing": "outputs", "consuming": "inputs"}
     excessFactors = {"inputs": 1, "outputs": -1}
     finalProducts = {}
     recipeAmounts = {}
@@ -67,18 +68,24 @@ def productionLine(
                 itemQuantity = lookup(
                     itemRecipe[searchSide[recipeType]], "item", item, "amount"
                 )
-                recipeQuantity = recipeTypeIndex * excess[item] / itemQuantity
+                recipeQuantity = (
+                    recipeTypeIndex
+                    * excess[item]
+                    / itemQuantity
+                    * itemRecipe["duration"]
+                    / unitFactor
+                )
                 recipeAmounts[recipeIndex] = (
                     currentValue(recipeAmounts, recipeIndex) + recipeQuantity
                 )
                 for recipeSide in recipeSides:
-                    for recipeItem in list(itemRecipe[recipeSide].keys()):
+                    for recipeItem in lookup(itemRecipe[recipeSide], "item"):
                         if recipeItem != item or recipeSide != searchSide[recipeType]:
                             excess[recipeItem] = (
                                 currentValue(excess, recipeItem)
                                 + excessFactors[recipeSide]
                                 * recipeQuantity
-                                * itemRecipe[recipeSide][recipeItem]
+                                * lookup(itemRecipe[recipeSide],"item",recipeItem,"amount")
                             )
                             if recipeItem not in checklist:
                                 checklist.append(recipeItem)
@@ -100,6 +107,7 @@ def productionLine(
             recipeQuantities.append(
                 {"recipeId": recipeIndex, "quantity": recipeAmounts[recipeIndex]}
             )
+    print(f"RECIPE QUANTITIES: {recipeQuantities}")
     return {
         "inputs": itemInputs,
         "recipes": recipeQuantities,
@@ -122,7 +130,7 @@ def totalRequirements(
 ) -> list[dict]:
     machineAmounts = {}
     for recipe in recipeQuantities:
-        recipeMachine = lookup(recipes, "id", recipes[recipe["id"]], "machine")
+        recipeMachine = lookup(recipes, "id", recipe["recipeId"], "machine")
         machineAmounts[recipeMachine] = (
             currentValue(machineAmounts, recipeMachine) + recipe["quantity"]
         )
@@ -130,17 +138,18 @@ def totalRequirements(
     for machine in list(machineAmounts.keys()):
         for requirement in requirementList:
             requirements[requirement["name"]] = (
-                currentValue(requirements, requirement)
+                currentValue(requirements, requirement["name"])
                 + requirementRounder(
                     machineAmounts[machine], requirement["utilisationDependency"]
                 )
-                * machines[machine]["requirements"][requirement]
+                * lookup(machines, "name", machine)["requirements"][requirement["name"]]
             )
     machineRequirements = []
-    for requirement in list(requirements.keys()):
-        machineRequirements.append(
-            {"requirement": requirement, "value": requirements[requirement]}
-        )
+    for requirement in lookup(requirementList, "name"):
+        if currentValue(requirements, requirement) != 0:
+            machineRequirements.append(
+                {"requirement": requirement, "value": requirements[requirement]}
+            )
     return machineRequirements
 
 

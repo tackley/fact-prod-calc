@@ -64,30 +64,43 @@ def graphGenerator(
                 "amount": itemAmount,
                 "unit": constants["itemUnit"],
             }
+            if itemName in inputNodes.keys():
+                edges.append(
+                    {
+                        "start": inputNodes[itemName],
+                        "end": recipeNodes[str(recipe["id"])],
+                        "details": details,
+                    }
+                )
             if itemName in chosenRecipes["producing"].keys():
-                startNode = recipeNodes[str(chosenRecipes["producing"][itemName])]
-            else:
-                startNode = inputNodes[itemName]
-            edges.append(
-                {
-                    "start": startNode,
-                    "end": recipeNodes[str(recipe["id"])],
-                    "details": details,
-                }
-            )
+                edges.append(
+                    {
+                        "start": recipeNodes[str(chosenRecipes["producing"][itemName])],
+                        "end": recipeNodes[str(recipe["id"])],
+                        "details": details,
+                    }
+                )
         for item in recipe["outputs"]:
             itemName = item["item"]
             itemAmount = item["amount"] * recipeQuantity
-            if itemName in lookup(sortedInputs["byproducts"], "item"):
-                details = {
-                    "item": itemName,
-                    "amount": itemAmount,
-                    "unit": constants["itemUnit"],
-                }
+            details = {
+                "item": itemName,
+                "amount": itemAmount,
+                "unit": constants["itemUnit"],
+            }
+            if itemName in outputNodes.keys():
                 edges.append(
                     {
                         "start": recipeNodes[recipe["id"]],
                         "end": outputNodes[itemName],
+                        "details": details,
+                    }
+                )
+            if itemName in chosenRecipes["consuming"].keys() and itemName not in chosenRecipes["producing"].keys():
+                edges.append(
+                    {
+                        "start": recipeNodes[recipe["id"]],
+                        "end": recipeNodes[chosenRecipes["consuming"][itemName]],
                         "details": details,
                     }
                 )

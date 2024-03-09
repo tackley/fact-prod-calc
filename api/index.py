@@ -1,12 +1,12 @@
 from flask import Flask
 from flask import request
-from .calculator import allowedRecipes
-from .calculator import productionLine
-from .calculator import totalRequirements
-from .data import gameName
-from .data import getData
-from .functions import currentValue
-from .graph import graphGenerator
+from ._lib.calculator import allowedRecipes
+from ._lib.calculator import productionLine
+from ._lib.calculator import totalRequirements
+from ._lib.data import gameName
+from ._lib.data import getData
+from ._lib.functions import currentValue
+from ._lib.graph import graphGenerator
 
 
 app = Flask(__name__)

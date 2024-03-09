@@ -54,7 +54,7 @@ def recipes() -> list[dict]:
     )
 
 
-@app.route("/api/calculator", methods=["POST"])
+@app.route("/api/calc", methods=["POST"])
 def graph() -> dict[str:any]:
     # FORMATTING OF REQUEST:
     # {
@@ -101,7 +101,7 @@ def graph() -> dict[str:any]:
 
 
 @app.route("/api/settings", methods=["POST"])
-def settings(game: str) -> list[dict]:
+def settings() -> list[dict]:
     # FORMATTING OF REQUEST:
     # {"game": shortGameName}
     game = gameName(request.json["game"], True)

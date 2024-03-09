@@ -13,7 +13,7 @@ interface FetcherArgs {
   url: string;
   body: unknown;
 }
-const fetcher = ({ url, body }: FetcherArgs) =>
+export const fetcher = ({ url, body }: FetcherArgs) =>
   ky.post(url, { json: body }).json();
 
 export function useItems(): string[] {
@@ -63,7 +63,7 @@ export function useCalculator(
   input: Omit<CalculatorInput, "settings" | "game">,
 ): CalculatorOutput | undefined {
   const { data, error } = useSWR(
-    { url: "/api/calculator", body: { ...input, settings, game } },
+    { url: "/api/calc", body: { ...input, settings, game } },
     fetcher,
   );
   if (error) {

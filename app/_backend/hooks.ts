@@ -27,23 +27,6 @@ export function useItems(): string[] {
   return (data as string[]) ?? [];
 }
 
-/*
-  {
-    "chosenRecipes": {
-      "producing": {itemName: recipeId, ... }
-      "consuming": {itemName: recipeId, ... }
-    },
-    "outputItems": [
-      {"item":itemName, "amount":itemAmount},
-      ...
-    ],
-    "gameSettings": {
-      gameSetting: settingValue,
-      ...
-    },
-    "game": shortGameName
-  }
-*/
 interface CalculatorInput {
   chosenRecipes: {
     producing: Record<string, string>;

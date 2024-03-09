@@ -2,6 +2,13 @@ import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
 import { ThemeProvider } from "@mui/material/styles";
 import { theme } from "@/theme";
 import { Box, CssBaseline, Typography } from "@mui/material";
+import { Satisfy } from "next/font/google";
+
+const font = Satisfy({
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["400"],
+});
 
 export const metadata = {
   title: "Fact! Prod! Calc!",
@@ -20,7 +27,11 @@ export default function RootLayout({
           <CssBaseline />
           <AppRouterCacheProvider>
             <Box padding={2}>
-              <Typography variant="h1">
+              <Typography
+                variant="h2"
+                sx={{ mb: 2 }}
+                fontFamily={font.style.fontFamily}
+              >
                 Factory! Production! Calculator!
               </Typography>
 

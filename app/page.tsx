@@ -47,7 +47,7 @@ export default function Home() {
 
   return (
     <Box>
-      <Box display="flex" flexDirection="column" gap={1} maxWidth="250px">
+      <Box display="flex" flexDirection="column" gap={1} maxWidth="400px">
         {input.outputItems.map((i) => (
           <ItemSelect
             key={i.item}

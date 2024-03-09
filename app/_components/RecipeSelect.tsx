@@ -25,6 +25,7 @@ function formatRecipe(r: RecipeOutput[0]): string {
 export function RecipeSelect({ input, onSelect }: Props) {
   const [open, setOpen] = useState(false);
   const result = useRecipe(input);
+  const hasRecipes = result && result.length > 1;
 
   const handleClose = () => setOpen(false);
   const handleOpen = () => setOpen(true);
@@ -33,10 +34,16 @@ export function RecipeSelect({ input, onSelect }: Props) {
       <Button
         variant="text"
         size="small"
-        disabled={!result}
+        disabled={!result || !hasRecipes}
         onClick={handleOpen}
       >
-        Select&nbsp;Recipe
+        {hasRecipes ? (
+          <>Select&nbsp;Recipe</>
+        ) : input.nodeType === "input" ? (
+          <>RAW RESOURCE</>
+        ) : (
+          <>THE END</>
+        )}
       </Button>
       <Dialog onClose={handleClose} open={open}>
         <DialogTitle>Choose Recipe</DialogTitle>

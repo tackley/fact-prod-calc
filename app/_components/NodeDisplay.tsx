@@ -27,7 +27,7 @@ export function NodeDisplay({ node, onRecipeSelect }: Props) {
         alignItems="baseline"
         gap={1}
         justifyContent="space-between"
-        maxWidth={300}
+        maxWidth={400}
       >
         <Typography>
           {node.details.amount} per min {node.details.item}

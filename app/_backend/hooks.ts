@@ -1,13 +1,10 @@
 import ky from "ky";
 import useSWR from "swr";
+import { z } from "zod";
 
 // parameters not implemented
 const settings = {};
 const game = "coi";
-const postData = {
-  settings: settings,
-  game: game,
-};
 
 interface FetcherArgs {
   url: string;
@@ -27,24 +24,7 @@ export function useItems(): string[] {
   return (data as string[]) ?? [];
 }
 
-/*
-  {
-    "chosenRecipes": {
-      "producing": {itemName: recipeId, ... }
-      "consuming": {itemName: recipeId, ... }
-    },
-    "outputItems": [
-      {"item":itemName, "amount":itemAmount},
-      ...
-    ],
-    "gameSettings": {
-      gameSetting: settingValue,
-      ...
-    },
-    "game": shortGameName
-  }
-*/
-interface CalculatorInput {
+export interface CalculatorInput {
   chosenRecipes: {
     producing: Record<string, string>;
     consuming: Record<string, string>;
@@ -53,14 +33,59 @@ interface CalculatorInput {
     item: string;
     amount: number;
   }>;
-  settings: Record<string, any>;
-  game: "coi";
 }
 
-type CalculatorOutput = any;
+const ItemAndAmountSchema = z.object({
+  amount: z.number(),
+  item: z.string(),
+});
+
+const RecipeSchema = z.object({
+  inputs: z.array(ItemAndAmountSchema),
+  outputs: z.array(ItemAndAmountSchema),
+  machine: z.string(),
+  duration: z.number(),
+  id: z.string(),
+});
+
+const CalculatorOutputSchema = z.object({
+  graph: z.object({
+    edges: z.array(
+      z.object({
+        details: ItemAndAmountSchema.extend({
+          unit: z.string(),
+        }),
+        end: z.string(),
+        start: z.string(),
+      }),
+    ),
+    nodes: z.array(
+      z.discriminatedUnion("type", [
+        z.object({
+          type: z.enum(["input", "byproduct", "output"]),
+          details: ItemAndAmountSchema.extend({
+            unit: z.string(),
+          }),
+          id: z.string(),
+        }),
+        z.object({
+          type: z.literal("recipe"),
+          id: z.string(),
+          details: RecipeSchema.extend({
+            quantity: z.number(),
+          }),
+        }),
+      ]),
+    ),
+  }),
+  requirements: z.array(
+    z.object({ requirement: z.string(), value: z.number(), unit: z.string() }),
+  ),
+});
+export type CalculatorOutput = z.infer<typeof CalculatorOutputSchema>;
 
 export function useCalculator(
-  input: Omit<CalculatorInput, "settings" | "game">,
+  input: CalculatorInput,
 ): CalculatorOutput | undefined {
   const { data, error } = useSWR(
     { url: "/api/calc", body: { ...input, settings, game } },
@@ -69,5 +94,33 @@ export function useCalculator(
   if (error) {
     throw error;
   }
-  return data;
+
+  if (!data) {
+    return undefined;
+  }
+  return CalculatorOutputSchema.parse(data);
+}
+
+const RecipeOutputSchema = z.array(RecipeSchema);
+
+export type RecipeOutput = z.infer<typeof RecipeOutputSchema>;
+
+export interface RecipeInput {
+  item: string;
+  nodeType: "byproduct" | "input";
+}
+
+export function useRecipe(input: RecipeInput): RecipeOutput | undefined {
+  const { data, error } = useSWR(
+    { url: "/api/recipes", body: { ...input, settings, game } },
+    fetcher,
+  );
+  if (error) {
+    throw error;
+  }
+
+  if (!data) {
+    return undefined;
+  }
+  return RecipeOutputSchema.parse(data);
 }

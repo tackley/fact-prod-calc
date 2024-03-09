@@ -15,10 +15,10 @@ def allowedRecipes(
 ) -> list[dict]:
     searchSide = {"consuming": "inputs", "producing": "outputs"}
     allowedRecipeList = []
-    for index in range(len(recipes)):
-        for candidate in recipes[index][searchSide[recipeType]]:
+    for recipe in recipes:
+        for candidate in recipe[searchSide[recipeType]]:
             if item == candidate["item"]:
-                allowedRecipeList.append(recipes[index])
+                allowedRecipeList.append(recipe)
     return allowedRecipeList
 
 
@@ -72,8 +72,6 @@ def productionLine(
                     recipeTypeIndex
                     * excess[item]
                     / itemQuantity
-                    * itemRecipe["duration"]
-                    / unitFactor
                 )
                 recipeAmounts[recipeIndex] = (
                     currentValue(recipeAmounts, recipeIndex) + recipeQuantity
@@ -104,7 +102,10 @@ def productionLine(
     for recipeIndex in list(recipeAmounts.keys()):
         if recipeAmounts[recipeIndex] != 0:
             recipeQuantities.append(
-                {"recipeId": recipeIndex, "quantity": recipeAmounts[recipeIndex]}
+                {
+                    "recipeId": recipeIndex,
+                    "quantity": recipeAmounts[recipeIndex] * lookup(recipes, "id", recipeIndex, "duration") / unitFactor
+                }
             )
     return {
         "inputs": itemInputs,
@@ -146,7 +147,11 @@ def totalRequirements(
     for requirement in lookup(requirementList, "name"):
         if currentValue(requirements, requirement) != 0:
             machineRequirements.append(
-                {"requirement": requirement, "value": requirements[requirement]}
+                {
+                    "requirement": requirement,
+                    "value": requirements[requirement],
+                    "unit": lookup(requirementList, "name", requirement, "unit", ifNotFound=""),
+                }
             )
     return machineRequirements
 

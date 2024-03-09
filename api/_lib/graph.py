@@ -20,18 +20,22 @@ def graphGenerator(
     sortedInputs = inputSplitter(itemInputs)
     sortedOutputs = inputSplitter(finalOutputs)
     for item in sortedInputs["byproducts"]:
+        item["unit"] = constants["itemUnit"]
         index = str(len(nodes))
         nodes.append(newNode(index, "byproduct", item))
         outputNodes[item["item"]] = index
     for item in sortedInputs["inputs"]:
+        item["unit"] = constants["itemUnit"]
         index = str(len(nodes))
         nodes.append(newNode(index, "input", item))
         inputNodes[item["item"]] = index
     for item in sortedOutputs["byproducts"]:
+        item["unit"] = constants["itemUnit"]
         index = str(len(nodes))
         nodes.append(newNode(index, "output", item))
         inputNodes[item["item"]] = index
     for item in sortedOutputs["inputs"]:
+        item["unit"] = constants["itemUnit"]
         index = str(len(nodes))
         nodes.append(newNode(index, "output", item))
         outputNodes[item["item"]] = index
@@ -51,8 +55,6 @@ def graphGenerator(
     for recipe in usedRecipes:
         recipeQuantity = (
             lookup(recipeQuantities, "recipeId", str(recipe["id"]), "quantity")
-            * constants["unitFactor"]
-            / recipe["duration"]
         )
         for item in recipe["inputs"]:
             itemName = item["item"]
@@ -76,10 +78,7 @@ def graphGenerator(
         for item in recipe["outputs"]:
             itemName = item["item"]
             itemAmount = item["amount"] * recipeQuantity
-            counted = True
-            if itemName not in chosenRecipes["consuming"].keys():
-                counted = False
-            if not counted:
+            if itemName in lookup(sortedInputs["byproducts"], "item"):
                 details = {
                     "item": itemName,
                     "amount": itemAmount,

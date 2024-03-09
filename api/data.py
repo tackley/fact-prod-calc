@@ -6,14 +6,14 @@ from .functions import currentValue
 from .functions import lookup
 
 
-def gameName(value: str, shortName: bool):
+def gameName(value: str, isShort: bool):
     games = [
         {
             "name": "Captain of Industry",
             "shortName": "coi",
         }
     ]
-    if shortName:
+    if isShort:
         return lookup(games, "shortName", value, "name")
     else:
         return lookup(games, "name", value, "shortName")

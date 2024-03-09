@@ -1,5 +1,4 @@
 from .functions import lookup
-from .functions import sign
 from .calculator import inputSplitter
 
 
@@ -16,18 +15,23 @@ def graphGenerator(
 
     nodes = []
     # item nodes
-    itemNodes = {}
+    inputNodes = {}
     outputNodes = {}
     sortedInputs = inputSplitter(itemInputs)
+    sortedOutputs = inputSplitter(finalOutputs)
     for item in sortedInputs["byproducts"]:
         index = str(len(nodes))
         nodes.append(newNode(index, "byproduct", item))
-        itemNodes[item["item"]] = index
+        outputNodes[item["item"]] = index
     for item in sortedInputs["inputs"]:
         index = str(len(nodes))
         nodes.append(newNode(index, "input", item))
-        itemNodes[item["item"]] = index
-    for item in finalOutputs:
+        inputNodes[item["item"]] = index
+    for item in sortedOutputs["byproducts"]:
+        index = str(len(nodes))
+        nodes.append(newNode(index, "output", item))
+        inputNodes[item["item"]] = index
+    for item in sortedOutputs["inputs"]:
         index = str(len(nodes))
         nodes.append(newNode(index, "output", item))
         outputNodes[item["item"]] = index
@@ -61,7 +65,7 @@ def graphGenerator(
             if itemName in chosenRecipes["producing"].keys():
                 startNode = recipeNodes[str(chosenRecipes["producing"][itemName])]
             else:
-                startNode = itemNodes[itemName]
+                startNode = inputNodes[itemName]
             edges.append(
                 {
                     "start": startNode,
@@ -71,46 +75,45 @@ def graphGenerator(
             )
         for item in recipe["outputs"]:
             itemName = item["item"]
+            itemAmount = item["amount"] * recipeQuantity
             counted = True
             if itemName not in chosenRecipes["consuming"].keys():
                 counted = False
-                if itemName in lookup(finalOutputs, "item"):
-                    endNode = outputNodes[itemName]
-                else:
-                    endNode = itemNodes[itemName]
             if not counted:
                 details = {
                     "item": itemName,
-                    "amount": item["amount"] * recipeQuantity,
+                    "amount": itemAmount,
                     "unit": constants["itemUnit"],
                 }
                 edges.append(
                     {
                         "start": recipeNodes[recipe["id"]],
-                        "end": endNode,
+                        "end": outputNodes[itemName],
                         "details": details,
                     }
                 )
     for item in finalOutputs:
+        itemName = item["item"]
+        itemAmount = item["amount"]
         details = {
-            "item": item["item"],
+            "item": itemName,
             "amount": item["amount"],
             "unit": constants["itemUnit"],
         }
-        if item["amount"] > 0 and item["item"] not in chosenRecipes["producing"].keys():
+        if itemAmount > 0 and itemName not in chosenRecipes["producing"].keys():
             edges.append(
                 {
-                    "start": itemNodes[item["item"]],
-                    "end": outputNodes[item["item"]],
-                    "details":details
+                    "start": inputNodes[itemName],
+                    "end": outputNodes[itemName],
+                    "details": details,
                 }
             )
-        if item["amount"] < 0 and item["item"] not in chosenRecipes["consuming"].keys():
+        if itemAmount < 0 and itemName not in chosenRecipes["consuming"].keys():
             edges.append(
                 {
-                    "start": outputNodes[item["item"]],
-                    "end": itemNodes[item["item"]],
-                    "details":details
+                    "start": outputNodes[itemName],
+                    "end": inputNodes[itemName],
+                    "details": details,
                 }
             )
     return {"nodes": nodes, "edges": edges}

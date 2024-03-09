@@ -28,22 +28,22 @@ export function useItems(): string[] {
 }
 
 /*
-    # {
-    #     "chosenRecipes": {
-    #         "producing": {itemName: recipeId, ... }
-    #         "consuming": {itemName: recipeId, ... }
-    #     },
-    #     "outputItems": [
-    #         {"item":itemName, "amount":itemAmount},
-    #         ...
-    #     ],
-    #     "gameSettings": {
-    #         gameSetting: settingValue,
-    #         ...
-    #     },
-    #     "game": shortGameName
-    # }
-    */
+  {
+    "chosenRecipes": {
+      "producing": {itemName: recipeId, ... }
+      "consuming": {itemName: recipeId, ... }
+    },
+    "outputItems": [
+      {"item":itemName, "amount":itemAmount},
+      ...
+    ],
+    "gameSettings": {
+      gameSetting: settingValue,
+      ...
+    },
+    "game": shortGameName
+  }
+*/
 interface CalculatorInput {
   chosenRecipes: {
     producing: Record<string, string>;

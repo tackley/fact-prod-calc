@@ -34,10 +34,10 @@ def lookup(
             if value[lookupField] == lookupValue
         ]
     if returnFirstOnly:
-        # if len(matches) > 0:
+        if len(matches) > 0:
             return matches[0]
-        # else:
-        #     return ifNotFound
+        else:
+            return ifNotFound
     else:
         return matches
         

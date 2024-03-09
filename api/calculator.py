@@ -81,11 +81,10 @@ def productionLine(
                 for recipeSide in recipeSides:
                     for recipeItem in lookup(itemRecipe[recipeSide], "item"):
                         if recipeItem != item or recipeSide != searchSide[recipeType]:
-                            excess[recipeItem] = (
-                                currentValue(excess, recipeItem)
-                                + excessFactors[recipeSide]
-                                * recipeQuantity
-                                * lookup(itemRecipe[recipeSide],"item",recipeItem,"amount")
+                            excess[recipeItem] = currentValue(
+                                excess, recipeItem
+                            ) + excessFactors[recipeSide] * recipeQuantity * lookup(
+                                itemRecipe[recipeSide], "item", recipeItem, "amount"
                             )
                             if recipeItem not in checklist:
                                 checklist.append(recipeItem)
@@ -107,7 +106,6 @@ def productionLine(
             recipeQuantities.append(
                 {"recipeId": recipeIndex, "quantity": recipeAmounts[recipeIndex]}
             )
-    print(f"RECIPE QUANTITIES: {recipeQuantities}")
     return {
         "inputs": itemInputs,
         "recipes": recipeQuantities,

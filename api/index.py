@@ -19,6 +19,14 @@ def homepage() -> str:
 
 @app.route("/api/items", methods=["POST"])
 def itemList() -> list[str]:
+    # FORMATTING OF REQUEST:
+    # {
+    #     "settings": {
+    #         settingName: settingValue,
+    #         ...
+    #     },
+    #     "game": shortGameName,
+    # }
     game = gameName(request.json["game"], True)
     gameSettings = currentValue(request.json, "settings", {})
     return getData(game, gameSettings, "items")
@@ -26,6 +34,16 @@ def itemList() -> list[str]:
 
 @app.route("/api/recipes", methods=["POST"])
 def recipes() -> list[dict]:
+    # FORMATTING OF REQUEST:
+    # {
+    #     "settings": {
+    #         settingName: settingValue,
+    #         ...
+    #     },
+    #     "game": shortGameName,
+    #     "item": itemName,
+    #     "nodeType": nodeType, (node type = "byproduct" or "input")
+    # }
     recipeTypes = {"byproduct": "consuming", "input": "producing"}
     gameSettings = currentValue(request.json, "settings", {})
     game = gameName(request.json["game"], True)
@@ -45,16 +63,15 @@ def graph() -> dict[str:any]:
     #         "consuming": {itemName: recipeId, ... }
     #     },
     #     "outputItems": [
-    #         {"item":itemName, "amount":itemAmount},
+    #         {"item": name, "amount": amount},
     #         ...
     #     ],
     #     "settings": {
-    #         gameSetting: settingValue,
+    #         settingName: settingValue,
     #         ...
     #     },
-    #     "game": shortGameName
+    #     "game": shortGameName,
     # }
-    # (if not given, gameSettings will default to {}; all other fields are required)
     chosenRecipes = request.json["chosenRecipes"]
     outputItems = request.json["outputItems"]
     gameSettings = currentValue(request.json, "settings", {})
@@ -83,6 +100,9 @@ def graph() -> dict[str:any]:
     return {"graph": outputGraph, "requirements": requirements}
 
 
-@app.route("/api/settings/<game>")
+@app.route("/api/settings", methods=["POST"])
 def settings(game: str) -> list[dict]:
-    return getData(gameName(game, True), parameter="constants")["settings"]
+    # FORMATTING OF REQUEST:
+    # {"game": shortGameName}
+    game = gameName(request.json["game"], True)
+    return getData(game, parameter="constants")["settings"]

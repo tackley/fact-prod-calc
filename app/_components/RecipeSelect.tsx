@@ -25,7 +25,7 @@ function formatRecipe(r: RecipeOutput[0]): string {
 export function RecipeSelect({ input, onSelect }: Props) {
   const [open, setOpen] = useState(false);
   const result = useRecipe(input);
-  const hasRecipes = result && result.length > 1;
+  const hasRecipes = result && result.length > 0;
 
   const handleClose = () => setOpen(false);
   const handleOpen = () => setOpen(true);

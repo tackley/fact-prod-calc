@@ -10,7 +10,8 @@
     "dev": "run-p -l dev:flask dev:next",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "vitest"
   },
   "dependencies": {
     "@emotion/cache": "^11.11.0",
@@ -18,21 +19,30 @@
     "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.15.12",
     "@mui/material-nextjs": "^5.15.11",
+    "@react-sigma/core": "^3.4.2",
+    "graphology": "^0.25.4",
+    "graphology-types": "^0.24.7",
     "ky": "^1.2.2",
+    "lodash": "^4.17.21",
     "next": "14.1.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "sigma": "2.X",
     "swr": "^2.2.5",
     "zod": "^3.22.4"
   },
   "devDependencies": {
+    "@testing-library/react": "^14.2.1",
     "@types/node": "20.11.24",
     "@types/react": "18.2.63",
     "@types/react-dom": "18.2.20",
+    "@vitejs/plugin-react": "^4.2.1",
     "eslint": "8.57.0",
     "eslint-config-next": "14.1.2",
+    "jsdom": "^24.0.0",
     "npm-run-all2": "6.1.2",
     "prettier": "3.2.5",
-    "typescript": "5.3.3"
+    "typescript": "5.3.3",
+    "vitest": "^1.3.1"
   }
 }

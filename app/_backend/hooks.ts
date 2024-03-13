@@ -48,36 +48,39 @@ const RecipeSchema = z.object({
   id: z.string(),
 });
 
-const CalculatorOutputSchema = z.object({
-  graph: z.object({
-    edges: z.array(
+const GraphSchema = z.object({
+  edges: z.array(
+    z.object({
+      details: ItemAndAmountSchema.extend({
+        unit: z.string(),
+      }),
+      end: z.string(),
+      start: z.string(),
+    }),
+  ),
+  nodes: z.array(
+    z.discriminatedUnion("type", [
       z.object({
+        type: z.enum(["input", "byproduct", "output"]),
         details: ItemAndAmountSchema.extend({
           unit: z.string(),
         }),
-        end: z.string(),
-        start: z.string(),
+        id: z.string(),
       }),
-    ),
-    nodes: z.array(
-      z.discriminatedUnion("type", [
-        z.object({
-          type: z.enum(["input", "byproduct", "output"]),
-          details: ItemAndAmountSchema.extend({
-            unit: z.string(),
-          }),
-          id: z.string(),
+      z.object({
+        type: z.literal("recipe"),
+        id: z.string(),
+        details: RecipeSchema.extend({
+          quantity: z.number(),
         }),
-        z.object({
-          type: z.literal("recipe"),
-          id: z.string(),
-          details: RecipeSchema.extend({
-            quantity: z.number(),
-          }),
-        }),
-      ]),
-    ),
-  }),
+      }),
+    ]),
+  ),
+});
+export type ApiGraph = z.infer<typeof GraphSchema>;
+
+const CalculatorOutputSchema = z.object({
+  graph: GraphSchema,
   requirements: z.array(
     z.object({ requirement: z.string(), value: z.number(), unit: z.string() }),
   ),

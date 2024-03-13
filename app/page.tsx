@@ -1,9 +1,16 @@
 "use client";
-import { Box, Typography } from "@mui/material";
+import { Box, Tab, Tabs, Typography } from "@mui/material";
 import { ItemSelect } from "./_components/ItemSelect";
 import { useState } from "react";
 import { CalculatorInput, useCalculator } from "./_backend/hooks";
 import { NodeDisplay } from "./_components/NodeDisplay";
+import { TextCalcDisplay } from "./_components/TextCalcDisplay";
+import { GraphCalcDisplay } from "./_components/GraphCalcDisplay";
+
+export interface SelectRecipeArgs {
+  type: "producing" | "consuming";
+  recipe: { item: string; id: string };
+}
 
 export default function Home() {
   const [input, setInput] = useState<CalculatorInput>({
@@ -13,8 +20,10 @@ export default function Home() {
       consuming: {},
     },
   });
+  const [selectedTab, setSelectedTab] = useState(0);
 
-  const graph = useCalculator(input);
+  const calcResult = useCalculator(input);
+  const graph = calcResult?.graph;
 
   const handleAddItem = (item: string) => {
     setInput((current) => ({
@@ -29,21 +38,19 @@ export default function Home() {
     }));
   };
 
-  const handleRecipeSelect =
-    (type: "producing" | "consuming") =>
-    (recipe: { item: string; id: string }) => {
-      setInput((current) => ({
-        ...current,
-        chosenRecipes: {
-          ...current.chosenRecipes,
-          [type]: {
-            ...current.chosenRecipes[type],
-            [recipe.item]: recipe.id,
-          },
+  const handleSelectRecipe = ({ type, recipe }: SelectRecipeArgs) => {
+    setInput((current) => ({
+      ...current,
+      chosenRecipes: {
+        ...current.chosenRecipes,
+        [type]: {
+          ...current.chosenRecipes[type],
+          [recipe.item]: recipe.id,
         },
-      }));
-    };
-  const nodes = graph?.graph.nodes ?? [];
+      },
+    }));
+  };
+  const nodes = calcResult?.graph.nodes ?? [];
 
   return (
     <Box>
@@ -58,35 +65,26 @@ export default function Home() {
         <ItemSelect add item={undefined} setItem={handleAddItem} />
       </Box>
 
-      <Typography variant="h4" marginTop={2}>
-        Inputs
-      </Typography>
+      <Tabs
+        value={selectedTab}
+        onChange={(e, newValue) => setSelectedTab(newValue)}
+      >
+        <Tab label="Text" />
+        <Tab label="Graph" />
+        <Tab label="Debug" />
+      </Tabs>
 
-      {nodes
-        .filter((n) => n.type === "input")
-        .map((node) => (
-          <NodeDisplay
-            key={node.id}
-            node={node}
-            onRecipeSelect={handleRecipeSelect("producing")}
-          />
-        ))}
+      {selectedTab === 0 && graph && (
+        <TextCalcDisplay graph={graph} onSelectRecipe={handleSelectRecipe} />
+      )}
 
-      <Typography variant="h4" marginTop={2}>
-        Byproducts
-      </Typography>
+      {selectedTab === 1 && graph && (
+        <GraphCalcDisplay graph={graph} onSelectRecipe={handleSelectRecipe} />
+      )}
 
-      {nodes
-        .filter((n) => n.type === "byproduct")
-        .map((node) => (
-          <NodeDisplay
-            key={node.id}
-            node={node}
-            onRecipeSelect={handleRecipeSelect("consuming")}
-          />
-        ))}
-
-      <pre>{JSON.stringify(graph, undefined, 2)}</pre>
+      {selectedTab === 2 && (
+        <pre>{JSON.stringify(calcResult, undefined, 2)}</pre>
+      )}
     </Box>
   );
 }

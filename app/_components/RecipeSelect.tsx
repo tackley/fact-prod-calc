@@ -8,7 +8,7 @@ import {
   ListItemText,
 } from "@mui/material";
 import { RecipeInput, RecipeOutput, useRecipe } from "../_backend/hooks";
-import { Dispatch, useState } from "react";
+import { Dispatch, DispatchWithoutAction, useState } from "react";
 
 interface Props {
   input: RecipeInput;
@@ -22,7 +22,7 @@ function formatRecipe(r: RecipeOutput[0]): string {
   return `${inputs} → ${outputs} in ${duration}s`;
 }
 
-export function RecipeSelect({ input, onSelect }: Props) {
+export function RecipeButton({ input, onSelect }: Props) {
   const [open, setOpen] = useState(false);
   const result = useRecipe(input);
   const hasRecipes = result && result.length > 0;
@@ -45,20 +45,35 @@ export function RecipeSelect({ input, onSelect }: Props) {
           <>THE END</>
         )}
       </Button>
-      <Dialog onClose={handleClose} open={open}>
-        <DialogTitle>Choose Recipe</DialogTitle>
-        <List dense sx={{ paddingTop: 0 }}>
-          {result?.map((r) => (
-            <ListItem disableGutters key={r.id}>
-              <ListItemButton
-                onClick={() => onSelect({ item: input.item, id: r.id })}
-              >
-                <ListItemText primary={r.machine} secondary={formatRecipe(r)} />
-              </ListItemButton>
-            </ListItem>
-          ))}
-        </List>
-      </Dialog>
+      <RecipeMenu
+        input={input}
+        onSelect={onSelect}
+        open={open}
+        onClose={handleClose}
+      />
     </>
+  );
+}
+interface MenuProps extends Props {
+  open: boolean;
+  onClose: DispatchWithoutAction;
+}
+export function RecipeMenu({ input, onSelect, open, onClose }: MenuProps) {
+  const result = useRecipe(input);
+  return (
+    <Dialog onClose={onClose} open={open}>
+      <DialogTitle>Choose Recipe</DialogTitle>
+      <List dense sx={{ paddingTop: 0 }}>
+        {result?.map((r) => (
+          <ListItem disableGutters key={r.id}>
+            <ListItemButton
+              onClick={() => onSelect({ item: input.item, id: r.id })}
+            >
+              <ListItemText primary={r.machine} secondary={formatRecipe(r)} />
+            </ListItemButton>
+          </ListItem>
+        ))}
+      </List>
+    </Dialog>
   );
 }

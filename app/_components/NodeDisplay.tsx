@@ -1,6 +1,6 @@
 import { Box, Button, Typography } from "@mui/material";
 import { CalculatorOutput } from "../_backend/hooks";
-import { RecipeSelect } from "./RecipeSelect";
+import { RecipeButton } from "./RecipeSelect";
 import { Dispatch } from "react";
 
 type Node = CalculatorOutput["graph"]["nodes"][0];
@@ -32,7 +32,7 @@ export function NodeDisplay({ node, onRecipeSelect }: Props) {
         <Typography>
           {node.details.amount} per min {node.details.item}
         </Typography>
-        <RecipeSelect
+        <RecipeButton
           input={{ item: node.details.item, nodeType: node.type }}
           onSelect={onRecipeSelect}
         />

@@ -44,13 +44,12 @@ def recipes() -> list[dict]:
     #     "item": itemName,
     #     "nodeType": nodeType, (node type = "byproduct" or "input")
     # }
-    recipeTypes = {"byproduct": "consuming", "input": "producing"}
     gameSettings = currentValue(request.json, "settings", {})
     game = gameName(request.json["game"], True)
     itemName = request.json["item"]
-    recipeType = recipeTypes[request.json["nodeType"]]
+    nodeType = request.json["nodeType"]
     return allowedRecipes(
-        itemName, recipeType, getData(game, gameSettings, "recipes")
+        itemName, nodeType, getData(game, gameSettings, "recipes")
     )
 
 
@@ -59,8 +58,8 @@ def graph() -> dict[str:any]:
     # FORMATTING OF REQUEST:
     # {
     #     "chosenRecipes": {
-    #         "producing": {itemName: recipeId, ... }
-    #         "consuming": {itemName: recipeId, ... }
+    #         "input": {itemName: recipeId, ... }
+    #         "byproduct": {itemName: recipeId, ... }
     #     },
     #     "outputItems": [
     #         {"item": name, "amount": amount},

@@ -10,13 +10,13 @@ from .functions import roundToDigit
 # allowed recipe calculator
 def allowedRecipes(
     item: str,
-    recipeType: str,
+    nodeType: str,
     recipes: list[dict],
 ) -> list[dict]:
-    searchSide = {"consuming": "inputs", "producing": "outputs"}
+    searchSide = {"byproduct": "inputs", "input": "outputs"}
     allowedRecipeList = []
     for recipe in recipes:
-        for candidate in recipe[searchSide[recipeType]]:
+        for candidate in recipe[searchSide[nodeType]]:
             if item == candidate["item"]:
                 allowedRecipeList.append(recipe)
     return allowedRecipeList
@@ -30,9 +30,9 @@ def productionLine(
     unitFactor: float,
 ) -> dict[str, list[dict]]:
     # set variables
-    typeNames = {-1: "consuming", 1: "producing"}
+    typeNames = {-1: "byproduct", 1: "input"}
     recipeSides = ["inputs", "outputs"]
-    searchSide = {"producing": "outputs", "consuming": "inputs"}
+    searchSides = {"input": "outputs", "byproduct": "inputs"}
     excessFactors = {"inputs": 1, "outputs": -1}
     finalProducts = {}
     recipeAmounts = {}
@@ -47,29 +47,30 @@ def productionLine(
     while len(checklist) > 0:
         item = checklist[0]
         # recipe type
-        recipeTypeIndex = 1
+        itemTypeIndex = 1
         if excess[item] < 0:
-            recipeTypeIndex *= -1
-        if currentValue(production, item) * recipeTypeIndex < 0:
-            recipeTypeIndex *= -1
-        if (currentValue(production, item) + excess[item]) * recipeTypeIndex < 0:
+            itemTypeIndex *= -1
+        if currentValue(production, item) * itemTypeIndex < 0:
+            itemTypeIndex *= -1
+        if (currentValue(production, item) + excess[item]) * itemTypeIndex < 0:
             leftover = excess[item] + production[item]
             excess[item] = -production[item]
         else:
             leftover = 0
-        recipeType = typeNames[recipeTypeIndex]
+        itemType = typeNames[itemTypeIndex]
+        searchSide = searchSides[itemType]
         production[item] = currentValue(production, item) + excess[item]
-        recipeChosen = currentValue(chosenRecipes[recipeType], item, None) != None
+        recipeChosen = currentValue(chosenRecipes[itemType], item, None) != None
         # working out values
         if recipeChosen:
             if abs(excess[item]) > 2**-32:  # to prevent diminishing loops
-                recipeIndex = str(chosenRecipes[recipeType][item])
+                recipeIndex = str(chosenRecipes[itemType][item])
                 itemRecipe = lookup(recipes, "id", recipeIndex)
                 itemQuantity = lookup(
-                    itemRecipe[searchSide[recipeType]], "item", item, "amount"
+                    itemRecipe[searchSide], "item", item, "amount"
                 )
                 recipeQuantity = (
-                    recipeTypeIndex
+                    itemTypeIndex
                     * excess[item]
                     / itemQuantity
                 )
@@ -78,7 +79,7 @@ def productionLine(
                 )
                 for recipeSide in recipeSides:
                     for recipeItem in lookup(itemRecipe[recipeSide], "item"):
-                        if recipeItem != item or recipeSide != searchSide[recipeType]:
+                        if recipeItem != item or recipeSide != searchSide:
                             excess[recipeItem] = currentValue(
                                 excess, recipeItem
                             ) + excessFactors[recipeSide] * recipeQuantity * lookup(

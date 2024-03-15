@@ -26,8 +26,8 @@ export function useItems(): string[] {
 
 export interface CalculatorInput {
   chosenRecipes: {
-    producing: Record<string, string>;
-    consuming: Record<string, string>;
+    input: Record<string, string>;
+    byproduct: Record<string, string>;
   };
   outputItems: Array<{
     item: string;
@@ -51,26 +51,30 @@ const RecipeSchema = z.object({
 const GraphSchema = z.object({
   edges: z.array(
     z.object({
-      details: ItemAndAmountSchema.extend({
-        unit: z.string(),
-      }),
-      end: z.string(),
-      start: z.string(),
+      label: z.string(),
+      source: z.string(),
+      target: z.string(),
     }),
   ),
   nodes: z.array(
     z.discriminatedUnion("type", [
       z.object({
-        type: z.enum(["input", "byproduct", "output"]),
-        details: ItemAndAmountSchema.extend({
+        type: z.enum(["input", "byproduct", "output", "input-end", "byproduct-end"]),
+        color: z.string(),
+        x: z.number(),
+        y: z.number(),
+        id: z.string(),
+        labelInfo: ItemAndAmountSchema.extend({
           unit: z.string(),
         }),
-        id: z.string(),
       }),
       z.object({
         type: z.literal("recipe"),
+        color: z.string(),
+        x: z.number(),
+        y: z.number(),
         id: z.string(),
-        details: RecipeSchema.extend({
+        labelInfo: RecipeSchema.extend({
           quantity: z.number(),
         }),
       }),

@@ -12,12 +12,12 @@ interface Props {
 
 export function NodeDisplay({ node, onRecipeSelect }: Props) {
   if (node.type === "recipe") {
-    return <Typography>{node.details.machine}</Typography>;
+    return <Typography>{node.labelInfo.machine}</Typography>;
   }
-  if (node.type === "output") {
+  if (node.type === "output" || node.type === "byproduct-end" || node.type == "input-end") {
     return (
       <Typography>
-        {node.details.amount} per min {node.details.item}
+        {node.labelInfo.amount}{node.labelInfo.unit} {node.labelInfo.item}
       </Typography>
     );
   } else {
@@ -30,10 +30,10 @@ export function NodeDisplay({ node, onRecipeSelect }: Props) {
         maxWidth={400}
       >
         <Typography>
-          {node.details.amount} per min {node.details.item}
+          {node.labelInfo.amount}{node.labelInfo.unit} {node.labelInfo.item}
         </Typography>
         <RecipeButton
-          input={{ item: node.details.item, nodeType: node.type }}
+          input={{ item: node.labelInfo.item, nodeType: node.type }}
           onSelect={onRecipeSelect}
         />
       </Box>

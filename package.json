@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev:flask:install": "pip3 install -r requirements.txt",
-    "dev:flask:run": "python3 -m flask --debug --app api/index run -p 5328",
+    "dev:flask:run": "python -m flask --debug --app api/index run -p 5328",
     "dev:flask": "run-s -l dev:flask:install dev:flask:run",
     "dev:next": "next dev",
     "dev": "run-p -l dev:flask dev:next",

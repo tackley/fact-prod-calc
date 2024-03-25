@@ -28,8 +28,8 @@ export default function Diagnostics() {
             settings: {},
             game: "coi",
             chosenRecipes: {
-              producing: {},
-              consuming: {},
+              input: {},
+              byproduct: {},
             },
             outputItems: [
               {

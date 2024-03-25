@@ -12,7 +12,7 @@ export function TextCalcDisplay({ graph, onSelectRecipe }: Props) {
   const nodes = graph.nodes;
 
   const handleRecipeSelect =
-    (type: "producing" | "consuming") =>
+    (type: "input" | "byproduct") =>
     (recipe: { item: string; id: string }) =>
       onSelectRecipe({ type, recipe });
 
@@ -28,7 +28,7 @@ export function TextCalcDisplay({ graph, onSelectRecipe }: Props) {
           <NodeDisplay
             key={node.id}
             node={node}
-            onRecipeSelect={handleRecipeSelect("producing")}
+            onRecipeSelect={handleRecipeSelect("input")}
           />
         ))}
 
@@ -42,7 +42,7 @@ export function TextCalcDisplay({ graph, onSelectRecipe }: Props) {
           <NodeDisplay
             key={node.id}
             node={node}
-            onRecipeSelect={handleRecipeSelect("consuming")}
+            onRecipeSelect={handleRecipeSelect("byproduct")}
           />
         ))}
     </>

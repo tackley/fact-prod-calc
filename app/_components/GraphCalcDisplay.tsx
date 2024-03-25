@@ -54,7 +54,7 @@ function GraphEvents({
         onClose={handleClose}
         onSelect={(recipe) => {
           onSelectRecipe({
-            type: item.nodeType === "byproduct" ? "consuming" : "producing",
+            type: item.nodeType,
             recipe,
           });
           handleClose();

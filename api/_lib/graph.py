@@ -1,5 +1,6 @@
 from .functions import lookup
-from .calculator import inputSplitter
+from .functions import roundToDigit
+from .calculator import allowedRecipes, inputSplitter
 
 
 def graphGenerator(
@@ -10,10 +11,28 @@ def graphGenerator(
     chosenRecipes: dict[str, dict[str, str]],
     constants: dict[str, any],
 ):
-    def newNode(index: str, nodeType: str, details: any):
-        return {"id": index, "type": nodeType, "details": details}
-
     nodes = []
+
+    def newNode(nodeType: str, labelInfo: any):
+        nodeColours = {
+            "input": "#FFC080",
+            "input-end": "#C0C0C0",
+            "byproduct": "#FFC080",
+            "byproduct-end": "#C0C0C0",
+            "output": "#80FFC0",
+            "recipe": "#80C0FF",
+        }
+        nodes.append(
+            {
+                "id": str(len(nodes)),
+                "type": nodeType,
+                "color": nodeColours[nodeType],
+                "x": (len(nodes) % 10) * 100,
+                "y": len(nodes) * 10,
+                "labelInfo": labelInfo,
+            }
+        )
+
     # item nodes
     inputNodes = {}
     outputNodes = {}
@@ -21,111 +40,106 @@ def graphGenerator(
     sortedOutputs = inputSplitter(finalOutputs)
     for item in sortedInputs["byproducts"]:
         item["unit"] = constants["itemUnit"]
-        index = str(len(nodes))
-        nodes.append(newNode(index, "byproduct", item))
-        outputNodes[item["item"]] = index
+        outputNodes[item["item"]] = str(len(nodes))
+        if len(allowedRecipes(item["item"], "byproduct", recipeList)) == 0:
+            nodeType = "byproduct-end"
+        else:
+            nodeType = "byproduct"
+        newNode(nodeType, item)
     for item in sortedInputs["inputs"]:
         item["unit"] = constants["itemUnit"]
-        index = str(len(nodes))
-        nodes.append(newNode(index, "input", item))
-        inputNodes[item["item"]] = index
+        inputNodes[item["item"]] = str(len(nodes))
+        if len(allowedRecipes(item["item"], "input", recipeList)) == 0:
+            nodeType = "input-end"
+        else:
+            nodeType = "input"
+        newNode(nodeType, item)
     for item in sortedOutputs["byproducts"]:
         item["unit"] = constants["itemUnit"]
-        index = str(len(nodes))
-        nodes.append(newNode(index, "output", item))
-        inputNodes[item["item"]] = index
+        inputNodes[item["item"]] = str(len(nodes))
+        newNode("output", item)
     for item in sortedOutputs["inputs"]:
         item["unit"] = constants["itemUnit"]
-        index = str(len(nodes))
-        nodes.append(newNode(index, "output", item))
-        outputNodes[item["item"]] = index
+        outputNodes[item["item"]] = str(len(nodes))
+        newNode("output", item)
     # recipe nodes
     usedRecipes = []
     recipeNodes = {}
     for quantity in recipeQuantities:
-        recipe = lookup(recipeList, "id", str(quantity["recipeId"]))
-        recipeId = str(recipe["id"])
+        recipe = lookup(recipeList, "id", quantity["recipeId"])
         usedRecipes.append(recipe)
         recipe["quantity"] = quantity["quantity"]
-        index = str(len(nodes))
-        nodes.append(newNode(index, "recipe", recipe))
-        recipeNodes[recipeId] = index
+        recipeNodes[recipe["id"]] = str(len(nodes))
+        newNode("recipe", recipe)
     # edges
     edges = []
-    for recipe in usedRecipes:
-        recipeQuantity = (
-            lookup(recipeQuantities, "recipeId", str(recipe["id"]), "quantity")
+
+    def newEdge(source: str, target: str, item: dict[str, any]):
+        edges.append(
+            {
+                "source": source,
+                "target": target,
+                "label": str(roundToDigit(item["amount"], 2, "up"))
+                + constants["itemUnit"]
+                + " "
+                + item["item"],
+            }
         )
-        for item in recipe["inputs"]:
+
+    for recipe in usedRecipes:
+        recipeId = recipe["id"]
+        recipeQuantity = lookup(recipeQuantities, "recipeId", recipeId, "quantity")
+        for item in recipe["inputs"][:]:
             itemName = item["item"]
-            itemAmount = item["amount"] * recipeQuantity
-            details = {
-                "item": itemName,
-                "amount": itemAmount,
-                "unit": constants["itemUnit"],
-            }
+            item["amount"] *= recipeQuantity
             if itemName in inputNodes.keys():
-                edges.append(
-                    {
-                        "start": inputNodes[itemName],
-                        "end": recipeNodes[str(recipe["id"])],
-                        "details": details,
-                    }
+                newEdge(
+                    inputNodes[itemName],
+                    recipeNodes[recipeId],
+                    item,
                 )
-            if itemName in chosenRecipes["producing"].keys():
-                edges.append(
-                    {
-                        "start": recipeNodes[str(chosenRecipes["producing"][itemName])],
-                        "end": recipeNodes[str(recipe["id"])],
-                        "details": details,
-                    }
+            elif itemName in chosenRecipes["input"].keys():
+                newEdge(
+                    recipeNodes[chosenRecipes["input"][itemName]],
+                    recipeNodes[recipeId],
+                    item,
                 )
-        for item in recipe["outputs"]:
+            else:
+                recipeFound = False
+                for testRecipe in usedRecipes:
+                    if itemName in lookup(testRecipe["outputs"], "item"):
+                        sourceRecipe = testRecipe["id"]
+                        recipeFound = True
+                if recipeFound:
+                    newEdge(
+                        recipeNodes[sourceRecipe],
+                        recipeNodes[recipeId],
+                        item,
+                    )
+        for item in recipe["outputs"][:]:
             itemName = item["item"]
-            itemAmount = item["amount"] * recipeQuantity
-            details = {
-                "item": itemName,
-                "amount": itemAmount,
-                "unit": constants["itemUnit"],
-            }
+            item["amount"] *= recipeQuantity
             if itemName in outputNodes.keys():
-                edges.append(
-                    {
-                        "start": recipeNodes[recipe["id"]],
-                        "end": outputNodes[itemName],
-                        "details": details,
-                    }
+                newEdge(
+                    recipeNodes[recipeId],
+                    outputNodes[itemName],
+                    item,
                 )
-            if itemName in chosenRecipes["consuming"].keys() and itemName not in chosenRecipes["producing"].keys():
-                edges.append(
-                    {
-                        "start": recipeNodes[recipe["id"]],
-                        "end": recipeNodes[chosenRecipes["consuming"][itemName]],
-                        "details": details,
-                    }
+            elif (
+                itemName in chosenRecipes["byproduct"].keys()
+                and itemName not in chosenRecipes["input"].keys()
+            ):
+                newEdge(
+                    recipeNodes[recipeId],
+                    recipeNodes[chosenRecipes["byproduct"][itemName]],
+                    item,
                 )
+
     for item in finalOutputs:
-        itemName = item["item"]
         itemAmount = item["amount"]
-        details = {
-            "item": itemName,
-            "amount": item["amount"],
-            "unit": constants["itemUnit"],
-        }
-        if itemAmount > 0 and itemName not in chosenRecipes["producing"].keys():
-            edges.append(
-                {
-                    "start": inputNodes[itemName],
-                    "end": outputNodes[itemName],
-                    "details": details,
-                }
-            )
-        if itemAmount < 0 and itemName not in chosenRecipes["consuming"].keys():
-            edges.append(
-                {
-                    "start": outputNodes[itemName],
-                    "end": inputNodes[itemName],
-                    "details": details,
-                }
-            )
+        itemName = item["item"]
+        if itemAmount > 0 and itemName not in chosenRecipes["input"].keys():
+            newEdge(inputNodes[itemName], outputNodes[itemName], item)
+        if itemAmount < 0 and itemName not in chosenRecipes["byproduct"].keys():
+            newEdge(outputNodes[itemName], inputNodes[itemName], item)
     return {"nodes": nodes, "edges": edges}

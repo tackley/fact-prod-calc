@@ -8,7 +8,7 @@ import { TextCalcDisplay } from "./_components/TextCalcDisplay";
 import { GraphCalcDisplay } from "./_components/GraphCalcDisplay";
 
 export interface SelectRecipeArgs {
-  type: "producing" | "consuming";
+  type: "input" | "byproduct";
   recipe: { item: string; id: string };
 }
 
@@ -16,8 +16,8 @@ export default function Home() {
   const [input, setInput] = useState<CalculatorInput>({
     outputItems: [],
     chosenRecipes: {
-      producing: {},
-      consuming: {},
+      input: {},
+      byproduct: {},
     },
   });
   const [selectedTab, setSelectedTab] = useState(0);

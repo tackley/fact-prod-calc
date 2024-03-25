@@ -31,7 +31,5 @@ export function convertApiResponseToGraph(api: ApiGraph): Graph {
     });
   }
 
-  console.log(g);
-
   return g;
 }

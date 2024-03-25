@@ -37,7 +37,10 @@ function GraphEvents({
       // node events
       clickNode: (event) => {
         const theNode = graph.getNodeAttributes(event.node);
-        setItem({ item: theNode.label, nodeType: theNode.nodeType });
+        console.log("clickNode running", theNode);
+        if (theNode && ["input", "byproduct"].includes(theNode.nodeType)) {
+          setItem({ item: theNode.label, nodeType: theNode.nodeType });
+        }
       },
     });
   }, [registerEvents]);

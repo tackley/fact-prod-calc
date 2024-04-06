@@ -24,8 +24,8 @@ dependencies:
     specifier: ^3.4.2
     version: 3.4.2(graphology@0.25.4)(lodash@4.17.21)(react@18.2.0)(sigma@2.4.0)
   '@react-sigma/layout-forceatlas2':
-    specifier: ^3.4.2
-    version: 3.4.2(graphology-layout-forceatlas2@0.10.1)(graphology@0.25.4)(lodash@4.17.21)(react@18.2.0)(sigma@2.4.0)
+    specifier: ^4.0.0
+    version: 4.0.1(graphology-layout-forceatlas2@0.10.1)(graphology@0.25.4)(react@18.2.0)(sigma@2.4.0)
   graphology:
     specifier: ^0.25.4
     version: 0.25.4(graphology-types@0.24.7)
@@ -1303,27 +1303,37 @@ packages:
       sigma: 2.4.0(graphology-types@0.24.7)
     dev: false
 
-  /@react-sigma/layout-core@3.4.2(graphology@0.25.4)(lodash@4.17.21)(react@18.2.0)(sigma@2.4.0):
-    resolution: {integrity: sha512-pf3jiLeHV4C2kFmAIo2T6klbyE9+r00kcRu45yLQ3J4ltPsrcgQAP78ykZPkzZexZzJ4Vumlv4vXhlvOqmeM4Q==}
+  /@react-sigma/core@4.0.1(graphology@0.25.4)(react@18.2.0)(sigma@2.4.0):
+    resolution: {integrity: sha512-NQNnwA5Af7CtIpshzlr7FKqbDw4mHLmF/GdKmAXlbBSdHsu3ptk26IgK2dmTQOZxbjn6hFxvJHmOZ0IVg8/g3A==}
+    peerDependencies:
+      graphology: ^0.25.1
+      react: ^18.0.0
+      sigma: ^3.0.0-beta.16
     dependencies:
-      '@react-sigma/core': 3.4.2(graphology@0.25.4)(lodash@4.17.21)(react@18.2.0)(sigma@2.4.0)
+      graphology: 0.25.4(graphology-types@0.24.7)
+      react: 18.2.0
+      sigma: 2.4.0(graphology-types@0.24.7)
+    dev: false
+
+  /@react-sigma/layout-core@4.0.1(graphology@0.25.4)(react@18.2.0)(sigma@2.4.0):
+    resolution: {integrity: sha512-F/3n769ht4lZvKrPrcVd3WPap1avqf1+/Y0Ck4S9hzXTnoazdBYZhcDL2TzSALo1/KGASuy4eICzCc3rNjcJmg==}
+    dependencies:
+      '@react-sigma/core': 4.0.1(graphology@0.25.4)(react@18.2.0)(sigma@2.4.0)
     transitivePeerDependencies:
       - graphology
-      - lodash
       - react
       - sigma
     dev: false
 
-  /@react-sigma/layout-forceatlas2@3.4.2(graphology-layout-forceatlas2@0.10.1)(graphology@0.25.4)(lodash@4.17.21)(react@18.2.0)(sigma@2.4.0):
-    resolution: {integrity: sha512-CXWPu4v8+TWzSd3u7E4hPOsX7j5CcgP5sXzszU8b8t+87YMVQb0sdvT+xYMRbSjn6WkZkNhY7wh0iT5X842RZw==}
+  /@react-sigma/layout-forceatlas2@4.0.1(graphology-layout-forceatlas2@0.10.1)(graphology@0.25.4)(react@18.2.0)(sigma@2.4.0):
+    resolution: {integrity: sha512-+dGYTnheU5sGSQ0oC96yGivgzxWvXKazV1E8pUD7vPDp+V6Zs5xZ+/G96BeJs5DEIZt7alykKwgIkpTGsBbowg==}
     peerDependencies:
       graphology-layout-forceatlas2: ^0.10.1
     dependencies:
-      '@react-sigma/layout-core': 3.4.2(graphology@0.25.4)(lodash@4.17.21)(react@18.2.0)(sigma@2.4.0)
+      '@react-sigma/layout-core': 4.0.1(graphology@0.25.4)(react@18.2.0)(sigma@2.4.0)
       graphology-layout-forceatlas2: 0.10.1(graphology-types@0.24.7)
     transitivePeerDependencies:
       - graphology
-      - lodash
       - react
       - sigma
     dev: false
